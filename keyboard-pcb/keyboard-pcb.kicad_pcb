@@ -193,7 +193,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 145db372-d189-4ee4-a026-1db2e56d9699)
-    (at 196.4182 158.75)
+    (at 223.139 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -244,7 +244,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 14d43c02-e7c0-4242-8ac0-8c32b6223e64)
-    (at 98.8822 196.859)
+    (at 125.603 182.39)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -295,7 +295,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 1b83eeb3-4166-4a44-9d54-224ec8860158)
-    (at 306.0192 139.709)
+    (at 332.74 125.24)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -346,7 +346,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 2318c6db-f19d-4a41-84cb-b426001bd344)
-    (at 215.4682 158.75)
+    (at 242.189 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -397,7 +397,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 245c7b57-1df0-4873-92fa-9fc0828af5b9)
-    (at 75.057 196.859)
+    (at 101.7778 182.39)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -448,7 +448,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 25ee4fbc-fb79-456d-a5d6-8ab9d902d042)
-    (at 277.4442 120.659)
+    (at 304.165 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -499,7 +499,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 2a99dbde-2b34-4a9f-a780-425b974e1dbf)
-    (at 267.8938 139.7)
+    (at 294.6146 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -550,7 +550,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 34a9486f-49c8-4483-aa05-e9e7c3be2bc2)
-    (at 306.0192 196.859)
+    (at 332.74 182.39)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -601,7 +601,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 40d12431-5808-4ff8-9852-41bb6ecb9ca7)
-    (at 120.2182 158.75)
+    (at 146.939 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -652,7 +652,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 47d32c44-b39f-451e-82a9-69e157009a9d)
-    (at 205.994 177.8)
+    (at 232.7148 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -703,7 +703,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 48717f92-4291-4d26-953a-985fc457fbcf)
-    (at 265.5316 196.859)
+    (at 292.2524 182.39)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -754,7 +754,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 4d6de9fa-fe2a-4eeb-abbf-68e139984921)
-    (at 186.944 177.8)
+    (at 213.6648 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -805,7 +805,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 4e4e543c-6ac3-4ea0-b512-c8a24f82e343)
-    (at 101.1682 158.75)
+    (at 127.889 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -856,7 +856,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 5086a5bf-a964-4143-828b-f2c3560ff7d4)
-    (at 191.6938 139.7)
+    (at 218.4146 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -907,7 +907,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 51e034a6-3d62-4b7b-9734-3e0db1b2768e)
-    (at 172.6438 139.7)
+    (at 199.3646 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -958,7 +958,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 5cdf0314-04aa-429a-b9f2-8558aa5a91e2)
-    (at 125.0442 120.659)
+    (at 151.765 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1009,7 +1009,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 5e9a955b-62c9-4743-abc2-d191ee3d6fcf)
-    (at 139.2682 158.75)
+    (at 165.989 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1060,7 +1060,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 62b182cf-c46c-4157-a9d4-873ff1e21a15)
-    (at 284.5816 177.8)
+    (at 311.3024 163.331)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1111,7 +1111,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 648b234d-7e97-4ea0-8256-3c14498d5e71)
-    (at 51.2318 177.809)
+    (at 77.9526 163.34)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1162,7 +1162,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 679b9724-c99a-4137-b077-65a6cf00f091)
-    (at 239.3442 120.659)
+    (at 266.065 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1213,7 +1213,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 6b421940-1cfd-4979-841d-a3feb48db6cd)
-    (at 110.744 177.8)
+    (at 137.4648 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1264,7 +1264,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 6f56969f-76d5-4a2b-ac07-f90a30783241)
-    (at 182.1942 120.659)
+    (at 208.915 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1315,7 +1315,7 @@
 
   (footprint "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" (layer "F.Cu")
     (tedit 5A74C8CB) (tstamp 76eb7b20-3fa5-414e-8fb2-27c34a705203)
-    (at 315.0252 123.23)
+    (at 341.746 108.761)
     (descr "Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html")
     (tags "rotary encoder")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1381,7 +1381,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 77b4451a-02f0-432c-9596-dcd13a624ac6)
-    (at 201.2442 120.659)
+    (at 227.965 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1432,7 +1432,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.50u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 7c0d9f08-ee8c-4ce0-a68f-c3946881fb11)
-    (at 53.594 139.709)
+    (at 80.3148 125.24)
     (descr "Cherry MX keyswitch, 1.50u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.50u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1483,7 +1483,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 7ed173a7-356d-44b6-b7f5-5302cbc8aef4)
-    (at 86.9442 120.65)
+    (at 113.665 106.181)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1534,7 +1534,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 7fc77c10-49b1-47db-a83f-bc8d02c767d1)
-    (at 220.2942 120.659)
+    (at 247.015 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1585,7 +1585,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 817e2e4f-78a3-4f16-b4a8-996157aa3bac)
-    (at 105.9942 120.65)
+    (at 132.715 106.181)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1636,7 +1636,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 86b92ffe-e99d-4863-9d79-f88563fbd5d6)
-    (at 286.9438 139.7)
+    (at 313.6646 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1687,7 +1687,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 8fb85fb1-309c-4573-86bb-bf12de7f266c)
-    (at 325.0692 196.859)
+    (at 351.79 182.39)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1738,7 +1738,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 963ec01b-00a8-4f6c-a9aa-f18674028d23)
-    (at 82.1182 158.75)
+    (at 108.839 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1789,7 +1789,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 9a24450a-0e9b-4fdf-8c06-c8e83e87f03c)
-    (at 177.3682 158.75)
+    (at 204.089 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1840,7 +1840,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 9f78b9f9-63a6-4213-8a4f-3062d6bda4e4)
-    (at 51.2318 196.859)
+    (at 77.9526 182.39)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1891,7 +1891,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp 9fd32313-2355-46a8-9f9b-3b6529244eb9)
-    (at 115.4938 139.7)
+    (at 142.2146 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1942,7 +1942,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.50u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp a18d2e6d-950e-490e-b79f-3fe4ceec1944)
-    (at 301.244 120.659)
+    (at 327.9648 106.19)
     (descr "Cherry MX keyswitch, 1.50u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.50u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -1993,7 +1993,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp a29e49b1-1312-4546-a4b2-5dec4eac638b)
-    (at 241.7318 196.859)
+    (at 268.4526 182.39)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2044,7 +2044,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp aabd78cc-d0b2-4cda-93b3-f39aae57d109)
-    (at 244.094 177.8)
+    (at 270.8148 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2095,7 +2095,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_6.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp ac15101d-01db-427b-854c-826d0f5574a8)
-    (at 170.307 196.8438)
+    (at 197.0278 182.3748)
     (descr "Cherry MX keyswitch, 6.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 6.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2150,7 +2150,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp b36ef455-d296-4a0c-b1a3-e3a4c482cb01)
-    (at 144.0942 120.659)
+    (at 170.815 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2201,7 +2201,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp b480ee95-0f6e-4944-8e14-9536cff18995)
-    (at 234.5436 158.75)
+    (at 261.2644 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2252,7 +2252,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp b7d0432f-dd22-4574-bb92-ca180986cf70)
-    (at 167.894 177.8)
+    (at 194.6148 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2303,7 +2303,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.75u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp b7efc9fc-98f7-4f04-b654-ad0b7e483780)
-    (at 298.8818 158.759)
+    (at 325.6026 144.29)
     (descr "Cherry MX keyswitch, 1.75u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.75u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2354,7 +2354,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp bfb3f83c-8988-43ef-9856-597c3edd4ebd)
-    (at 67.8942 120.659)
+    (at 94.615 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2405,7 +2405,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp c073b3c3-2b6b-43f1-8e82-55a3190d82f2)
-    (at 134.5438 139.7)
+    (at 161.2646 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2456,7 +2456,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.25u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp cf3f30ad-8c15-4809-8ea3-26485f318ea1)
-    (at 51.2318 158.759)
+    (at 77.9526 144.29)
     (descr "Cherry MX keyswitch, 1.25u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.25u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2507,7 +2507,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp d012b7e3-3fed-4494-8efe-d9c5fc01d18b)
-    (at 306.0192 177.8254)
+    (at 332.74 163.3564)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2558,7 +2558,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp d13cc204-13ec-4ed2-863b-fbbd71ae8631)
-    (at 210.7438 139.7)
+    (at 237.4646 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2609,7 +2609,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp d25887fa-7450-4c67-94b6-7a96ca0d9c12)
-    (at 229.7938 139.7)
+    (at 256.5146 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2660,7 +2660,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp d4a16612-6b8a-46ba-86fa-24603e561fab)
-    (at 72.6694 177.809)
+    (at 99.3902 163.34)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2711,7 +2711,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp d830fb04-8e9e-4724-9c51-db5ad68996e5)
-    (at 258.3942 120.659)
+    (at 285.115 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2762,7 +2762,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp d9e55703-909b-483e-b1c1-7da42c731c35)
-    (at 253.5936 158.75)
+    (at 280.3144 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2813,7 +2813,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp dbe1be82-1509-49de-9a02-8314037c23d1)
-    (at 96.4438 139.7)
+    (at 123.1646 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2864,7 +2864,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp dcde13c3-faa3-4ec0-8571-f5fe2510983f)
-    (at 163.1442 120.659)
+    (at 189.865 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2915,7 +2915,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp dd9e3ff4-ea4b-46b2-95d3-7a6db3f01833)
-    (at 153.5938 139.7)
+    (at 180.3146 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -2966,7 +2966,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp df839560-bd99-480c-9628-4e54c7928342)
-    (at 225.044 177.8)
+    (at 251.7648 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3017,7 +3017,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp e5f40340-de1e-46e9-8c46-6b1ee00070dc)
-    (at 129.794 177.8)
+    (at 156.5148 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3068,7 +3068,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp e9b1a2fd-00d1-47ad-b165-cea6e56025ec)
-    (at 248.8438 139.7)
+    (at 275.5646 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3119,7 +3119,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp eaa062a9-b4f5-4001-bb07-53e5e7357725)
-    (at 158.3182 158.75)
+    (at 185.039 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3170,7 +3170,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp f1458b5c-bab6-4418-a9ce-85c94e05b471)
-    (at 77.3938 139.7)
+    (at 104.1146 125.231)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3221,7 +3221,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp f1c1b91d-59bd-485f-be54-beed0e39ae55)
-    (at 148.844 177.8)
+    (at 175.5648 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3272,7 +3272,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp f4062ed4-0e92-4bbb-89ff-19580de7325f)
-    (at 263.144 177.8)
+    (at 289.8648 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3323,7 +3323,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp f85517e4-6b83-45d0-8f90-dac1a26d42c7)
-    (at 48.8442 120.659)
+    (at 75.565 106.19)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3374,7 +3374,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp f946d50c-0e50-436b-b723-eb238db1dea9)
-    (at 286.9692 196.859)
+    (at 313.69 182.39)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3425,7 +3425,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp fd600a27-00f8-4b1d-adfe-b0c0671bb0e4)
-    (at 91.694 177.8)
+    (at 118.4148 163.331)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3476,7 +3476,7 @@
 
   (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB" (layer "F.Cu")
     (tedit 5A02FE24) (tstamp fe742379-5ab9-4855-9632-76d2a3b08ae8)
-    (at 272.669 158.75)
+    (at 299.3898 144.281)
     (descr "Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf")
     (tags "Cherry MX keyswitch 1.00u PCB")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3527,7 +3527,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 03d8d5f7-95dd-4519-a8d3-55df20bf63ea)
-    (at 273.05 184.15 90)
+    (at 299.7708 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3577,7 +3577,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 081ab638-c988-4020-90de-bd30511f0acf)
-    (at 61.976 184.15 90)
+    (at 88.6968 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3627,7 +3627,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 083bf007-c833-40d1-a0f6-c38e1e547d99)
-    (at 228.6 127 90)
+    (at 255.3208 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3677,7 +3677,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 09e2ba74-4a6b-4821-a115-fbf92278e68d)
-    (at 238.125 146.05 90)
+    (at 264.8458 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3727,7 +3727,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 0cce7fd7-235d-4eab-b965-d6831782a74a)
-    (at 66.675 146.05 90)
+    (at 93.3958 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3777,7 +3777,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 0f68c76a-79a9-4023-9e61-b01a3ed5eda4)
-    (at 95.25 127 90)
+    (at 121.9708 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3827,7 +3827,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 116bc78e-f6bb-413e-82b8-b58edc8a098f)
-    (at 123.825 146.05 90)
+    (at 150.5458 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3877,7 +3877,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 16b3833a-9267-4ffc-aa4d-c1d082f73bdc)
-    (at 295.275 184.15 90)
+    (at 321.9958 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3927,7 +3927,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 1c0738de-aa8c-4a64-982f-69d9aef3f2c6)
-    (at 81.026 184.15 90)
+    (at 107.7468 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -3977,7 +3977,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 1d0faa75-196a-4d67-898f-b62679c41897)
-    (at 311.15 132.08 90)
+    (at 337.8708 117.611 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4027,7 +4027,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 1eba9e9b-38c7-488c-8fa7-8b2078c07e7c)
-    (at 204.724 165.1 90)
+    (at 231.4448 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4077,7 +4077,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 221dceeb-0e1e-44fd-9de5-25bc69cdd0ee)
-    (at 133.35 127 90)
+    (at 160.0708 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4127,7 +4127,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 258a9c81-434e-44dd-a0ec-5ed423efbdc3)
-    (at 233.426 184.15 90)
+    (at 260.1468 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4177,7 +4177,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 29564dd3-f112-40d1-bef3-84d986178f11)
-    (at 254 203.2 90)
+    (at 280.7208 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4227,7 +4227,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 31043a4b-8e7b-48ea-a032-2b925e75e84a)
-    (at 185.674 165.1 90)
+    (at 212.3948 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4277,7 +4277,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 3da2db6e-8d60-4bc0-97fd-7ad0aca1b381)
-    (at 247.65 127 90)
+    (at 274.3708 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4327,7 +4327,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 4dc21b97-78f2-4c36-a734-f96c82560335)
-    (at 109.474 165.1 90)
+    (at 136.1948 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4377,7 +4377,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 5715ac15-5e2a-4319-b8aa-031aaa96d224)
-    (at 128.524 165.1 90)
+    (at 155.2448 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4427,7 +4427,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 591737a7-d868-40ca-bfad-4d16de4f311f)
-    (at 39.37 184.15 90)
+    (at 66.0908 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4477,7 +4477,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 602028e6-1d17-4746-a2c4-beb768a4d3ba)
-    (at 166.624 165.1 90)
+    (at 193.3448 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4527,7 +4527,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 61efe23b-398c-46bd-8f7f-87f74ad19039)
-    (at 180.975 146.05 90)
+    (at 207.6958 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4577,7 +4577,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 640d0f45-d64a-4133-9372-8d2bb2fb26a6)
-    (at 85.725 146.05 90)
+    (at 112.4458 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4627,7 +4627,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 664f61ce-717f-4a6a-87c3-452f90b14532)
-    (at 41.91 146.05 90)
+    (at 68.6308 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4677,7 +4677,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 6a4aac9b-0650-4989-9edc-a5fd6e74bd61)
-    (at 214.376 184.15 90)
+    (at 241.0968 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4727,7 +4727,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 6d5e8845-109a-460d-bb78-14785e6aa659)
-    (at 171.45 127 90)
+    (at 198.1708 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4777,7 +4777,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 6ee690ad-4258-4816-8dc9-a12c10e79d31)
-    (at 257.175 146.05 90)
+    (at 283.8958 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4827,7 +4827,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 6f635a6d-2d98-445a-a447-fe5dc5292dbc)
-    (at 287.02 165.1 90)
+    (at 313.7408 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4877,7 +4877,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 70dcbb64-cc40-43b5-b72d-05b12179893b)
-    (at 252.476 184.15 90)
+    (at 279.1968 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4927,7 +4927,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 72d690f7-b41d-46f7-80fc-5f64d99b9c20)
-    (at 147.574 165.1 90)
+    (at 174.2948 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -4977,7 +4977,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 74e39c8f-bd24-4c48-99d5-1864e713ea66)
-    (at 152.4 127 90)
+    (at 179.1208 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5027,7 +5027,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 75106940-16de-4901-9f68-d1c8ae2ba046)
-    (at 138.176 184.15 90)
+    (at 164.8968 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5077,7 +5077,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 80032543-b1db-4ad2-b562-b0c63eb249ee)
-    (at 276.225 203.2 90)
+    (at 302.9458 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5127,7 +5127,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 872b4fa9-6f91-4a6b-8c5e-7498ff9d676a)
-    (at 114.3 127 90)
+    (at 141.0208 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5177,7 +5177,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 89c544b0-7f9d-4609-923b-318e08ed7c8d)
-    (at 104.775 146.05 90)
+    (at 131.4958 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5227,7 +5227,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 8cc1b6a6-a944-41e6-ba94-cd911cdf3ee7)
-    (at 161.925 146.05 90)
+    (at 188.6458 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5277,7 +5277,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 8e190aef-7431-47cd-b4c0-eac2a54fcd61)
-    (at 158.75 203.2 90)
+    (at 185.4708 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5327,7 +5327,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 8ed933ee-fb6a-467f-8650-257660e58709)
-    (at 200.025 146.05 90)
+    (at 226.7458 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5377,7 +5377,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 8fa4b2fc-e895-4b33-bc8e-6cb6f5f2cf54)
-    (at 209.55 127 90)
+    (at 236.2708 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5427,7 +5427,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 970a4d30-a3c8-4e66-96e3-10e0a57332fd)
-    (at 229.87 203.2 90)
+    (at 256.5908 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5477,7 +5477,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 9900eb3e-fd7a-4683-b033-29257c7516b0)
-    (at 242.824 165.1 90)
+    (at 269.5448 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5527,7 +5527,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 9a6f578e-008c-4c68-bd51-8a77f28019a5)
-    (at 142.875 146.05 90)
+    (at 169.5958 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5577,7 +5577,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp 9c59be60-c764-45db-9a9d-3cfe8af0e088)
-    (at 39.37 165.1 90)
+    (at 66.0908 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5627,7 +5627,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp a0c23fa0-de09-471c-89de-f7f2f9b425f1)
-    (at 71.374 165.1 90)
+    (at 98.0948 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5677,7 +5677,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp a68e11d6-8845-4aed-875a-8be4f2d45235)
-    (at 295.275 203.2 90)
+    (at 321.9958 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -5727,7 +5727,7 @@
 
   (footprint "MCU_RaspberryPi_and_Boards:RPi_Pico_SMD_TH" (layer "B.Cu")
     (tedit 6224DF39) (tstamp ace12d5f-c2d2-408b-b8e7-8d7eefbd5969)
-    (at 358.013 164.719 180)
+    (at 350.6978 146.821 180)
     (descr "Through hole straight pin header, 2x20, 2.54mm pitch, double rows")
     (tags "Through hole pin header THT 2x20 2.54mm double row")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6183,7 +6183,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp b50a1fb4-5399-444e-822b-416b9afd3279)
-    (at 276.098 146.05 90)
+    (at 302.8188 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6233,7 +6233,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp b5430490-f8a8-4ab9-bb6d-686bc21adff5)
-    (at 176.276 184.15 90)
+    (at 202.9968 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6283,7 +6283,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp b6dda394-9bc7-45e7-a8b3-c433d3ff1972)
-    (at 223.774 165.1 90)
+    (at 250.4948 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6333,7 +6333,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp b8b802e2-cd3d-4353-9bf3-4288b4b9b025)
-    (at 219.075 146.05 90)
+    (at 245.7958 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6383,7 +6383,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp c1368326-27a7-479b-9fd3-cc868158f383)
-    (at 100.076 184.15 90)
+    (at 126.7968 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6433,7 +6433,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp c3e96578-e400-48f5-a630-96c7d1cfc4bc)
-    (at 39.37 203.2 90)
+    (at 66.0908 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6483,7 +6483,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp c4309d14-a980-4011-a974-1017d36edc4b)
-    (at 295.275 146.05 90)
+    (at 321.9958 131.581 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6533,7 +6533,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp c8990806-8639-48c8-8fcc-3b46829b935a)
-    (at 57.15 127 90)
+    (at 83.8708 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6583,7 +6583,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp c9e2a89b-83ba-47d3-803a-9cb16ea8e229)
-    (at 190.5 127 90)
+    (at 217.2208 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6633,7 +6633,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp ceb20278-26f6-402a-9eb3-81f5a1bdc411)
-    (at 289.56 127 90)
+    (at 316.2808 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6683,7 +6683,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp cfff84f8-69d4-43d7-a5dc-9e12522ed851)
-    (at 38.1 127 90)
+    (at 64.8208 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6733,7 +6733,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp d2a018fa-0941-4e5f-ba49-1530c85f9dee)
-    (at 87.63 203.2 90)
+    (at 114.3508 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6783,7 +6783,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp d86ad409-d475-47ed-a793-acdc69df25bb)
-    (at 90.424 165.1 90)
+    (at 117.1448 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6833,7 +6833,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp da4d3833-9fab-4de0-bda3-58d12c253c53)
-    (at 314.325 203.2 90)
+    (at 341.0458 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6883,7 +6883,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp dcc7890f-a4e3-489c-8b18-390554fc5886)
-    (at 157.226 184.15 90)
+    (at 183.9468 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6933,7 +6933,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp e0cd20cf-2721-4d5c-9024-4a956475fb7d)
-    (at 266.7 127 90)
+    (at 293.4208 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -6983,7 +6983,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp e7175cb2-d90a-4f96-a7d8-e32ad52822ee)
-    (at 119.126 184.15 90)
+    (at 145.8468 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -7033,7 +7033,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp eb3a94bf-1576-44b0-8158-2ead26e9dd2d)
-    (at 63.5 203.2 90)
+    (at 90.2208 188.731 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -7083,7 +7083,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp ebc57da8-3f92-4e84-8300-2da58dc737cb)
-    (at 195.326 184.15 90)
+    (at 222.0468 169.681 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -7133,7 +7133,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp ed0f8382-7a3b-407b-9a58-bb5f5056f4cd)
-    (at 76.2 127 90)
+    (at 102.9208 112.531 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
@@ -7183,7 +7183,7 @@
 
   (footprint "Diode_SMD:D_SOD-123" (layer "B.Cu")
     (tedit 58645DC7) (tstamp f7800ac0-7de4-4dbf-9919-afb21b831669)
-    (at 261.874 165.1 90)
+    (at 288.5948 150.631 90)
     (descr "SOD-123")
     (tags "SOD-123")
     (property "Sheetfile" "File: keyboard-pcb.kicad_sch")
