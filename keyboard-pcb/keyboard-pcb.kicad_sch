@@ -4317,7 +4317,7 @@
     (uuid f433be38-82e2-473b-9bcf-c0c050d04e9a)
     (property "Reference" "U1" (id 0) (at 76.2 36.83 0))
     (property "Value" "Pico" (id 1) (at 76.2 39.37 0))
-    (property "Footprint" "RPi_Pico:RPi_Pico_SMD_TH" (id 2) (at 76.2 68.58 90)
+    (property "Footprint" "MCU_RaspberryPi_and_Boards:RPi_Pico_SMD_TH" (id 2) (at 76.2 68.58 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (id 3) (at 76.2 68.58 0)
@@ -4875,7 +4875,7 @@
       (reference "TAB1") (unit 1) (value "MX-NoLED") (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.50u_PCB")
     )
     (path "/f433be38-82e2-473b-9bcf-c0c050d04e9a"
-      (reference "U1") (unit 1) (value "Pico") (footprint "RPi_Pico:RPi_Pico_SMD_TH")
+      (reference "U1") (unit 1) (value "Pico") (footprint "MCU_RaspberryPi_and_Boards:RPi_Pico_SMD_TH")
     )
     (path "/c4b08a63-44b5-48b9-adfd-68736c92ed66"
       (reference "UP1") (unit 1) (value "MX-NoLED") (footprint "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB")
