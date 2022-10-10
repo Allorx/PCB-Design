@@ -7240,6 +7240,12 @@
   (gr_line (start 370.84 104.14) (end 370.84 199.39) (layer "Edge.Cuts") (width 0.2) (tstamp b3e6b915-64fb-4fbe-afc7-563c51afdda4))
   (gr_arc (start 370.84 199.39) (mid 370.468026 200.288026) (end 369.57 200.66) (layer "Edge.Cuts") (width 0.2) (tstamp ce0682df-e63f-47f1-9c5f-729734b177a8))
   (gr_line (start 68.58 102.87) (end 369.57 102.87) (layer "Edge.Cuts") (width 0.2) (tstamp e2d0ac62-74da-450f-825d-a84e994c7f5b))
+  (gr_text "V1.0" (at 178.308 189.484) (layer "F.SilkS") (tstamp 51594222-048a-46c0-9505-67aba8e4acb0)
+    (effects (font (size 1.5 3) (thickness 0.3) italic))
+  )
+  (gr_text "Orions Hands" (at 229.362 189.738) (layer "F.SilkS") (tstamp 89e47cb8-d794-4d61-83ca-3d7b3c2cf37d)
+    (effects (font (size 1.5 3) (thickness 0.3) italic))
+  )
 
   (segment (start 118.745 110.363) (end 119.634 111.252) (width 0.25) (layer "F.Cu") (net 1) (tstamp 0f4fe77d-cc9f-4419-935c-da7a1ed892ec))
   (segment (start 123.4948 167.4368) (end 124.46 168.402) (width 0.25) (layer "F.Cu") (net 1) (tstamp 127cce5d-f0af-46c4-8534-c9080f12b798))
