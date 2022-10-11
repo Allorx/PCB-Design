@@ -1,3 +1,6 @@
 # PCB-Design
-PCB design projects
-1) A custom mechanical keyboard PCB design
+PCB design projects:
+
+Currently only contains a custom mechanical keyboard PCB design
+
+![Alt text](PCB_OrionsHands.jpg?raw=true "Keyboard PCB")
