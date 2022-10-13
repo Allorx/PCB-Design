@@ -1,0 +1,7 @@
+[
+{
+  "directory": "D:/Documents/Github/PCB-Design/keyboard-code/build",
+  "command": "C:\\PROGRA~2\\MICROS~3\\2019\\COMMUN~1\\VC\\Tools\\MSVC\\1429~1.301\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 /FoCMakeFiles\\orionshands.dir\\src\\main.cpp.obj /FdCMakeFiles\\orionshands.dir\\ /FS -c D:\\Documents\\Github\\PCB-Design\\keyboard-code\\src\\main.cpp",
+  "file": "D:/Documents/Github/PCB-Design/keyboard-code/src/main.cpp"
+}
+]
