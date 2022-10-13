@@ -7,3 +7,6 @@
 [submodule "keyboard-code/pico-sdk"]
 	path = keyboard-code/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk
+[submodule "keyboard-code/pico-examples"]
+	path = keyboard-code/pico-examples
+	url = https://github.com/raspberrypi/pico-examples
