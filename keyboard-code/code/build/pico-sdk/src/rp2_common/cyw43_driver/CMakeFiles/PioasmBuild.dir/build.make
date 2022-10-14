@@ -81,11 +81,11 @@ pico-sdk\src\rp2_common\cyw43_driver\pioasm\src\PioasmBuild-stamp\PioasmBuild-bu
 	cd D:\Documents\Github\PCB-Design\keyboard-code\code\build
 
 pico-sdk\src\rp2_common\cyw43_driver\pioasm\src\PioasmBuild-stamp\PioasmBuild-configure: pico-sdk\src\rp2_common\cyw43_driver\pioasm\tmp\PioasmBuild-cfgcmd.txt
-pico-sdk\src\rp2_common\cyw43_driver\pioasm\src\PioasmBuild-stamp\PioasmBuild-configure: pico-sdk\src\rp2_common\cyw43_driver\pioasm\tmp\PioasmBuild-cache-Debug.cmake
+pico-sdk\src\rp2_common\cyw43_driver\pioasm\src\PioasmBuild-stamp\PioasmBuild-configure: pico-sdk\src\rp2_common\cyw43_driver\pioasm\tmp\PioasmBuild-cache-Release.cmake
 pico-sdk\src\rp2_common\cyw43_driver\pioasm\src\PioasmBuild-stamp\PioasmBuild-configure: pico-sdk\src\rp2_common\cyw43_driver\pioasm\src\PioasmBuild-stamp\PioasmBuild-patch
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=D:\Documents\Github\PCB-Design\keyboard-code\code\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Performing configure step for 'PioasmBuild'"
 	cd D:\Documents\Github\PCB-Design\keyboard-code\code\build\pioasm
-	echo >nul && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-GNMake Makefiles" -CD:/Documents/Github/PCB-Design/keyboard-code/code/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/tmp/PioasmBuild-cache-Debug.cmake D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/tools/pioasm
+	echo >nul && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-GNMake Makefiles" -CD:/Documents/Github/PCB-Design/keyboard-code/code/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/tmp/PioasmBuild-cache-Release.cmake D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/tools/pioasm
 	echo >nul && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch D:/Documents/Github/PCB-Design/keyboard-code/code/build/pico-sdk/src/rp2_common/cyw43_driver/pioasm/src/PioasmBuild-stamp/PioasmBuild-configure
 	cd D:\Documents\Github\PCB-Design\keyboard-code\code\build
 

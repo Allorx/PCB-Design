@@ -19,7 +19,6 @@ Linker script and memory map
 LOAD CMakeFiles\bs2_default.dir\compile_time_choice.S.obj
 START GROUP
 LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libgcc.a
-LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libg.a
 LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a
 END GROUP
 START GROUP
@@ -61,24 +60,3 @@ LOAD linker stubs
                 0x00000000       0x22
  .ARM.attributes
                 0x00000000       0x22 CMakeFiles\bs2_default.dir\compile_time_choice.S.obj
-
-.debug_line     0x00000000       0xed
- .debug_line    0x00000000       0xed CMakeFiles\bs2_default.dir\compile_time_choice.S.obj
-
-.debug_line_str
-                0x00000000      0x15c
- .debug_line_str
-                0x00000000      0x15c CMakeFiles\bs2_default.dir\compile_time_choice.S.obj
-
-.debug_info     0x00000000       0x25
- .debug_info    0x00000000       0x25 CMakeFiles\bs2_default.dir\compile_time_choice.S.obj
-
-.debug_abbrev   0x00000000       0x14
- .debug_abbrev  0x00000000       0x14 CMakeFiles\bs2_default.dir\compile_time_choice.S.obj
-
-.debug_aranges  0x00000000       0x20
- .debug_aranges
-                0x00000000       0x20 CMakeFiles\bs2_default.dir\compile_time_choice.S.obj
-
-.debug_str      0x00000000       0xcc
- .debug_str     0x00000000       0xcc CMakeFiles\bs2_default.dir\compile_time_choice.S.obj

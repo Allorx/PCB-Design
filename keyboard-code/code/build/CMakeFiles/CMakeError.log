@@ -42,3 +42,47 @@ d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12
 collect2.exe: error: ld returned 1 exit status
 
 
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: D:/Documents/Arm GNU Toolchain/12.2 mpacbti-bet1/bin/arm-none-eabi-gcc.exe 
+Build flags: -mcpu=cortex-m0plus;-mthumb
+Id flags:  
+
+The output was:
+1
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-exit.o): in function `exit':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/stdlib/exit.c:65: undefined reference to `_exit'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-closer.o): in function `_close_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/closer.c:47: undefined reference to `_close'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-lseekr.o): in function `_lseek_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/lseekr.c:49: undefined reference to `_lseek'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-readr.o): in function `_read_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/readr.c:49: undefined reference to `_read'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-writer.o): in function `_write_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/writer.c:49: undefined reference to `_write'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-sbrkr.o): in function `_sbrk_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/sbrkr.c:51: undefined reference to `_sbrk'
+collect2.exe: error: ld returned 1 exit status
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: D:/Documents/Arm GNU Toolchain/12.2 mpacbti-bet1/bin/arm-none-eabi-g++.exe 
+Build flags: -mcpu=cortex-m0plus;-mthumb
+Id flags:  
+
+The output was:
+1
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-exit.o): in function `exit':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/stdlib/exit.c:65: undefined reference to `_exit'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-closer.o): in function `_close_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/closer.c:47: undefined reference to `_close'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-lseekr.o): in function `_lseek_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/lseekr.c:49: undefined reference to `_lseek'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-readr.o): in function `_read_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/readr.c:49: undefined reference to `_read'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-writer.o): in function `_write_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/writer.c:49: undefined reference to `_write'
+d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/../../../../arm-none-eabi/bin/ld.exe: d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-sbrkr.o): in function `_sbrk_r':
+/data/jenkins/workspace/GNU-toolchain/arm-12-mpacbti/src/newlib-cygwin/newlib/libc/reent/sbrkr.c:51: undefined reference to `_sbrk'
+collect2.exe: error: ld returned 1 exit status
+
+
