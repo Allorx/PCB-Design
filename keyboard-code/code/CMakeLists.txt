@@ -1,4 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
+
+if(MSVC)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+endif()
+
 include(pico_sdk_import.cmake)
 project(orionshands C CXX ASM)
 set(CMAKE_C_STANDARD 11)
