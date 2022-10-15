@@ -1341,65 +1341,7 @@ CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_printf\include\pico\printf.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio\driver.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_uart\include\hardware\uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
-
-
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio\driver.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\types.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\assert.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stdbool.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\assert.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\_ansi.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\newlib.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\_newlib_version.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\config.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\machine\ieeefp.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\features.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stdint.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\stdint.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\machine\_default_types.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\_intsup.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\_stdint.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stddef.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: generated\pico_base\pico\version.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\config.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: generated\pico_base\pico\config_autogen.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\boards\include\boards\pico.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\cdefs.h"
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\types.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\error.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_uart\include\hardware\uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\defs.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\structure.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\code.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_gpio\include\hardware\gpio.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\sio.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\interp.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\padsbank0.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pads_bank0.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\iobank0.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\io_bank0.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_irq\include\hardware\irq.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\intctrl.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\m0plus.h
+CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 
 
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c
@@ -1453,34 +1395,47 @@ CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
-CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h
+CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_pll\include\hardware\pll.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\pll.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pll.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_clocks\include\hardware\clocks.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\clocks.h
 CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\clocks.h
+CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info.h
+CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\defs.h
+CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\structure.h
+CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\code.h
 
 
 CMakeFiles\orionshands.dir\src\main.c.obj: ..\src\main.c
-CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
-CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico.h
-CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\types.h
-CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\assert.h
-CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stdbool.h"
-CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\assert.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\stdio.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\_ansi.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\newlib.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\_newlib_version.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\config.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\machine\ieeefp.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\features.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stddef.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stdarg.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\reent.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\_ansi.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\_types.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\machine\_types.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\lock.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\stdio.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
+CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stdbool.h"
+CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\assert.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stdint.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\stdint.h"
-CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\machine\_default_types.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\_intsup.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\_stdint.h"
-CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\lib\gcc\arm-none-eabi\12.2.0\include\stddef.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: generated\pico_base\pico\version.h
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\config.h
 CMakeFiles\orionshands.dir\src\main.c.obj: generated\pico_base\pico\config_autogen.h
@@ -1490,7 +1445,6 @@ CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboa
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
-CMakeFiles\orionshands.dir\src\main.c.obj: "D:\Documents\Arm GNU Toolchain\12.2 mpacbti-bet1\arm-none-eabi\include\sys\cdefs.h"
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\types.h
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_base\include\pico\error.h
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
@@ -1513,7 +1467,7 @@ CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboa
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
 CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
-CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h
+CMakeFiles\orionshands.dir\src\main.c.obj: D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 
 
 
@@ -1819,9 +1773,7 @@ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\
 
 D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio\driver.h:
 
-D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h:
-
-D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c:
+D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h:
 
 D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c:
 

@@ -201,10 +201,6 @@
 				},
 				{
 					"backtrace" : 2,
-					"define" : "LIB_PICO_STDIO_UART=1"
-				},
-				{
-					"backtrace" : 2,
 					"define" : "LIB_PICO_STDLIB=1"
 				},
 				{
@@ -421,10 +417,6 @@
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/include"
 				}
 			],
 			"language" : "C",
@@ -470,8 +462,7 @@
 				37,
 				39,
 				43,
-				44,
-				45
+				44
 			]
 		},
 		{
@@ -569,10 +560,6 @@
 				},
 				{
 					"backtrace" : 2,
-					"define" : "LIB_PICO_STDIO_UART=1"
-				},
-				{
-					"backtrace" : 2,
 					"define" : "LIB_PICO_STDLIB=1"
 				},
 				{
@@ -789,10 +776,6 @@
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/include"
 				}
 			],
 			"language" : "ASM",
@@ -925,10 +908,6 @@
 				},
 				{
 					"backtrace" : 2,
-					"define" : "LIB_PICO_STDIO_UART=1"
-				},
-				{
-					"backtrace" : 2,
 					"define" : "LIB_PICO_STDLIB=1"
 				},
 				{
@@ -1145,10 +1124,6 @@
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/include"
-				},
-				{
-					"backtrace" : 2,
-					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/include"
 				}
 			],
 			"language" : "CXX",
@@ -2059,8 +2034,7 @@
 				39,
 				42,
 				43,
-				44,
-				45
+				44
 			]
 		},
 		{
@@ -2351,12 +2325,6 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 2,
-			"compileGroupIndex" : 0,
-			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c",
 			"sourceGroupIndex" : 0
 		}
 	],

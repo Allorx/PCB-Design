@@ -43,7 +43,6 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
   "LIB_PICO_RUNTIME=1"
   "LIB_PICO_STANDARD_LINK=1"
   "LIB_PICO_STDIO=1"
-  "LIB_PICO_STDIO_UART=1"
   "LIB_PICO_STDLIB=1"
   "LIB_PICO_SYNC=1"
   "LIB_PICO_SYNC_CORE=1"
@@ -102,7 +101,6 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/boot_stage2/include"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_binary_info/include"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/include"
-  "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/include"
   )
 
 # The set of dependency files which are needed:
@@ -138,7 +136,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj" "gcc" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj.d"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj" "gcc" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj.d"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj" "gcc" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj.d"
-  "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj" "gcc" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" "gcc" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
   "D:/Documents/Github/PCB-Design/keyboard-code/code/src/main.c" "CMakeFiles/orionshands.dir/src/main.c.obj" "gcc" "CMakeFiles/orionshands.dir/src/main.c.obj.d"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" "gcc" "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d"

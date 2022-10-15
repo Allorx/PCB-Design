@@ -50,10 +50,13 @@ CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/uart.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/uart.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h \
- D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\include/pico/stdio_uart.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_pll\include/hardware/pll.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/pll.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/pll.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_clocks\include/hardware/clocks.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/clocks.h \
- D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/clocks.h
+ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/clocks.h \
+ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include/pico/binary_info.h \
+ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/defs.h \
+ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/structure.h \
+ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/code.h

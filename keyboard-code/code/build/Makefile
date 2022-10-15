@@ -1065,30 +1065,6 @@ D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\orionshands.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.s
 .PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio\stdio.c.s
 
-D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.obj: D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj
-.PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.obj
-
-# target to build an object file
-D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\orionshands.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj
-.PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj
-
-D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.i: D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.i
-.PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.i
-
-# target to preprocess a source file
-D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\orionshands.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.i
-.PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.i
-
-D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.s: D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.s
-.PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.s
-
-# target to generate assembly for a file
-D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\orionshands.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\orionshands.dir\D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.s
-.PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.s
-
 D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.obj: D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj
 .PHONY : D_\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdlib\stdlib.obj
 
@@ -1260,9 +1236,6 @@ help:
 	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.obj
 	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.i
 	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.s
-	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj
-	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
-	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
 	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj
 	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i
 	@echo ... D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s
