@@ -10,6 +10,9 @@
 #define KEY_PRESSED 0
 #define KEY_RELEASED 1
 
+// testing - use LED to output event
+#define LED 25
+
 int main() {
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
@@ -34,11 +37,15 @@ int main() {
         gpio_pull_up(rows[i]);
     }
 
+    // testing - init led pin and set direction
+    gpio_init(LED);
+    gpio_set_dir(LED, true);
+
     while (true) {
         for(int i = 0; i < 14; i++){
             // send signal from column i
             gpio_set_dir(cols[i], true);
-            gpio_put(cols[i], false);
+            gpio_put(cols[i], 1);
 
             for(int j = 0; j < 5; j++){
                 // read row j: if it is 0 and the debounce on the key exceeds confirmed_press, then i,j is pressed
@@ -48,9 +55,15 @@ int main() {
                         // key has been confirmed to be pressed
                         key_out[i][j] = KEY_PRESSED;
                         key_debounce[i][j] = 0;
+                        // fetch key value at key_out location and send to event queue that it has been pressed
+
+                        gpio_put(LED, 1);
                     }
                     else{
                         key_debounce[i][j] ++;
+                        // fetch key value at key_out location and send to event queue that it has been released
+                        
+                        gpio_put(LED, 1);
                     }
                 }
                 else if(read == KEY_RELEASED && key_out[i][j] == KEY_PRESSED){
@@ -75,6 +88,9 @@ int main() {
             }
             // turn off signal from column i
             gpio_set_dir(cols[i], false);
+
+            // testing - reset led
+            gpio_put(LED, 0);
         }
     }
 }
