@@ -74,8 +74,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d"
   "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
   "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj.d"
-  "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
-  "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj.d"
   "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
   "CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
   "CMakeFiles/orionshands.dir/src/main.c.obj"

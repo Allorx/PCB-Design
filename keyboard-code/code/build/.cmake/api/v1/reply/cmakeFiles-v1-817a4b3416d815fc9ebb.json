@@ -5,7 +5,8 @@
 			"path" : "CMakeLists.txt"
 		},
 		{
-			"path" : "pico_sdk_import.cmake"
+			"isExternal" : true,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/external/pico_sdk_import.cmake"
 		},
 		{
 			"isExternal" : true,

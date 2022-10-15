@@ -4,11 +4,13 @@ if(MSVC)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
 
-include(pico_sdk_import.cmake)
+# include pico-sdk next to the workspace folder
+include(../pico-sdk/external/pico_sdk_import.cmake)
 project(orionshands C CXX ASM)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
+
 pico_sdk_init()
 
 add_executable(${PROJECT_NAME}
@@ -20,3 +22,7 @@ target_link_libraries(${PROJECT_NAME}
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(${PROJECT_NAME})
+
+# enable usb or uart output
+pico_enable_stdio_usb(${PROJECT_NAME} 0)
+pico_enable_stdio_uart(${PROJECT_NAME} 0)
