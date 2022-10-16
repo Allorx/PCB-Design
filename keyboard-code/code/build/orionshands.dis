@@ -504,7 +504,7 @@ Disassembly of section .text:
 10000468:	409a      	lsls	r2, r3
 1000046a:	6272      	str	r2, [r6, #36]	; 0x24
 1000046c:	4690      	mov	r8, r2
-1000046e:	6172      	str	r2, [r6, #20]
+1000046e:	61b2      	str	r2, [r6, #24]
 10000470:	002a      	movs	r2, r5
 10000472:	6873      	ldr	r3, [r6, #4]
 10000474:	0d1b      	lsrs	r3, r3, #20
@@ -665,27 +665,27 @@ Disassembly of section .text:
 100005b4:	4658      	mov	r0, fp
 100005b6:	60fd      	str	r5, [r7, #12]
 100005b8:	60e3      	str	r3, [r4, #12]
-100005ba:	f004 f95f 	bl	1000487c <__wrap_printf>
+100005ba:	f004 f869 	bl	10004690 <__wrap_puts>
 100005be:	e738      	b.n	10000432 <main+0x122>
 100005c0:	4658      	mov	r0, fp
 100005c2:	613d      	str	r5, [r7, #16]
 100005c4:	6123      	str	r3, [r4, #16]
-100005c6:	f004 f959 	bl	1000487c <__wrap_printf>
+100005c6:	f004 f863 	bl	10004690 <__wrap_puts>
 100005ca:	e741      	b.n	10000450 <main+0x140>
 100005cc:	4658      	mov	r0, fp
 100005ce:	607d      	str	r5, [r7, #4]
 100005d0:	6063      	str	r3, [r4, #4]
-100005d2:	f004 f953 	bl	1000487c <__wrap_printf>
+100005d2:	f004 f85d 	bl	10004690 <__wrap_puts>
 100005d6:	e70e      	b.n	100003f6 <main+0xe6>
 100005d8:	4658      	mov	r0, fp
 100005da:	60bd      	str	r5, [r7, #8]
 100005dc:	60a3      	str	r3, [r4, #8]
-100005de:	f004 f94d 	bl	1000487c <__wrap_printf>
+100005de:	f004 f857 	bl	10004690 <__wrap_puts>
 100005e2:	e717      	b.n	10000414 <main+0x104>
 100005e4:	4658      	mov	r0, fp
 100005e6:	603d      	str	r5, [r7, #0]
 100005e8:	6023      	str	r3, [r4, #0]
-100005ea:	f004 f947 	bl	1000487c <__wrap_printf>
+100005ea:	f004 f851 	bl	10004690 <__wrap_puts>
 100005ee:	e6f3      	b.n	100003d8 <main+0xc8>
 100005f0:	fffffd74 	.word	0xfffffd74
 100005f4:	10007224 	.word	0x10007224

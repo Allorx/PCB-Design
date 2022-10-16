@@ -1135,9 +1135,9 @@ Discarded input sections
                 0x00000000       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .time_critical.flash_range_program
                 0x00000000       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .text          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccuUGNiU.o
- .data          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccuUGNiU.o
- .bss           0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccuUGNiU.o
+ .text          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
+ .data          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
+ .bss           0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
  .data          0x00000000        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-calloc.o)
@@ -1747,7 +1747,7 @@ LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-ea
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\Alex\AppData\Local\Temp\ccuUGNiU.o
+ .boot2         0x10000000      0x100 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -2826,7 +2826,7 @@ LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pic
 LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-LOAD C:\Users\Alex\AppData\Local\Temp\ccuUGNiU.o
+LOAD C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
 LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libstdc++.a
 LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -2940,7 +2940,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000776       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .ARM.attributes
-                0x000007a2       0x22 C:\Users\Alex\AppData\Local\Temp\ccuUGNiU.o
+                0x000007a2       0x22 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
  .ARM.attributes
                 0x000007c4       0x1e d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .ARM.attributes

@@ -41,7 +41,7 @@ int main() {
         for(int i = 0; i < 14; i++){
             // send signal from column i
             gpio_set_dir(cols[i], true);
-            gpio_put(cols[i], 1);
+            gpio_put(cols[i], 0);
 
             for(int j = 0; j < 5; j++){
                 // read row j: if it is 0 and the debounce on the key exceeds confirmed_press, then i,j is pressed
@@ -66,7 +66,7 @@ int main() {
                         key_debounce[i][j] = 0;
                         // fetch key value at key_out location and send to event queue that it has been released
 
-                        printf("released");
+                        printf("released\r\n");
                     }
                     else{
                         key_debounce[i][j] --;
