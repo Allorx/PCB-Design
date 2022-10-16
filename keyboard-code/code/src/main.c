@@ -1,6 +1,7 @@
 // Aleksas Girenas 15/10/2022
 // For controlling OrionsHands (a fully custom keyboard)
 
+#include <stdio.h>
 #include "pico/stdlib.h"
 
 // keyboard rotary encoder inputs
@@ -10,10 +11,9 @@
 #define KEY_PRESSED 0
 #define KEY_RELEASED 1
 
-// testing - use LED to output event
-#define LED 25
-
 int main() {
+    stdio_init_all();
+
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
     // define key debounce counter array and number of checks until a confirmed press
@@ -37,10 +37,6 @@ int main() {
         gpio_pull_up(rows[i]);
     }
 
-    // testing - init led pin and set direction
-    gpio_init(LED);
-    gpio_set_dir(LED, true);
-
     while (true) {
         for(int i = 0; i < 14; i++){
             // send signal from column i
@@ -57,13 +53,10 @@ int main() {
                         key_debounce[i][j] = 0;
                         // fetch key value at key_out location and send to event queue that it has been pressed
 
-                        gpio_put(LED, 1);
+                        printf("pressed");
                     }
                     else{
                         key_debounce[i][j] ++;
-                        // fetch key value at key_out location and send to event queue that it has been released
-                        
-                        gpio_put(LED, 1);
                     }
                 }
                 else if(read == KEY_RELEASED && key_out[i][j] == KEY_PRESSED){
@@ -71,6 +64,9 @@ int main() {
                         // key has been confirmed to be released
                         key_out[i][j] = KEY_RELEASED;
                         key_debounce[i][j] = 0;
+                        // fetch key value at key_out location and send to event queue that it has been released
+
+                        printf("released");
                     }
                     else{
                         key_debounce[i][j] --;
@@ -88,9 +84,6 @@ int main() {
             }
             // turn off signal from column i
             gpio_set_dir(cols[i], false);
-
-            // testing - reset led
-            gpio_put(LED, 0);
         }
     }
 }
