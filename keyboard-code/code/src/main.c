@@ -10,13 +10,13 @@
 // define key presses
 #define KEY_PRESSED 0
 #define KEY_RELEASED 1
-// define debounce FLIP and MAX states
+// define debounce FLIP and MAX states in cycles
 #define MAX 1000
 #define FLIP 500
 
 int main() {
     stdio_init_all();
-    
+
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
     // define key debounce counter array and number of checks until a FLIP
@@ -48,7 +48,7 @@ int main() {
                 // read row j: if it is 0 and the debounce on the key exceeds FLIP, then i,j is pressed
                 bool read = gpio_get(rows[j]);
                 if(read == KEY_PRESSED && key_out[i][j] == KEY_RELEASED){
-                    if(key_debounce[i][j] > FLIP){
+                    if(key_debounce[i][j] >= FLIP){
                         // key has been confirmed to be pressed
                         key_out[i][j] = KEY_PRESSED;
                         key_debounce[i][j] = MAX;
@@ -75,13 +75,13 @@ int main() {
                         key_debounce[i][j] --;
                     }
                 }
-                else if(key_debounce[i][j] >= FLIP && key_debounce[i][j] < MAX && key_out[i][j] == KEY_PRESSED){
-                    // current read is same as key_out for i,j - return towards the MAX debounce counts
-                    key_debounce[i][j] ++;
-                }
-                else if(key_debounce[i][j] < FLIP && key_debounce[i][j] > 0 && key_out[i][j] == KEY_RELEASED){
+                else if(key_debounce[i][j] > 0 && key_out[i][j] == KEY_RELEASED){
                     // current read is same as key_out for i,j - return towards 0 debounce counts
                     key_debounce[i][j] --;
+                }
+                else if(key_debounce[i][j] < MAX && key_out[i][j] == KEY_PRESSED){
+                    // current read is same as key_out for i,j - return towards the MAX debounce counts
+                    key_debounce[i][j] ++;
                 }
             }
             // turn off signal from column i
