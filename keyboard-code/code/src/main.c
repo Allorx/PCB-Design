@@ -53,15 +53,15 @@ int main() {
                         key_debounce[i][j] = 0;
                         // fetch key value at key_out location and send to event queue that it has been pressed
 
-                        printf("pressed");
+                        printf("pressed\n");
                     }
                     else{
-                        // 2x increse faster than return to 0
+                        // 2x increase faster than return to 0
                         key_debounce[i][j] += 2;
                     }
                 }
                 else if(read == KEY_RELEASED && key_out[i][j] == KEY_PRESSED){
-                    if(key_debounce[i][j] < -confirmed_press){
+                    if(key_debounce[i][j] > confirmed_press){
                         // key has been confirmed to be released
                         key_out[i][j] = KEY_RELEASED;
                         key_debounce[i][j] = 0;
@@ -70,7 +70,7 @@ int main() {
                         printf("released\n");
                     }
                     else{
-                        // 2x increse faster than return to 0
+                        // 2x increase faster than return to 0
                         key_debounce[i][j] += 2;
                     }
                 }
