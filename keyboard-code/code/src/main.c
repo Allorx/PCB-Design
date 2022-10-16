@@ -16,9 +16,10 @@ int main() {
 
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
-    // define key debounce counter array and number of checks until a confirmed press
+    // define key debounce counter array and number of checks until a flip
     uint key_debounce[14][5] = {0};
     uint confirmed_press = 1000;
+    uint flip = 500;
 
     // gpio pin nums of keyboard columns starting from COL_0, COL_1, ...
     uint cols[14] = {13,14,15,12,11,10,9,8,2,3,4,5,6,7};
@@ -44,13 +45,13 @@ int main() {
             gpio_put(cols[i], 0);
 
             for(int j = 0; j < 5; j++){
-                // read row j: if it is 0 and the debounce on the key exceeds confirmed_press, then i,j is pressed
+                // read row j: if it is 0 and the debounce on the key exceeds flip, then i,j is pressed
                 bool read = gpio_get(rows[j]);
                 if(read == KEY_PRESSED && key_out[i][j] == KEY_RELEASED){
-                    if(key_debounce[i][j] > confirmed_press){
+                    if(key_debounce[i][j] > flip){
                         // key has been confirmed to be pressed
                         key_out[i][j] = KEY_PRESSED;
-                        key_debounce[i][j] = 0;
+                        key_debounce[i][j] = confirmed_press;
                         // fetch key value at key_out location and send to event queue that it has been pressed
 
                         printf("pressed\n");
@@ -61,7 +62,7 @@ int main() {
                     }
                 }
                 else if(read == KEY_RELEASED && key_out[i][j] == KEY_PRESSED){
-                    if(key_debounce[i][j] > confirmed_press){
+                    if(key_debounce[i][j] < flip){
                         // key has been confirmed to be released
                         key_out[i][j] = KEY_RELEASED;
                         key_debounce[i][j] = 0;
@@ -70,14 +71,19 @@ int main() {
                         printf("released\n");
                     }
                     else{
-                        // increment debounce state
-                        key_debounce[i][j] ++;
+                        // decrement debounce state
+                        key_debounce[i][j] --;
                     }
                 }
-                else if(key_debounce[i][j] > 0){
-                    // current read is same as key_out for i,j - return towards 0 debounce counts
+                else if(key_debounce[i][j] > 0 && key_debounce[i][j] < flip){
+                    // current read is same as key_out for i,j - return towards the state debounce counts
                     key_debounce[i][j] --;
                 }
+                else if(key_debounce[i][j] < confirmed_press && key_debounce[i][j] > flip){
+                    // current read is same as key_out for i,j - return towards the state debounce counts
+                    key_debounce[i][j] ++;
+                }
+                
             }
             // turn off signal from column i
             gpio_set_dir(cols[i], false);
