@@ -17,8 +17,8 @@ int main() {
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
     // define key debounce counter array and number of checks until a confirmed press
-    int key_debounce[14][5] = {0};
-    uint confirmed_press = 10;
+    uint key_debounce[14][5] = {0};
+    uint confirmed_press = 100;
 
     // gpio pin nums of keyboard columns starting from COL_0, COL_1, ...
     uint cols[14] = {13,14,15,12,11,10,9,8,2,3,4,5,6,7};
@@ -56,7 +56,8 @@ int main() {
                         printf("pressed");
                     }
                     else{
-                        key_debounce[i][j] ++;
+                        // 2x increse faster than return to 0
+                        key_debounce[i][j] += 2;
                     }
                 }
                 else if(read == KEY_RELEASED && key_out[i][j] == KEY_PRESSED){
@@ -66,24 +67,21 @@ int main() {
                         key_debounce[i][j] = 0;
                         // fetch key value at key_out location and send to event queue that it has been released
 
-                        printf("released\r\n");
+                        printf("released\n");
                     }
                     else{
-                        key_debounce[i][j] --;
+                        // 2x increse faster than return to 0
+                        key_debounce[i][j] += 2;
                     }
                 }
-                else if(key_debounce[i][j] != 0){
+                else if(key_debounce[i][j] > 0){
                     // current read is same as key_out for i,j - return towards 0 debounce counts
-                    if(read == KEY_RELEASED){
-                        key_debounce[i][j] --;
-                    }
-                    else{
-                        key_debounce[i][j] ++;
-                    }
+                    key_debounce[i][j] --;
                 }
             }
             // turn off signal from column i
             gpio_set_dir(cols[i], false);
         }
+        // send queud keys to HID
     }
 }

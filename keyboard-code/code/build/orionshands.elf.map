@@ -1135,9 +1135,9 @@ Discarded input sections
                 0x00000000       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .time_critical.flash_range_program
                 0x00000000       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
- .text          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
- .data          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
- .bss           0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
+ .text          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccqGYQ35.o
+ .data          0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccqGYQ35.o
+ .bss           0x00000000        0x0 C:\Users\Alex\AppData\Local\Temp\ccqGYQ35.o
  .data          0x00000000        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-calloc.o)
@@ -1747,11 +1747,11 @@ LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-ea
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
+ .boot2         0x10000000      0x100 C:\Users\Alex\AppData\Local\Temp\ccqGYQ35.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x7110
+.text           0x10000100     0x70d8
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1817,557 +1817,557 @@ LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-ea
  .text.frame_dummy
                 0x100002ec       0x24 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
  .text.startup.main
-                0x10000310      0x2f0 CMakeFiles/orionshands.dir/src/main.c.obj
+                0x10000310      0x2b8 CMakeFiles/orionshands.dir/src/main.c.obj
                 0x10000310                main
  .text.gpio_set_pulls
-                0x10000600       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000600                gpio_set_pulls
+                0x100005c8       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100005c8                gpio_set_pulls
  .text.gpio_init
-                0x10000624       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000624                gpio_init
+                0x100005ec       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100005ec                gpio_init
  .text.hw_claim_or_assert
-                0x10000660       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000660                hw_claim_or_assert
+                0x10000628       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000628                hw_claim_or_assert
  .text.hw_claim_unused_from_range
-                0x100006a4       0x9c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x100006a4                hw_claim_unused_from_range
+                0x1000066c       0x9c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x1000066c                hw_claim_unused_from_range
  .text.running_on_fpga
-                0x10000740       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000740                running_on_fpga
+                0x10000708       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000708                running_on_fpga
  .text.spin_locks_reset
-                0x10000750       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000750                spin_locks_reset
+                0x10000718       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000718                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x1000076c       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x1000076c                next_striped_spin_lock_num
+                0x10000734       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000734                next_striped_spin_lock_num
  .text.spin_lock_claim_unused
-                0x10000784       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000784                spin_lock_claim_unused
+                0x1000074c       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x1000074c                spin_lock_claim_unused
  .text.irq_set_enabled
-                0x100007a8       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100007a8                irq_set_enabled
+                0x10000770       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000770                irq_set_enabled
  .text.irq_set_pending
-                0x100007cc       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100007cc                irq_set_pending
+                0x10000794       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000794                irq_set_pending
  .text.irq_has_shared_handler
-                0x100007dc       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x100007dc                irq_has_shared_handler
+                0x100007a4       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100007a4                irq_has_shared_handler
  .text.irq_get_vtable_handler
-                0x10000808       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000808                irq_get_vtable_handler
+                0x100007d0       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100007d0                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x10000818       0x54 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000818                irq_set_exclusive_handler
+                0x100007e0       0x54 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x100007e0                irq_set_exclusive_handler
  .text.irq_add_shared_handler
-                0x1000086c      0x1f4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x1000086c                irq_add_shared_handler
+                0x10000834      0x1f4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000834                irq_add_shared_handler
  .text.irq_remove_handler
-                0x10000a60      0x1cc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000a60                irq_remove_handler
+                0x10000a28      0x1cc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000a28                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x10000c2c       0xb4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000c2c                irq_add_tail_to_free_list
+                0x10000bf4       0xb4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000bf4                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x10000ce0       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000ce0                irq_init_priorities
+                0x10000ca8       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ca8                irq_init_priorities
  .text.user_irq_claim_unused
-                0x10000d04       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000d04                user_irq_claim_unused
+                0x10000ccc       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ccc                user_irq_claim_unused
  .text.lock_init
-                0x10000d34       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x10000d34                lock_init
+                0x10000cfc       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x10000cfc                lock_init
  .text.timer_pool_entry_comparator
-                0x10000d44       0x34 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000d44                timer_pool_entry_comparator
+                0x10000d0c       0x34 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000d0c                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x10000d78       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000d40       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x10000da8      0x100 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000d70      0x100 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x10000ea8      0x1c4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000e70      0x1c4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_add_alarm_at.constprop.0
-                0x1000106c      0x11c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001034      0x11c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x10001188       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001188                alarm_pool_init_default
+                0x10001150       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001150                alarm_pool_init_default
  .text.alarm_pool_get_default
-                0x100011ec        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
-                0x100011ec                alarm_pool_get_default
+                0x100011b4        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x100011b4                alarm_pool_get_default
  .text.alarm_pool_add_alarm_at
-                0x100011f4      0x19c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
-                0x100011f4                alarm_pool_add_alarm_at
+                0x100011bc      0x19c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x100011bc                alarm_pool_add_alarm_at
  .text.best_effort_wfe_or_timeout
-                0x10001390       0xd0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001390                best_effort_wfe_or_timeout
+                0x10001358       0xd0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001358                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x10001460       0xb8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001428       0xb8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10001518       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001518                hardware_alarm_claim
+                0x100014e0       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100014e0                hardware_alarm_claim
  .text.time_us_64
-                0x10001530       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001530                time_us_64
+                0x100014f8       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100014f8                time_us_64
  .text.hardware_alarm_set_callback
-                0x10001544       0x8c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001544                hardware_alarm_set_callback
+                0x1000150c       0x8c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x1000150c                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x100015d0       0xdc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100015d0                hardware_alarm_set_target
+                0x10001598       0xdc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001598                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x100016ac       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100016ac                hardware_alarm_cancel
+                0x10001674       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001674                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x100016e8       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100016b0       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x1000174c       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x1000174c                ph_post_alloc_init
+                0x10001714       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001714                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x10001788       0x98 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001788                ph_merge_two_pass
+                0x10001750       0x98 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001750                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x10001820      0x12c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100017e8      0x12c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x1000194c      0x130 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x1000194c                ph_remove_head
+                0x10001914      0x130 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001914                ph_remove_head
  .text.ph_remove_and_free_node
-                0x10001a7c       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001a7c                ph_remove_and_free_node
+                0x10001a44       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001a44                ph_remove_and_free_node
  .text.mutex_init
-                0x10001af4       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10001af4                mutex_init
+                0x10001abc       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10001abc                mutex_init
  .text.recursive_mutex_init
-                0x10001b10       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10001b10                recursive_mutex_init
+                0x10001ad8       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10001ad8                recursive_mutex_init
  .text.critical_section_init
-                0x10001b2c       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/critical_section.c.obj
-                0x10001b2c                critical_section_init
+                0x10001af4       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_sync/critical_section.c.obj
+                0x10001af4                critical_section_init
  .text.runtime_init
-                0x10001b48       0xf0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001b48                runtime_init
- .text.exit     0x10001c38        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001c38                exit
- .text.panic    0x10001c3c       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001c3c                panic
+                0x10001b10       0xf0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001b10                runtime_init
+ .text.exit     0x10001c00        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001c00                exit
+ .text.panic    0x10001c04       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001c04                panic
  .text.hard_assertion_failure
-                0x10001c6c        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001c6c                hard_assertion_failure
+                0x10001c34        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10001c34                hard_assertion_failure
  .text.clocks_init
-                0x10001c78      0x2b4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10001c78                clocks_init
+                0x10001c40      0x2b4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10001c40                clocks_init
  .text.pll_init
-                0x10001f2c       0xa8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x10001f2c                pll_init
+                0x10001ef4       0xa8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x10001ef4                pll_init
  .text.watchdog_start_tick
-                0x10001fd4       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10001fd4                watchdog_start_tick
+                0x10001f9c       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10001f9c                watchdog_start_tick
  .text.watchdog_reboot
-                0x10001fe4       0x9c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10001fe4                watchdog_reboot
+                0x10001fac       0x9c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x10001fac                watchdog_reboot
  .text.xosc_init
-                0x10002080       0x28 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10002080                xosc_init
+                0x10002048       0x28 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x10002048                xosc_init
  .text._out_null
-                0x100020a8        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002070        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x100020ac       0x90 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002074       0x90 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x1000213c      0x1f4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002104      0x1f4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_char
-                0x10002330       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100022f8       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_fct
-                0x10002340       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._etoa    0x10002350      0x454 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x100027a4      0x3c4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002308       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._etoa    0x10002318      0x454 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x1000276c      0x3c4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x10002b68      0xb24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002b30      0xb24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.vfctprintf
-                0x1000368c       0x20 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x1000368c                vfctprintf
+                0x10003654       0x20 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003654                vfctprintf
  .text.weak_raw_vprintf
-                0x100036ac       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x100036ac                weak_raw_vprintf
- .text          0x100036dc       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x10003674       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10003674                weak_raw_vprintf
+ .text          0x100036a4       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x100036ec       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x100036ec                rom_func_lookup
+                0x100036b4       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x100036b4                rom_func_lookup
  .text.rom_data_lookup
-                0x100036fc       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x100036fc                rom_data_lookup
+                0x100036c4       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x100036c4                rom_data_lookup
  .text.rom_funcs_lookup
-                0x1000370c       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x1000370c                rom_funcs_lookup
+                0x100036d4       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x100036d4                rom_funcs_lookup
  .text.__wrap___aeabi_idiv
-                0x10003750       0x50 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003750                __wrap___aeabi_idivmod
-                0x10003750                divmod_s32s32
-                0x10003750                div_s32s32
-                0x10003750                __wrap___aeabi_idiv
-                0x10003758                divmod_s32s32_unsafe
-                0x10003784                divmod_s32s32_savestate
+                0x10003718       0x50 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003718                __wrap___aeabi_idivmod
+                0x10003718                divmod_s32s32
+                0x10003718                div_s32s32
+                0x10003718                __wrap___aeabi_idiv
+                0x10003720                divmod_s32s32_unsafe
+                0x1000374c                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x100037a0       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x100037a0                __wrap___aeabi_uidiv
-                0x100037a0                __wrap___aeabi_uidivmod
-                0x100037a0                div_u32u32
-                0x100037a0                divmod_u32u32
-                0x100037a8                divmod_u32u32_unsafe
-                0x100037d0                divmod_u32u32_savestate
+                0x10003768       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x10003768                __wrap___aeabi_uidiv
+                0x10003768                __wrap___aeabi_uidivmod
+                0x10003768                div_u32u32
+                0x10003768                divmod_u32u32
+                0x10003770                divmod_u32u32_unsafe
+                0x10003798                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x100037ec      0x434 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x100037ec                div_s64s64
-                0x100037ec                divmod_s64s64
-                0x100037ec                __wrap___aeabi_ldivmod
-                0x10003824                divmod_u64u64
-                0x10003824                div_u64u64
-                0x10003824                __wrap___aeabi_uldivmod
-                0x10003834                divmod_u64u64_savestate
-                0x1000385c                divmod_s64s64_unsafe
-                0x100038e4                divmod_u64u64_unsafe
+                0x100037b4      0x434 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x100037b4                div_s64s64
+                0x100037b4                divmod_s64s64
+                0x100037b4                __wrap___aeabi_ldivmod
+                0x100037ec                divmod_u64u64
+                0x100037ec                div_u64u64
+                0x100037ec                __wrap___aeabi_uldivmod
+                0x100037fc                divmod_u64u64_savestate
+                0x10003824                divmod_s64s64_unsafe
+                0x100038ac                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x10003c20       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003c20                __wrap___aeabi_drsub
-                0x10003c26                __wrap___aeabi_dsub
-                0x10003c38                __wrap___aeabi_dadd
-                0x10003c4a                __wrap___aeabi_ddiv
-                0x10003c86                __wrap___aeabi_dmul
+                0x10003be8       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003be8                __wrap___aeabi_drsub
+                0x10003bee                __wrap___aeabi_dsub
+                0x10003c00                __wrap___aeabi_dadd
+                0x10003c12                __wrap___aeabi_ddiv
+                0x10003c4e                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10003ca0       0x6c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003ca0                __wrap___aeabi_cdrcmple
-                0x10003cb0                __wrap___aeabi_cdcmpeq
-                0x10003cb0                __wrap___aeabi_cdcmple
+                0x10003c68       0x6c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003c68                __wrap___aeabi_cdrcmple
+                0x10003c78                __wrap___aeabi_cdcmpeq
+                0x10003c78                __wrap___aeabi_cdcmple
  .text.__wrap___aeabi_dcmplt
-                0x10003d0c        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d0c                __wrap___aeabi_dcmplt
+                0x10003cd4        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003cd4                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmpge
-                0x10003d18       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d18                __wrap___aeabi_dcmpge
+                0x10003ce0       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003ce0                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x10003d28        0xa CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d28                __wrap___aeabi_dcmpgt
+                0x10003cf0        0xa CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003cf0                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x10003d32       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d32                __wrap___aeabi_dcmpun
- *fill*         0x10003d4e        0x2 
+                0x10003cfa       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003cfa                __wrap___aeabi_dcmpun
+ *fill*         0x10003d16        0x2 
  .text.__wrap___aeabi_i2d
-                0x10003d50       0x38 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d50                __wrap___aeabi_ui2d
-                0x10003d58                __wrap___aeabi_i2d
+                0x10003d18       0x38 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003d18                __wrap___aeabi_ui2d
+                0x10003d20                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x10003d88       0x48 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d88                double2int_z
-                0x10003d88                __wrap___aeabi_d2iz
+                0x10003d50       0x48 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003d50                double2int_z
+                0x10003d50                __wrap___aeabi_d2iz
  .text.__wrap___aeabi_d2uiz
-                0x10003dd0       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003dd0                __wrap___aeabi_d2uiz
-                0x10003dd0                double2uint
+                0x10003d98       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003d98                __wrap___aeabi_d2uiz
+                0x10003d98                double2uint
  .text.__aeabi_double_init
-                0x10003de8       0x98 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x10003de8                __aeabi_double_init
+                0x10003db0       0x98 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10003db0                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x10003e80       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003e80                double_table_shim_on_use_helper
+                0x10003e48       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003e48                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x10003eac       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003eac                drsub_shim
-                0x10003eb2                dsub_shim
+                0x10003e74       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003e74                drsub_shim
+                0x10003e7a                dsub_shim
  .text.dadd_shim
-                0x10003ebc      0x15c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003ebc                dadd_shim
+                0x10003e84      0x15c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003e84                dadd_shim
  .text.dmul_shim
-                0x10004018      0x15c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004018                dmul_shim
+                0x10003fe0      0x15c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10003fe0                dmul_shim
  .text.ddiv_shim
-                0x10004174      0x1b0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004174                ddiv_shim
+                0x1000413c      0x1b0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000413c                ddiv_shim
  .text.double2uint_shim
-                0x10004324        0xe CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004324                double2uint_shim
-                0x10004326                double2ufix_shim
- *fill*         0x10004332        0x2 
+                0x100042ec        0xe CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100042ec                double2uint_shim
+                0x100042ee                double2ufix_shim
+ *fill*         0x100042fa        0x2 
  .text.double2uint64_shim
-                0x10004334       0x70 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004334                double2uint64_shim
-                0x10004336                double2ufix64_shim
-                0x10004356                d2fix_a
+                0x100042fc       0x70 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100042fc                double2uint64_shim
+                0x100042fe                double2ufix64_shim
+                0x1000431e                d2fix_a
  .text.dunpacks
-                0x100043a4       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100043a4                dunpacks
+                0x1000436c       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000436c                dunpacks
  .text.__aeabi_lmul
-                0x100043e0       0x32 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x100043e0                __wrap___aeabi_lmul
- *fill*         0x10004412        0x2 
+                0x100043a8       0x32 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x100043a8                __wrap___aeabi_lmul
+ *fill*         0x100043da        0x2 
  .text.__aeabi_float_init
-                0x10004414       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10004414                __aeabi_float_init
+                0x100043dc       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x100043dc                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x10004478       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x10004478                float_table_shim_on_use_helper
- .text          0x100044a4       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100044a4                __aeabi_mem_init
- .text.memset   0x100044b4        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100044b4                __wrap_memset
- .text.memcpy   0x100044c0        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x100044c0                __wrap_memcpy
-                0x100044c0                __wrap___aeabi_memcpy
+                0x10004440       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x10004440                float_table_shim_on_use_helper
+ .text          0x1000446c       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x1000446c                __aeabi_mem_init
+ .text.memset   0x1000447c        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x1000447c                __wrap_memset
+ .text.memcpy   0x10004488        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x10004488                __wrap_memcpy
+                0x10004488                __wrap___aeabi_memcpy
  .text.stdio_out_chars_crlf
-                0x100044cc       0xbc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004494       0xbc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_buffered_printer
-                0x10004588       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004550       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x100045ec       0xa4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100045ec                __wrap_putchar
+                0x100045b4       0xa4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100045b4                __wrap_putchar
  .text.__wrap_puts
-                0x10004690       0xe8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004690                __wrap_puts
+                0x10004658       0xe8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004658                __wrap_puts
  .text.stdio_set_driver_enabled
-                0x10004778       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004778                stdio_set_driver_enabled
+                0x10004740       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004740                stdio_set_driver_enabled
  .text.__wrap_vprintf
-                0x100047a8       0xd4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100047a8                __wrap_vprintf
+                0x10004770       0xd4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004770                __wrap_vprintf
  .text.__wrap_printf
-                0x1000487c       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x1000487c                __wrap_printf
+                0x10004844       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004844                __wrap_printf
  .text.stdio_init_all
-                0x10004894        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004894                stdio_init_all
+                0x1000485c        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000485c                stdio_init_all
  .text.resetd_init
-                0x1000489c        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10004864        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_reset
-                0x100048a0        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10004868        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_open
-                0x100048ac       0x28 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10004874       0x28 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_xfer_cb
-                0x100048d4        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x1000489c        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.resetd_control_xfer_cb
-                0x100048d8       0x60 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x100048a0       0x60 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .text.usbd_app_driver_get_cb
-                0x10004938        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x10004938                usbd_app_driver_get_cb
+                0x10004900        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10004900                usbd_app_driver_get_cb
  .text.tud_cdc_line_coding_cb
-                0x10004944       0x34 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
-                0x10004944                tud_cdc_line_coding_cb
+                0x1000490c       0x34 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x1000490c                tud_cdc_line_coding_cb
  .text.stdio_usb_in_chars
-                0x10004978       0x68 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10004978                stdio_usb_in_chars
+                0x10004940       0x68 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004940                stdio_usb_in_chars
  .text.stdio_usb_out_chars
-                0x100049e0       0xe8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x100049a8       0xe8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.timer_task
-                0x10004ac8       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- .text.usb_irq  0x10004ae0       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004a90       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ .text.usb_irq  0x10004aa8       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.low_priority_worker_irq
-                0x10004af0       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004ab8       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .text.stdio_usb_init
-                0x10004b14       0xb0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10004b14                stdio_usb_init
+                0x10004adc       0xb0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10004adc                stdio_usb_init
  .text.tud_descriptor_device_cb
-                0x10004bc4        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10004bc4                tud_descriptor_device_cb
+                0x10004b8c        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10004b8c                tud_descriptor_device_cb
  .text.tud_descriptor_configuration_cb
-                0x10004bcc        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10004bcc                tud_descriptor_configuration_cb
+                0x10004b94        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10004b94                tud_descriptor_configuration_cb
  .text.tud_descriptor_string_cb
-                0x10004bd4       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
-                0x10004bd4                tud_descriptor_string_cb
+                0x10004b9c       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10004b9c                tud_descriptor_string_cb
  .text.dcd_rp2040_irq
-                0x10004c4c      0x1d0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10004c14      0x1d0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .text.dcd_int_enable
-                0x10004e1c        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10004e1c                dcd_int_enable
+                0x10004de4        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10004de4                dcd_int_enable
  .text.dcd_set_address
-                0x10004e28       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10004e28                dcd_set_address
+                0x10004df0       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10004df0                dcd_set_address
  .text.dcd_connect
-                0x10004e3c       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10004e3c                dcd_connect
+                0x10004e04       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10004e04                dcd_connect
  .text.dcd_init
-                0x10004e4c       0xf0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10004e4c                dcd_init
+                0x10004e14       0xf0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10004e14                dcd_init
  .text.dcd_edpt0_status_complete
-                0x10004f3c       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10004f3c                dcd_edpt0_status_complete
+                0x10004f04       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10004f04                dcd_edpt0_status_complete
  .text.dcd_edpt_open
-                0x10004f58       0xf0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10004f58                dcd_edpt_open
+                0x10004f20       0xf0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10004f20                dcd_edpt_open
  .text.dcd_edpt_close_all
-                0x10005048       0x68 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x10005048                dcd_edpt_close_all
+                0x10005010       0x68 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005010                dcd_edpt_close_all
  .text.dcd_edpt_xfer
-                0x100050b0       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x100050b0                dcd_edpt_xfer
+                0x10005078       0x24 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10005078                dcd_edpt_xfer
  .text.dcd_edpt_stall
-                0x100050d4       0x38 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x100050d4                dcd_edpt_stall
+                0x1000509c       0x38 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x1000509c                dcd_edpt_stall
  .text.dcd_edpt_clear_stall
-                0x1000510c       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
-                0x1000510c                dcd_edpt_clear_stall
+                0x100050d4       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x100050d4                dcd_edpt_clear_stall
  .text._hw_endpoint_buffer_control_update32.part.0.isra.0
-                0x1000513c       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x10005104       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
  .text.rp2040_usb_init
-                0x10005158       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x10005158                rp2040_usb_init
+                0x10005120       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x10005120                rp2040_usb_init
  .text.hw_endpoint_reset_transfer
-                0x100051a4        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x100051a4                hw_endpoint_reset_transfer
+                0x1000516c        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x1000516c                hw_endpoint_reset_transfer
  .text._hw_endpoint_buffer_control_update32
-                0x100051b0       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x100051b0                _hw_endpoint_buffer_control_update32
+                0x10005178       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x10005178                _hw_endpoint_buffer_control_update32
  .text.hw_endpoint_xfer_start
-                0x100051f4      0x138 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x100051f4                hw_endpoint_xfer_start
+                0x100051bc      0x138 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x100051bc                hw_endpoint_xfer_start
  .text.hw_endpoint_xfer_continue
-                0x1000532c      0x1dc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
-                0x1000532c                hw_endpoint_xfer_continue
+                0x100052f4      0x1dc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+                0x100052f4                hw_endpoint_xfer_continue
  .text.tud_mounted
-                0x10005508       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005508                tud_mounted
+                0x100054d0       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100054d0                tud_mounted
  .text.tud_suspended
-                0x10005518       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005518                tud_suspended
+                0x100054e0       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100054e0                tud_suspended
  .text.tud_inited
-                0x10005528        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005528                tud_inited
+                0x100054f0        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100054f0                tud_inited
  .text.tud_init
-                0x10005534       0xe0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005534                tud_init
+                0x100054fc       0xe0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100054fc                tud_init
  .text.tud_task
-                0x10005614      0x8f0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005614                tud_task
+                0x100055dc      0x8f0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100055dc                tud_task
  .text.dcd_event_bus_signal
-                0x10005f04      0x124 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10005f04                dcd_event_bus_signal
+                0x10005ecc      0x124 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005ecc                dcd_event_bus_signal
  .text.dcd_event_bus_reset
-                0x10006028       0x58 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006028                dcd_event_bus_reset
+                0x10005ff0       0x58 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10005ff0                dcd_event_bus_reset
  .text.dcd_event_setup_received
-                0x10006080       0x50 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006080                dcd_event_setup_received
+                0x10006048       0x50 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006048                dcd_event_setup_received
  .text.dcd_event_xfer_complete
-                0x100060d0       0x68 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100060d0                dcd_event_xfer_complete
+                0x10006098       0x68 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006098                dcd_event_xfer_complete
  .text.usbd_open_edpt_pair
-                0x10006138       0x94 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006138                usbd_open_edpt_pair
+                0x10006100       0x94 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006100                usbd_open_edpt_pair
  .text.usbd_edpt_open
-                0x100061cc       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100061cc                usbd_edpt_open
+                0x10006194       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006194                usbd_edpt_open
  .text.usbd_edpt_claim
-                0x100061fc       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100061fc                usbd_edpt_claim
+                0x100061c4       0x64 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x100061c4                usbd_edpt_claim
  .text.usbd_edpt_release
-                0x10006260       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10006260                usbd_edpt_release
+                0x10006228       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006228                usbd_edpt_release
  .text.usbd_edpt_xfer
-                0x100062ac       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x100062ac                usbd_edpt_xfer
+                0x10006274       0x44 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10006274                usbd_edpt_xfer
  .text.tud_control_status
-                0x100062f0       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100062f0                tud_control_status
+                0x100062b8       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x100062b8                tud_control_status
  .text.tud_control_xfer
-                0x1000631c       0xac CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x1000631c                tud_control_xfer
+                0x100062e4       0xac CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x100062e4                tud_control_xfer
  .text.usbd_control_reset
-                0x100063c8       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100063c8                usbd_control_reset
+                0x10006390       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x10006390                usbd_control_reset
  .text.usbd_control_set_complete_callback
-                0x100063dc        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100063dc                usbd_control_set_complete_callback
+                0x100063a4        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x100063a4                usbd_control_set_complete_callback
  .text.usbd_control_set_request
-                0x100063e8       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x100063e8                usbd_control_set_request
+                0x100063b0       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x100063b0                usbd_control_set_request
  .text.usbd_control_xfer_cb
-                0x10006404       0xf4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
-                0x10006404                usbd_control_xfer_cb
+                0x100063cc       0xf4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj
+                0x100063cc                usbd_control_xfer_cb
  .text.tud_cdc_n_connected
-                0x100064f8       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100064f8                tud_cdc_n_connected
+                0x100064c0       0x30 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100064c0                tud_cdc_n_connected
  .text.tud_cdc_n_available
-                0x10006528       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006528                tud_cdc_n_available
+                0x100064f0       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100064f0                tud_cdc_n_available
  .text.tud_cdc_n_read
-                0x10006540       0x70 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006540                tud_cdc_n_read
+                0x10006508       0x70 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006508                tud_cdc_n_read
  .text.tud_cdc_n_write_flush
-                0x100065b0       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100065b0                tud_cdc_n_write_flush
+                0x10006578       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006578                tud_cdc_n_write_flush
  .text.tud_cdc_n_write
-                0x10006628       0x34 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006628                tud_cdc_n_write
+                0x100065f0       0x34 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100065f0                tud_cdc_n_write
  .text.tud_cdc_n_write_available
-                0x1000665c       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x1000665c                tud_cdc_n_write_available
+                0x10006624       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x10006624                tud_cdc_n_write_available
  .text.cdcd_init
-                0x10006674       0x7c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006674                cdcd_init
+                0x1000663c       0x7c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x1000663c                cdcd_init
  .text.cdcd_reset
-                0x100066f0       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100066f0                cdcd_reset
+                0x100066b8       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100066b8                cdcd_reset
  .text.cdcd_open
-                0x1000671c       0xe4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x1000671c                cdcd_open
+                0x100066e4       0xe4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100066e4                cdcd_open
  .text.cdcd_control_xfer_cb
-                0x10006800       0xe4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x10006800                cdcd_control_xfer_cb
+                0x100067c8       0xe4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100067c8                cdcd_control_xfer_cb
  .text.cdcd_xfer_cb
-                0x100068e4      0x13c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
-                0x100068e4                cdcd_xfer_cb
+                0x100068ac      0x13c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj
+                0x100068ac                cdcd_xfer_cb
  .text.tusb_init
-                0x10006a20        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006a20                tusb_init
+                0x100069e8        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x100069e8                tusb_init
  .text.tusb_inited
-                0x10006a2c        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006a2c                tusb_inited
+                0x100069f4        0x8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x100069f4                tusb_inited
  .text.tu_edpt_validate
-                0x10006a34       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006a34                tu_edpt_validate
+                0x100069fc       0x80 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x100069fc                tu_edpt_validate
  .text.tu_edpt_bind_driver
-                0x10006ab4       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
-                0x10006ab4                tu_edpt_bind_driver
+                0x10006a7c       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c.obj
+                0x10006a7c                tu_edpt_bind_driver
  .text.tu_fifo_config
-                0x10006ae0       0x74 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006ae0                tu_fifo_config
+                0x10006aa8       0x74 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006aa8                tu_fifo_config
  .text.tu_fifo_count
-                0x10006b54       0x20 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006b54                tu_fifo_count
+                0x10006b1c       0x20 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006b1c                tu_fifo_count
  .text.tu_fifo_empty
-                0x10006b74       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006b74                tu_fifo_empty
+                0x10006b3c       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006b3c                tu_fifo_empty
  .text.tu_fifo_remaining
-                0x10006b84       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006b84                tu_fifo_remaining
+                0x10006b4c       0x1c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006b4c                tu_fifo_remaining
  .text.tu_fifo_read
-                0x10006ba0       0xa4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006ba0                tu_fifo_read
+                0x10006b68       0xa4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006b68                tu_fifo_read
  .text.tu_fifo_read_n
-                0x10006c44      0x100 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006c44                tu_fifo_read_n
+                0x10006c0c      0x100 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006c0c                tu_fifo_read_n
  .text.tu_fifo_write
-                0x10006d44       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006d44                tu_fifo_write
+                0x10006d0c       0x78 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006d0c                tu_fifo_write
  .text.tu_fifo_write_n
-                0x10006dbc      0x100 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006dbc                tu_fifo_write_n
+                0x10006d84      0x100 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006d84                tu_fifo_write_n
  .text.tu_fifo_clear
-                0x10006ebc       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006ebc                tu_fifo_clear
+                0x10006e84       0x4c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006e84                tu_fifo_clear
  .text.tu_fifo_set_overwritable
-                0x10006f08       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
-                0x10006f08                tu_fifo_set_overwritable
+                0x10006ed0       0x3c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
+                0x10006ed0                tu_fifo_set_overwritable
  .text.startup._retrieve_unique_id_on_boot
-                0x10006f44       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10006f0c       0x10 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
  .text.pico_get_unique_board_id_string
-                0x10006f54      0x1a8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
-                0x10006f54                pico_get_unique_board_id_string
+                0x10006f1c      0x1a8 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
+                0x10006f1c                pico_get_unique_board_id_string
  .text.flash_get_unique_id
-                0x100070fc       0x40 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-                0x100070fc                flash_get_unique_id
- .text.strlen   0x1000713c       0x5c d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-strlen-stub.o)
-                0x1000713c                strlen
+                0x100070c4       0x40 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
+                0x100070c4                flash_get_unique_id
+ .text.strlen   0x10007104       0x5c d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libc.a(libc_a-strlen-stub.o)
+                0x10007104                strlen
  *(.fini)
- .fini          0x10007198        0x4 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crti.o
-                0x10007198                _fini
- *fill*         0x1000719c        0x4 
- .fini.__stub   0x100071a0       0x70 linker stubs
+ .fini          0x10007160        0x4 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crti.o
+                0x10007160                _fini
+ *fill*         0x10007164        0x4 
+ .fini.__stub   0x10007168       0x70 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2379,132 +2379,132 @@ LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-ea
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x10007210        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
-                0x10007210                        . = ALIGN (0x4)
+ .eh_frame      0x100071d8        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
+                0x100071d8                        . = ALIGN (0x4)
 
-.glue_7         0x10007210        0x0
- .glue_7        0x10007210        0x0 linker stubs
+.glue_7         0x100071d8        0x0
+ .glue_7        0x100071d8        0x0 linker stubs
 
-.glue_7t        0x10007210        0x0
- .glue_7t       0x10007210        0x0 linker stubs
+.glue_7t        0x100071d8        0x0
+ .glue_7t       0x100071d8        0x0 linker stubs
 
-.vfp11_veneer   0x10007210        0x0
- .vfp11_veneer  0x10007210        0x0 linker stubs
+.vfp11_veneer   0x100071d8        0x0
+ .vfp11_veneer  0x100071d8        0x0 linker stubs
 
-.v4_bx          0x10007210        0x0
- .v4_bx         0x10007210        0x0 linker stubs
+.v4_bx          0x100071d8        0x0
+ .v4_bx         0x100071d8        0x0 linker stubs
 
-.iplt           0x10007210        0x0
- .iplt          0x10007210        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x100071d8        0x0
+ .iplt          0x100071d8        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10007210      0x538
+.rodata         0x100071d8      0x538
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.main.str1.4
-                0x10007210       0x14 CMakeFiles/orionshands.dir/src/main.c.obj
- .rodata        0x10007224       0x4c CMakeFiles/orionshands.dir/src/main.c.obj
+                0x100071d8       0x14 CMakeFiles/orionshands.dir/src/main.c.obj
+ .rodata        0x100071ec       0x4c CMakeFiles/orionshands.dir/src/main.c.obj
  .rodata.spin_lock_claim_unused.str1.4
-                0x10007270       0x1b CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
- *fill*         0x1000728b        0x1 
+                0x10007238       0x1b CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+ *fill*         0x10007253        0x1 
  .rodata.user_irq_claim_unused.str1.4
-                0x1000728c       0x1b CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
- *fill*         0x100072a7        0x1 
+                0x10007254       0x1b CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+ *fill*         0x1000726f        0x1 
  .rodata.hardware_alarm_claim.str1.4
-                0x100072a8       0x22 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x100072ca        0x2 
+                0x10007270       0x22 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x10007292        0x2 
  .rodata.panic.str1.4
-                0x100072cc       0x12 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x100072de        0x2 
+                0x10007294       0x12 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x100072a6        0x2 
  .rodata.hard_assertion_failure.str1.4
-                0x100072e0        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100072a8        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata._ftoa.str1.4
-                0x100072ec       0x15 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10007301        0x3 
+                0x100072b4       0x15 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x100072c9        0x3 
  .rodata._vsnprintf
-                0x10007304      0x19c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100072cc      0x19c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.pow10.0
-                0x100074a0       0x50 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10007468       0x50 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.str1.4
-                0x100074f0       0x40 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100074b8       0x40 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10007530        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100074f8        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x1000753c        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007504        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x10007548        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007510        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x10007554        0x2 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x10007556        0x2 
+                0x1000751c        0x2 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x1000751e        0x2 
  .rodata._resetd_driver
-                0x10007558       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
+                0x10007520       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
  .rodata.str1.4
-                0x10007570       0x13 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
- *fill*         0x10007583        0x1 
+                0x10007538       0x13 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+ *fill*         0x1000754b        0x1 
  .rodata.__bi_118.0
-                0x10007584        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x1000754c        0xc CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
  .rodata.str1.4
-                0x10007590       0x2a CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- *fill*         0x100075ba        0x2 
+                0x10007558       0x2a CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ *fill*         0x10007582        0x2 
  .rodata.usbd_desc_str
-                0x100075bc       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x10007584       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_cfg
-                0x100075d4       0x54 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+                0x1000759c       0x54 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
  .rodata.usbd_desc_device
-                0x10007628       0x12 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
- *fill*         0x1000763a        0x2 
+                0x100075f0       0x12 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj
+ *fill*         0x10007602        0x2 
  .rodata.dcd_rp2040_irq.str1.4
-                0x1000763c       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+                0x10007604       0x14 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
  .rodata._hw_endpoint_buffer_control_update32.part.0.isra.0.str1.4
-                0x10007650       0x1f CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- *fill*         0x1000766f        0x1 
+                0x10007618       0x1f CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x10007637        0x1 
  .rodata.hw_endpoint_xfer_continue.str1.4
-                0x10007670       0x29 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- *fill*         0x10007699        0x3 
+                0x10007638       0x29 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x10007661        0x3 
  .rodata.str1.4
-                0x1000769c        0x7 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
- *fill*         0x100076a3        0x1 
+                0x10007664        0x7 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+ *fill*         0x1000766b        0x1 
  .rodata.tud_task
-                0x100076a4       0x8c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x1000766c       0x8c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
  .rodata._usbd_driver
-                0x10007730       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
-                0x10007748                        . = ALIGN (0x4)
+                0x100076f8       0x18 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c.obj
+                0x10007710                        . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x10007748                        . = ALIGN (0x4)
+                0x10007710                        . = ALIGN (0x4)
 
-.rel.dyn        0x10007748        0x0
- .rel.iplt      0x10007748        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x10007710        0x0
+ .rel.iplt      0x10007710        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x10007748                        __exidx_start = .
+                0x10007710                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x10007748                        __exidx_end = .
-                0x10007748                        . = ALIGN (0x4)
-                0x10007748                        __binary_info_start = .
+                0x10007710                        __exidx_end = .
+                0x10007710                        . = ALIGN (0x4)
+                0x10007710                        __binary_info_start = .
 
-.binary_info    0x10007748       0x20
+.binary_info    0x10007710       0x20
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr81
-                0x10007748        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007710        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x1000774c        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007714        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x10007750        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007718        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x10007754        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000771c        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x10007758        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007720        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x1000775c        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007724        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x10007760        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10007728        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
  .binary_info.__bi_ptr118
-                0x10007764        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
-                0x10007768                        __binary_info_end = .
-                0x10007768                        . = ALIGN (0x4)
-                0x10007768                        __etext = .
+                0x1000772c        0x4 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj
+                0x10007730                        __binary_info_end = .
+                0x10007730                        . = ALIGN (0x4)
+                0x10007730                        __etext = .
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -2513,7 +2513,7 @@ LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-ea
                 0x20000000       0xc0 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0x3b0 load address 0x10007768
+.data           0x200000c0      0x3b0 load address 0x10007730
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -2614,33 +2614,33 @@ LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-ea
                 0x20000470                        __data_end__ = .
 
 .tm_clone_table
-                0x20000470        0x0 load address 0x10007b18
+                0x20000470        0x0 load address 0x10007ae0
  .tm_clone_table
                 0x20000470        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x20000470        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20000470        0x0 load address 0x10007b18
+.igot.plt       0x20000470        0x0 load address 0x10007ae0
  .igot.plt      0x20000470        0x0 d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x20000470        0x0 load address 0x10007b18
+                0x20000470        0x0 load address 0x10007ae0
                 0x20000470                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x10007b18
+.scratch_x      0x20040000        0x0 load address 0x10007ae0
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10007b18                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x10007ae0                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10007b18
+.scratch_y      0x20041000        0x0 load address 0x10007ae0
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10007b18                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x10007ae0                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .bss            0x20000470      0xd84
                 0x20000470                        . = ALIGN (0x4)
@@ -2747,8 +2747,8 @@ LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-ea
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x10007b18        0x0
-                0x10007b18                        __flash_binary_end = .
+.flash_end      0x10007ae0        0x0
+                0x10007ae0                        __flash_binary_end = .
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2826,7 +2826,7 @@ LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pic
 LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj
 LOAD CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
-LOAD C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
+LOAD C:\Users\Alex\AppData\Local\Temp\ccqGYQ35.o
 LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libstdc++.a
 LOAD d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -2940,7 +2940,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000776       0x2c CMakeFiles/orionshands.dir/D_/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj
  .ARM.attributes
-                0x000007a2       0x22 C:\Users\Alex\AppData\Local\Temp\ccWGcIQk.o
+                0x000007a2       0x22 C:\Users\Alex\AppData\Local\Temp\ccqGYQ35.o
  .ARM.attributes
                 0x000007c4       0x1e d:/documents/arm gnu toolchain/12.2 mpacbti-bet1/bin/../lib/gcc/arm-none-eabi/12.2.0/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
