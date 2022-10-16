@@ -427,7 +427,7 @@ Disassembly of section .text:
 100003ce:	6823      	ldr	r3, [r4, #0]
 100003d0:	2b00      	cmp	r3, #0
 100003d2:	d001      	beq.n	100003d8 <main+0xc8>
-100003d4:	3b01      	subs	r3, #1
+100003d4:	3b02      	subs	r3, #2
 100003d6:	6023      	str	r3, [r4, #0]
 100003d8:	002a      	movs	r2, r5
 100003da:	6873      	ldr	r3, [r6, #4]
@@ -442,7 +442,7 @@ Disassembly of section .text:
 100003ec:	6863      	ldr	r3, [r4, #4]
 100003ee:	2b00      	cmp	r3, #0
 100003f0:	d001      	beq.n	100003f6 <main+0xe6>
-100003f2:	3b01      	subs	r3, #1
+100003f2:	3b02      	subs	r3, #2
 100003f4:	6063      	str	r3, [r4, #4]
 100003f6:	002a      	movs	r2, r5
 100003f8:	6873      	ldr	r3, [r6, #4]
@@ -457,7 +457,7 @@ Disassembly of section .text:
 1000040a:	68a3      	ldr	r3, [r4, #8]
 1000040c:	2b00      	cmp	r3, #0
 1000040e:	d001      	beq.n	10000414 <main+0x104>
-10000410:	3b01      	subs	r3, #1
+10000410:	3b02      	subs	r3, #2
 10000412:	60a3      	str	r3, [r4, #8]
 10000414:	002a      	movs	r2, r5
 10000416:	6873      	ldr	r3, [r6, #4]
@@ -471,7 +471,7 @@ Disassembly of section .text:
 10000426:	68e3      	ldr	r3, [r4, #12]
 10000428:	2b00      	cmp	r3, #0
 1000042a:	d001      	beq.n	10000430 <main+0x120>
-1000042c:	3b01      	subs	r3, #1
+1000042c:	3b02      	subs	r3, #2
 1000042e:	60e3      	str	r3, [r4, #12]
 10000430:	002a      	movs	r2, r5
 10000432:	6873      	ldr	r3, [r6, #4]
@@ -485,7 +485,7 @@ Disassembly of section .text:
 10000442:	6923      	ldr	r3, [r4, #16]
 10000444:	2b00      	cmp	r3, #0
 10000446:	d001      	beq.n	1000044c <main+0x13c>
-10000448:	3b01      	subs	r3, #1
+10000448:	3b02      	subs	r3, #2
 1000044a:	6123      	str	r3, [r4, #16]
 1000044c:	4643      	mov	r3, r8
 1000044e:	62b3      	str	r3, [r6, #40]	; 0x28
@@ -515,7 +515,7 @@ Disassembly of section .text:
 1000047e:	6822      	ldr	r2, [r4, #0]
 10000480:	2a64      	cmp	r2, #100	; 0x64
 10000482:	d85e      	bhi.n	10000542 <main+0x232>
-10000484:	3202      	adds	r2, #2
+10000484:	3201      	adds	r2, #1
 10000486:	6022      	str	r2, [r4, #0]
 10000488:	002a      	movs	r2, r5
 1000048a:	6873      	ldr	r3, [r6, #4]
@@ -529,7 +529,7 @@ Disassembly of section .text:
 1000049a:	6862      	ldr	r2, [r4, #4]
 1000049c:	2a64      	cmp	r2, #100	; 0x64
 1000049e:	d862      	bhi.n	10000566 <main+0x256>
-100004a0:	3202      	adds	r2, #2
+100004a0:	3201      	adds	r2, #1
 100004a2:	6062      	str	r2, [r4, #4]
 100004a4:	002a      	movs	r2, r5
 100004a6:	6873      	ldr	r3, [r6, #4]
@@ -543,7 +543,7 @@ Disassembly of section .text:
 100004b6:	68a2      	ldr	r2, [r4, #8]
 100004b8:	2a64      	cmp	r2, #100	; 0x64
 100004ba:	d83c      	bhi.n	10000536 <main+0x226>
-100004bc:	3202      	adds	r2, #2
+100004bc:	3201      	adds	r2, #1
 100004be:	60a2      	str	r2, [r4, #8]
 100004c0:	002a      	movs	r2, r5
 100004c2:	6873      	ldr	r3, [r6, #4]
@@ -557,7 +557,7 @@ Disassembly of section .text:
 100004d2:	68e2      	ldr	r2, [r4, #12]
 100004d4:	2a64      	cmp	r2, #100	; 0x64
 100004d6:	d83a      	bhi.n	1000054e <main+0x23e>
-100004d8:	3202      	adds	r2, #2
+100004d8:	3201      	adds	r2, #1
 100004da:	60e2      	str	r2, [r4, #12]
 100004dc:	002a      	movs	r2, r5
 100004de:	6873      	ldr	r3, [r6, #4]
@@ -571,37 +571,37 @@ Disassembly of section .text:
 100004ee:	6922      	ldr	r2, [r4, #16]
 100004f0:	2a64      	cmp	r2, #100	; 0x64
 100004f2:	d832      	bhi.n	1000055a <main+0x24a>
-100004f4:	3202      	adds	r2, #2
+100004f4:	3201      	adds	r2, #1
 100004f6:	6122      	str	r2, [r4, #16]
 100004f8:	e7a8      	b.n	1000044c <main+0x13c>
 100004fa:	6823      	ldr	r3, [r4, #0]
 100004fc:	2b64      	cmp	r3, #100	; 0x64
 100004fe:	d844      	bhi.n	1000058a <main+0x27a>
-10000500:	3302      	adds	r3, #2
+10000500:	3301      	adds	r3, #1
 10000502:	6023      	str	r3, [r4, #0]
 10000504:	e768      	b.n	100003d8 <main+0xc8>
 10000506:	6923      	ldr	r3, [r4, #16]
 10000508:	2b64      	cmp	r3, #100	; 0x64
 1000050a:	d84a      	bhi.n	100005a2 <main+0x292>
-1000050c:	3302      	adds	r3, #2
+1000050c:	3301      	adds	r3, #1
 1000050e:	6123      	str	r3, [r4, #16]
 10000510:	e79c      	b.n	1000044c <main+0x13c>
 10000512:	68e3      	ldr	r3, [r4, #12]
 10000514:	2b64      	cmp	r3, #100	; 0x64
 10000516:	d83e      	bhi.n	10000596 <main+0x286>
-10000518:	3302      	adds	r3, #2
+10000518:	3301      	adds	r3, #1
 1000051a:	60e3      	str	r3, [r4, #12]
 1000051c:	e788      	b.n	10000430 <main+0x120>
 1000051e:	6863      	ldr	r3, [r4, #4]
 10000520:	2b64      	cmp	r3, #100	; 0x64
 10000522:	d826      	bhi.n	10000572 <main+0x262>
-10000524:	3302      	adds	r3, #2
+10000524:	3301      	adds	r3, #1
 10000526:	6063      	str	r3, [r4, #4]
 10000528:	e765      	b.n	100003f6 <main+0xe6>
 1000052a:	68a3      	ldr	r3, [r4, #8]
 1000052c:	2b64      	cmp	r3, #100	; 0x64
 1000052e:	d826      	bhi.n	1000057e <main+0x26e>
-10000530:	3302      	adds	r3, #2
+10000530:	3301      	adds	r3, #1
 10000532:	60a3      	str	r3, [r4, #8]
 10000534:	e76e      	b.n	10000414 <main+0x104>
 10000536:	4658      	mov	r0, fp

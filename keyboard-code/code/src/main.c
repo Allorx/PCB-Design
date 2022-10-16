@@ -56,8 +56,8 @@ int main() {
                         printf("pressed\n");
                     }
                     else{
-                        // 2x increase faster than return to 0
-                        key_debounce[i][j] += 2;
+                        // increment debounce state
+                        key_debounce[i][j] ++;
                     }
                 }
                 else if(read == KEY_RELEASED && key_out[i][j] == KEY_PRESSED){
@@ -70,13 +70,14 @@ int main() {
                         printf("released\n");
                     }
                     else{
-                        // 2x increase faster than return to 0
-                        key_debounce[i][j] += 2;
+                        // increment debounce state
+                        key_debounce[i][j] ++;
                     }
                 }
                 else if(key_debounce[i][j] > 0){
                     // current read is same as key_out for i,j - return towards 0 debounce counts
-                    key_debounce[i][j] --;
+                    // decrements 2* faster than increment
+                    key_debounce[i][j] -= 2;
                 }
             }
             // turn off signal from column i
