@@ -18,7 +18,7 @@ int main() {
     uint key_out[14][5] = {KEY_RELEASED};
     // define key debounce counter array and number of checks until a confirmed press
     uint key_debounce[14][5] = {0};
-    uint confirmed_press = 100;
+    uint confirmed_press = 1000;
 
     // gpio pin nums of keyboard columns starting from COL_0, COL_1, ...
     uint cols[14] = {13,14,15,12,11,10,9,8,2,3,4,5,6,7};
@@ -76,8 +76,7 @@ int main() {
                 }
                 else if(key_debounce[i][j] > 0){
                     // current read is same as key_out for i,j - return towards 0 debounce counts
-                    // decrements 2* faster than increment
-                    key_debounce[i][j] -= 2;
+                    key_debounce[i][j] --;
                 }
             }
             // turn off signal from column i
