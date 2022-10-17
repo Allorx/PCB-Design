@@ -10,12 +10,12 @@
 // define key presses
 #define KEY_PRESSED 0
 #define KEY_RELEASED 1
-// define debounce FLIP and MAX states in cycles
-#define MAX 1000
-#define FLIP 500
+// define debounce FLIP and MAX_DEBOUNCE states in cycles
+#define MAX_DEBOUNCE 10
+#define FLIP 5
 
 int main() {
-    stdio_init_all();
+    //stdio_init_all();
 
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
@@ -51,10 +51,10 @@ int main() {
                     if(key_debounce[i][j] >= FLIP){
                         // key has been confirmed to be pressed
                         key_out[i][j] = KEY_PRESSED;
-                        key_debounce[i][j] = MAX;
+                        key_debounce[i][j] = MAX_DEBOUNCE;
                         // fetch key value at key_out location and send to event queue that it has been pressed
 
-                        printf("pressed\n");
+                        //printf("pressed %i %i\n", key_debounce[i][j], key_out[i][j]);
                     }
                     else{
                         // increment debounce state
@@ -68,7 +68,7 @@ int main() {
                         key_debounce[i][j] = 0;
                         // fetch key value at key_out location and send to event queue that it has been released
 
-                        printf("released\n");
+                        //printf("released %i %i\n", key_debounce[i][j], key_out[i][j]);
                     }
                     else{
                         // decrement debounce state
@@ -79,8 +79,8 @@ int main() {
                     // current read is same as key_out for i,j - return towards 0 debounce counts
                     key_debounce[i][j] --;
                 }
-                else if(key_debounce[i][j] < MAX && key_out[i][j] == KEY_PRESSED){
-                    // current read is same as key_out for i,j - return towards the MAX debounce counts
+                else if(key_debounce[i][j] < MAX_DEBOUNCE && key_out[i][j] == KEY_PRESSED){
+                    // current read is same as key_out for i,j - return towards the MAX_DEBOUNCE debounce counts
                     key_debounce[i][j] ++;
                 }
             }
