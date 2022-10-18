@@ -28,11 +28,16 @@ int main() {
         {0xE1,0X31,0X1D,0X1B,0X06,0X19,0X05,0X11,0X10,0X36,0X37,0X38,0X32,0X52},
         {0xE0,0XE3,0XE2,0X00,0X00,0X00,0X2C,0X00,0X00,0XE6,FUNC_KEY,0X50,0X51,0X4F}
     };
-    const unsigned char fn_keymap[14] =
-    {0x00,0X3A,0X3B,0X3C,0X3D,0X3E,0X3F,0X40,0X41,0X42,0X43,0X44,0X45,0x00};
-
+    const unsigned char fn_keymap[5][14] =
+    {
+        {0x00,0X3A,0X3B,0X3C,0X3D,0X3E,0X3F,0X40,0X41,0X42,0X43,0X44,0X45,0x00},
+        {0x2B,0x14,0x1A,0x08,0X15,0X17,0X1C,0X18,0X0C,0X12,0X13,0X2F,0X30,0X48},
+        {0x39,0X04,0X16,0X07,0X09,0X0A,0X0B,0X0D,0X0E,0X0F,0X33,0X34,0X28,0X4C},
+        {0xE1,0X31,0X1D,0X1B,0X06,0X19,0X05,0X11,0X10,0X36,0X37,0X38,0X32,0X52},
+        {0xE0,0XE3,0XE2,0X00,0X00,0X00,0X2C,0X00,0X00,0XE6,FUNC_KEY,0X50,0X51,0X4F}
+    };
+    // bool to state whether function key is pressed
     bool fning = false;
-
 
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
@@ -69,16 +74,25 @@ int main() {
                 if(read == KEY_PRESSED && key_out[i][j] == KEY_RELEASED){
                     if(key_debounce[i][j] >= FLIP){
                         // key has been confirmed to be pressed
-                        key_out[i][j] = KEY_PRESSED;
-                        key_debounce[i][j] = MAX_DEBOUNCE;
+                        // check and set if func key pressed and send to event queue that released all keys
                         // fetch key value at key_out location and send to event queue that it has been pressed
-                        unsigned char key = keymap[j][i];
-                        if(key == FUNC_KEY){
-                            printf("fn pressed\n");
+                        if(keymap[j][i] == FUNC_KEY){
+                            fning = true;
+                            for(int y = 0; y < 14; y++){
+                                for(int x = 0; x < 5; x++){
+                                    key_out[y][x] = KEY_RELEASED;
+                                    printf("%x\n", keymap[x][y]);
+                                }
+                            }
+                        }
+                        else if(fning){
+                            printf("%x\n", fn_keymap[j][i]);
                         }
                         else{
-                            printf("%x\n", key);
+                            printf("%x\n", keymap[j][i]);
                         }
+                        key_out[i][j] = KEY_PRESSED;
+                        key_debounce[i][j] = MAX_DEBOUNCE;
                     }
                     else{
                         // increment debounce state
@@ -88,16 +102,19 @@ int main() {
                 else if(read == KEY_RELEASED && key_out[i][j] == KEY_PRESSED){
                     if(key_debounce[i][j] < FLIP){
                         // key has been confirmed to be released
-                        key_out[i][j] = KEY_RELEASED;
-                        key_debounce[i][j] = 0;
+                        // check and set if func key pressed
                         // fetch key value at key_out location and send to event queue that it has been released
-                        unsigned char key = keymap[j][i];
-                        if(key == FUNC_KEY){
-                            printf("fn pressed\n");
+                        if(keymap[j][i] == FUNC_KEY){
+                            fning = false;
+                        }
+                        else if(fning){
+                            printf("%x\n", fn_keymap[j][i]);
                         }
                         else{
-                            printf("%x\n", key);
+                            printf("%x\n", keymap[j][i]);
                         }
+                        key_out[i][j] = KEY_RELEASED;
+                        key_debounce[i][j] = 0;
                     }
                     else{
                         // decrement debounce state
@@ -116,7 +133,7 @@ int main() {
             // turn off signal from column i
             gpio_set_dir(cols[i], false);
         }
-        // send queud keys to HID
-        
+        // send queued keys to usb
+
     }
 }
