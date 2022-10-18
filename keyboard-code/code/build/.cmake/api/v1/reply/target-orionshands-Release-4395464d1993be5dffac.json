@@ -125,6 +125,18 @@
 			[
 				{
 					"backtrace" : 2,
+					"define" : "CFG_TUSB_DEBUG=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "CFG_TUSB_MCU=OPT_MCU_RP2040"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "CFG_TUSB_OS=OPT_OS_PICO"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "LIB_PICO_BIT_OPS=1"
 				},
 				{
@@ -146,6 +158,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "LIB_PICO_DOUBLE_PICO=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "LIB_PICO_FIX_RP2040_USB_DEVICE_ENUMERATION=1"
 				},
 				{
 					"backtrace" : 2,
@@ -201,6 +217,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"define" : "LIB_PICO_STDIO_USB=1"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "LIB_PICO_STDLIB=1"
 				},
 				{
@@ -226,6 +246,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "LIB_PICO_TIME=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "LIB_PICO_UNIQUE_ID=1"
 				},
 				{
 					"backtrace" : 2,
@@ -417,6 +441,38 @@
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/hw"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_usb_reset_interface/include"
 				}
 			],
 			"language" : "C",
@@ -462,7 +518,31 @@
 				37,
 				39,
 				43,
-				44
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68
 			]
 		},
 		{
@@ -482,6 +562,18 @@
 			],
 			"defines" : 
 			[
+				{
+					"backtrace" : 2,
+					"define" : "CFG_TUSB_DEBUG=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "CFG_TUSB_MCU=OPT_MCU_RP2040"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "CFG_TUSB_OS=OPT_OS_PICO"
+				},
 				{
 					"backtrace" : 2,
 					"define" : "LIB_PICO_BIT_OPS=1"
@@ -505,6 +597,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "LIB_PICO_DOUBLE_PICO=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "LIB_PICO_FIX_RP2040_USB_DEVICE_ENUMERATION=1"
 				},
 				{
 					"backtrace" : 2,
@@ -560,6 +656,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"define" : "LIB_PICO_STDIO_USB=1"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "LIB_PICO_STDLIB=1"
 				},
 				{
@@ -585,6 +685,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "LIB_PICO_TIME=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "LIB_PICO_UNIQUE_ID=1"
 				},
 				{
 					"backtrace" : 2,
@@ -776,6 +880,38 @@
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/hw"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_usb_reset_interface/include"
 				}
 			],
 			"language" : "ASM",
@@ -832,6 +968,18 @@
 			[
 				{
 					"backtrace" : 2,
+					"define" : "CFG_TUSB_DEBUG=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "CFG_TUSB_MCU=OPT_MCU_RP2040"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "CFG_TUSB_OS=OPT_OS_PICO"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "LIB_PICO_BIT_OPS=1"
 				},
 				{
@@ -853,6 +1001,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "LIB_PICO_DOUBLE_PICO=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "LIB_PICO_FIX_RP2040_USB_DEVICE_ENUMERATION=1"
 				},
 				{
 					"backtrace" : 2,
@@ -908,6 +1060,10 @@
 				},
 				{
 					"backtrace" : 2,
+					"define" : "LIB_PICO_STDIO_USB=1"
+				},
+				{
+					"backtrace" : 2,
 					"define" : "LIB_PICO_STDLIB=1"
 				},
 				{
@@ -933,6 +1089,10 @@
 				{
 					"backtrace" : 2,
 					"define" : "LIB_PICO_TIME=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "LIB_PICO_UNIQUE_ID=1"
 				},
 				{
 					"backtrace" : 2,
@@ -1124,6 +1284,38 @@
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/hw"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_usb_reset_interface/include"
 				}
 			],
 			"language" : "CXX",
@@ -2034,7 +2226,31 @@
 				39,
 				42,
 				43,
-				44
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68
 			]
 		},
 		{
@@ -2325,6 +2541,150 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio/stdio.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/device/usbd_control.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/class/video/video_device.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/tusb.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/hardware_flash/flash.c",
 			"sourceGroupIndex" : 0
 		}
 	],

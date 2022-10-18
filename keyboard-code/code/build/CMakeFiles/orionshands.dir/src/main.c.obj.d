@@ -57,4 +57,5 @@ CMakeFiles\orionshands.dir\src\main.c.obj: \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\hardware_uart\include/hardware/uart.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/uart.h \
  D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/uart.h \
- D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h
+ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h \
+ D:\Documents\Github\PCB-Design\keyboard-code\pico-sdk\src\rp2_common\pico_stdio_usb\include/pico/stdio_usb.h

@@ -1,6 +1,7 @@
 {
     "cmake.sourceDirectory": "${workspaceFolder}/.",
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "pico.h": "c"
     }
 }

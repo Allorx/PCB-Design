@@ -13,9 +13,26 @@
 // define debounce FLIP and MAX_DEBOUNCE states in cycles
 #define MAX_DEBOUNCE 10
 #define FLIP 5
+// define FUNC_KEY
+#define FUNC_KEY 0xFF
 
 int main() {
-    //stdio_init_all();
+    stdio_init_all();
+
+    // keymaps
+    const unsigned char keymap[5][14] =
+    {
+        {0x29,0x1E,0x1F,0x20,0x21,0x22,0x23,0x24,0x25,0x26,0x27,0x2D,0x2E,0x2A},
+        {0x2B,0x14,0x1A,0x08,0X15,0X17,0X1C,0X18,0X0C,0X12,0X13,0X2F,0X30,0X48},
+        {0x39,0X04,0X16,0X07,0X09,0X0A,0X0B,0X0D,0X0E,0X0F,0X33,0X34,0X28,0X4C},
+        {0xE1,0X31,0X1D,0X1B,0X06,0X19,0X05,0X11,0X10,0X36,0X37,0X38,0X32,0X52},
+        {0xE0,0XE3,0XE2,0X00,0X00,0X00,0X2C,0X00,0X00,0XE6,FUNC_KEY,0X50,0X51,0X4F}
+    };
+    const unsigned char fn_keymap[14] =
+    {0x00,0X3A,0X3B,0X3C,0X3D,0X3E,0X3F,0X40,0X41,0X42,0X43,0X44,0X45,0x00};
+
+    bool fning = false;
+
 
     // define key outputs
     uint key_out[14][5] = {KEY_RELEASED};
@@ -25,6 +42,8 @@ int main() {
     uint cols[14] = {13,14,15,12,11,10,9,8,2,3,4,5,6,7};
     // gpio pin nums of keyboard rows starting from ROW_0, ROW_2,...
     uint rows[5] = {20,19,18,17,16};
+    // buffer array for key inputs to send
+    unsigned char key_buffer[128] = {0x00};
 
     // init gpio pins and set directions
     for(int i = 0; i < 14; i++){
@@ -53,8 +72,13 @@ int main() {
                         key_out[i][j] = KEY_PRESSED;
                         key_debounce[i][j] = MAX_DEBOUNCE;
                         // fetch key value at key_out location and send to event queue that it has been pressed
-
-                        //printf("pressed %i %i\n", key_debounce[i][j], key_out[i][j]);
+                        unsigned char key = keymap[j][i];
+                        if(key == FUNC_KEY){
+                            printf("fn pressed\n");
+                        }
+                        else{
+                            printf("%x\n", key);
+                        }
                     }
                     else{
                         // increment debounce state
@@ -67,8 +91,13 @@ int main() {
                         key_out[i][j] = KEY_RELEASED;
                         key_debounce[i][j] = 0;
                         // fetch key value at key_out location and send to event queue that it has been released
-
-                        //printf("released %i %i\n", key_debounce[i][j], key_out[i][j]);
+                        unsigned char key = keymap[j][i];
+                        if(key == FUNC_KEY){
+                            printf("fn pressed\n");
+                        }
+                        else{
+                            printf("%x\n", key);
+                        }
                     }
                     else{
                         // decrement debounce state
@@ -88,5 +117,6 @@ int main() {
             gpio_set_dir(cols[i], false);
         }
         // send queud keys to HID
+        
     }
 }
