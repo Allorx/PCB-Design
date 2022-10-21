@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "pico-sdk/src/rp2_common/pico_standard_link",
+		"source" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_standard_link"
+	}
+}

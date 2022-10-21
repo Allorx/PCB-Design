@@ -4,10 +4,10 @@
 D:/Documents/Github/PCB-Design/keyboard-code/code/build/CMakeFiles/ELF2UF2Build
 D:/Documents/Github/PCB-Design/keyboard-code/code/build/CMakeFiles/ELF2UF2Build.rule
 D:/Documents/Github/PCB-Design/keyboard-code/code/build/CMakeFiles/ELF2UF2Build-complete.rule
+D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
+D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
 D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
 D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
 D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
