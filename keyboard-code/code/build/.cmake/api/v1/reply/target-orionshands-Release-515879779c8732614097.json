@@ -12,20 +12,21 @@
 		[
 			"add_executable",
 			"target_link_libraries",
-			"pico_define_boot_stage2",
 			"add_dependencies",
 			"find_package",
 			"pico_add_uf2_output",
 			"pico_add_extra_outputs",
-			"target_compile_definitions"
+			"pico_define_boot_stage2",
+			"target_compile_definitions",
+			"target_include_directories"
 		],
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/boot_stage2/CMakeLists.txt",
 			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/tools/FindELF2UF2.cmake",
 			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/tools/CMakeLists.txt",
-			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common.cmake"
+			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common.cmake",
+			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/boot_stage2/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -45,59 +46,59 @@
 				"parent" : 0
 			},
 			{
-				"file" : 1
-			},
-			{
-				"command" : 2,
-				"file" : 1,
-				"line" : 100,
-				"parent" : 3
-			},
-			{
-				"command" : 1,
-				"file" : 1,
-				"line" : 76,
-				"parent" : 4
-			},
-			{
-				"command" : 6,
-				"file" : 0,
-				"line" : 24,
-				"parent" : 0
-			},
-			{
 				"command" : 5,
-				"file" : 4,
-				"line" : 45,
-				"parent" : 6
+				"file" : 0,
+				"line" : 28,
+				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 3,
+				"line" : 45,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 2,
 				"line" : 49,
-				"parent" : 7
-			},
-			{
-				"file" : 2,
-				"parent" : 8
-			},
-			{
-				"command" : 3,
-				"file" : 2,
-				"line" : 41,
-				"parent" : 9
-			},
-			{
-				"command" : 3,
-				"file" : 1,
-				"line" : 74,
 				"parent" : 4
 			},
 			{
-				"command" : 7,
-				"file" : 4,
-				"line" : 28,
+				"file" : 1,
+				"parent" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 41,
 				"parent" : 6
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 100,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 74,
+				"parent" : 9
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 28,
+				"parent" : 3
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 23,
+				"parent" : 0
 			}
 		]
 	},
@@ -288,7 +289,7 @@
 					"define" : "PICO_ON_DEVICE=1"
 				},
 				{
-					"backtrace" : 12,
+					"backtrace" : 11,
 					"define" : "PICO_TARGET_NAME=\"orionshands\""
 				},
 				{
@@ -298,6 +299,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 12,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/code/src"
+				},
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_stdlib/include"
@@ -476,14 +481,6 @@
 				}
 			],
 			"language" : "C",
-			"languageStandard" : 
-			{
-				"backtraces" : 
-				[
-					1
-				],
-				"standard" : "11"
-			},
 			"sourceIndexes" : 
 			[
 				0,
@@ -727,7 +724,7 @@
 					"define" : "PICO_ON_DEVICE=1"
 				},
 				{
-					"backtrace" : 12,
+					"backtrace" : 11,
 					"define" : "PICO_TARGET_NAME=\"orionshands\""
 				},
 				{
@@ -737,6 +734,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 12,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/code/src"
+				},
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_stdlib/include"
@@ -1131,7 +1132,7 @@
 					"define" : "PICO_ON_DEVICE=1"
 				},
 				{
-					"backtrace" : 12,
+					"backtrace" : 11,
 					"define" : "PICO_TARGET_NAME=\"orionshands\""
 				},
 				{
@@ -1141,6 +1142,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 12,
+					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/code/src"
+				},
 				{
 					"backtrace" : 2,
 					"path" : "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/common/pico_stdlib/include"
@@ -1319,14 +1324,6 @@
 				}
 			],
 			"language" : "CXX",
-			"languageStandard" : 
-			{
-				"backtraces" : 
-				[
-					1
-				],
-				"standard" : "17"
-			},
 			"sourceIndexes" : 
 			[
 				42
@@ -1336,11 +1333,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 10,
+			"backtrace" : 7,
 			"id" : "ELF2UF2Build::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 11,
+			"backtrace" : 10,
 			"id" : "bs2_default_padded_checksummed_asm::@bc554eaed616d198a22d"
 		}
 	],
@@ -2173,7 +2170,6 @@
 				"role" : "flags"
 			},
 			{
-				"backtrace" : 5,
 				"fragment" : "pico-sdk\\src\\rp2_common\\boot_stage2\\bs2_default_padded_checksummed.S",
 				"role" : "libraries"
 			}

@@ -20,6 +20,10 @@ target_link_libraries(${PROJECT_NAME}
   pico_stdlib
 )
 
+target_include_directories(${PROJECT_NAME} PUBLIC
+ src
+)
+
 # create map/bin/hex file etc.
 pico_add_extra_outputs(${PROJECT_NAME})
 

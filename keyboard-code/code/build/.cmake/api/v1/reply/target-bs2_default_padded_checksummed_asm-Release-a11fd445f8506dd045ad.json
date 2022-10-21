@@ -5,8 +5,7 @@
 		"commands" : 
 		[
 			"add_custom_target",
-			"pico_define_boot_stage2",
-			"add_custom_command"
+			"pico_define_boot_stage2"
 		],
 		"files" : 
 		[
@@ -26,13 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 65,
-				"parent" : 1
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 66,
+				"line" : 68,
 				"parent" : 1
 			}
 		]
@@ -40,12 +33,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
 			"id" : "bs2_default::@bc554eaed616d198a22d"
 		}
 	],
-	"id" : "bs2_default_bin::@bc554eaed616d198a22d",
-	"name" : "bs2_default_bin",
+	"id" : "bs2_default_padded_checksummed_asm::@bc554eaed616d198a22d",
+	"name" : "bs2_default_padded_checksummed_asm",
 	"paths" : 
 	{
 		"build" : "pico-sdk/src/rp2_common/boot_stage2",
@@ -65,7 +57,8 @@
 			"sourceIndexes" : 
 			[
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -74,13 +67,19 @@
 		{
 			"backtrace" : 2,
 			"isGenerated" : true,
-			"path" : "build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin",
+			"path" : "build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_bin.rule",
+			"path" : "build/pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S.rule",
 			"sourceGroupIndex" : 1
 		},
 		{

@@ -1,7 +1,3 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "ASM"
@@ -30,10 +26,6 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/boards/include"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/pico_platform/include"
   "D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common/boot_stage2/include"
-  )
-
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
   )
 
 # Targets to which this target links.

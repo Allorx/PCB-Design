@@ -12,7 +12,7 @@
 		],
 		"files" : 
 		[
-			"C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.23/Modules/ExternalProject.cmake",
+			"C:/Program Files/CMake/share/cmake-3.18/Modules/ExternalProject.cmake",
 			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/tools/FindELF2UF2.cmake",
 			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/tools/CMakeLists.txt",
 			"D:/Documents/Github/PCB-Design/keyboard-code/pico-sdk/src/rp2_common.cmake",
@@ -26,7 +26,7 @@
 			{
 				"command" : 4,
 				"file" : 4,
-				"line" : 24,
+				"line" : 28,
 				"parent" : 0
 			},
 			{
@@ -54,7 +54,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 3453,
+				"line" : 3152,
 				"parent" : 5
 			}
 		]
@@ -118,24 +118,6 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
 			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule",
 			"sourceGroupIndex" : 1
 		},
@@ -148,13 +130,31 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule",
+			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule",
 			"sourceGroupIndex" : 1
 		}
 	],
