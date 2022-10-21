@@ -47,8 +47,6 @@ int main() {
     uint cols[14] = {13,14,15,12,11,10,9,8,2,3,4,5,6,7};
     // gpio pin nums of keyboard rows starting from ROW_0, ROW_2,...
     uint rows[5] = {20,19,18,17,16};
-    // buffer array for key inputs to send
-    unsigned char key_buffer[128] = {0x00};
 
     // init gpio pins and set directions
     for(int i = 0; i < 14; i++){
