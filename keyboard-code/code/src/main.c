@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include <tusb.h>
 
 // keyboard rotary encoder inputs
 #define CLK 0
@@ -37,6 +38,7 @@ int main() {
         {0xE0,0XE3,0XE2,0X00,0X00,0X00,0X2C,0X00,0X00,0XE6,FUNC_KEY,0X50,0X51,0X4F}
     };
     // bool to state whether function key is pressed
+    const unsigned char 
     bool fning = false;
 
     // define key outputs

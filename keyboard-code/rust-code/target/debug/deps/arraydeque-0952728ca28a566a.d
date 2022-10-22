@@ -1,0 +1,11 @@
+d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\deps\arraydeque-0952728ca28a566a.rmeta: C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\lib.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\array.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\behavior.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\error.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\maybe_uninit\mod.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\maybe_uninit\maybe_uninit.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\range.rs
+
+d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\deps\arraydeque-0952728ca28a566a.d: C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\lib.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\array.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\behavior.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\error.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\maybe_uninit\mod.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\maybe_uninit\maybe_uninit.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\range.rs
+
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\lib.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\array.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\behavior.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\error.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\maybe_uninit\mod.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\maybe_uninit\maybe_uninit.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\arraydeque-0.4.5\src\range.rs:

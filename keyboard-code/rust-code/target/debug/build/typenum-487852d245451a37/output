@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\op.rs

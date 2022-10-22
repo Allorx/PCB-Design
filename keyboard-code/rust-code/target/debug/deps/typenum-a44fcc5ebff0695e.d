@@ -1,0 +1,18 @@
+d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\deps\typenum-a44fcc5ebff0695e.rmeta: C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\lib.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\bit.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\int.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\marker_traits.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\operator_aliases.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\private.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\type_operators.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\uint.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\array.rs d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\op.rs d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\consts.rs
+
+d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\deps\typenum-a44fcc5ebff0695e.d: C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\lib.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\bit.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\int.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\marker_traits.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\operator_aliases.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\private.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\type_operators.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\uint.rs C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\array.rs d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\op.rs d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\consts.rs
+
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\lib.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\bit.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\int.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\marker_traits.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\operator_aliases.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\private.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\type_operators.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\uint.rs:
+C:\Users\Alex\.cargo\registry\src\github.com-1ecc6299db9ec823\typenum-1.15.0\src\array.rs:
+d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\op.rs:
+d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\typenum-487852d245451a37\out\consts.rs:
+
+# env-dep:TYPENUM_BUILD_CONSTS=d:\\Documents\\Github\\PCB-Design\\keyboard-code\\rust-code\\target\\debug\\build\\typenum-487852d245451a37\\out\\consts.rs
+# env-dep:TYPENUM_BUILD_OP=d:\\Documents\\Github\\PCB-Design\\keyboard-code\\rust-code\\target\\debug\\build\\typenum-487852d245451a37\\out\\op.rs

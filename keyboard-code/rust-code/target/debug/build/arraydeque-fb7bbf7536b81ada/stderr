@@ -1,0 +1,11 @@
+error[E0557]: feature has been removed
+ --> <anon>:1:12
+  |
+1 | #![feature(untagged_unions)]
+  |            ^^^^^^^^^^^^^^^ feature has been removed
+  |
+  = note: unions with `Copy` and `ManuallyDrop` fields are stable; there is no intent to stabilize more
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0557`.
