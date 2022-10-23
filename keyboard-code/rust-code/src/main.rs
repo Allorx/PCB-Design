@@ -11,7 +11,6 @@ use rp2040_hal as hal;
 use hal::pac;
 
 use embedded_hal::digital::v2::OutputPin;
-//use embedded_time::fixed_point::FixedPoint;
 use rp2040_hal::clocks::Clock;
 
 // where to place the boot block
