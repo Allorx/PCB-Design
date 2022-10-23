@@ -8,7 +8,7 @@ authors = ["Aleksas Girenas"]
 
 [dependencies]
 rp2040-hal = "0.6.0"
-keyberon = "0.1.1"
+# keyberon = "0.1.1"
 cortex-m-rt = "0.7.1"
 panic-halt = "0.2.0"
 embedded-hal = "0.2.7"
