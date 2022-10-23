@@ -1,3 +1,0 @@
-cargo:rustc-link-search=d:\Documents\Github\PCB-Design\keyboard-code\rust-code\target\debug\build\cortex-m-rt-8c4a32d8f4e3194d\out
-cargo:rerun-if-changed=build.rs
-cargo:rerun-if-changed=link.x.in
