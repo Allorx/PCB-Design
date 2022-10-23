@@ -32,14 +32,16 @@ fn main() -> ! {
     let mut watchdog = hal::Watchdog::new(pac.WATCHDOG);
     // Clock configuration
     let clocks = hal::clocks::init_clocks_and_plls(
-        XTAL_FREQ_HZ, 
-        pac.XOSC, 
-        pac.CLOCKS, 
+        XTAL_FREQ_HZ,
+        pac.XOSC,
+        pac.CLOCKS,
         pac.PLL_SYS,
-        pac.PLL_USB, 
+        pac.PLL_USB,
         &mut pac.RESETS,
-        &mut watchdog
-    ).ok().unwrap();
+        &mut watchdog,
+    )
+    .ok()
+    .unwrap();
     // setting up delay
     let mut delay = cortex_m::delay::Delay::new(core.SYST, clocks.system_clock.freq().raw());
     // gpio control with single-cycle io block
@@ -50,7 +52,7 @@ fn main() -> ! {
         pac.IO_BANK0,
         pac.PADS_BANK0,
         sio.gpio_bank0,
-        &mut pac.RESETS
+        &mut pac.RESETS,
     );
     // led pin (GPIO25) as output
     let mut led_pin = pins.gpio25.into_push_pull_output();
