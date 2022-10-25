@@ -1,13 +1,13 @@
 // Aleksas Girenas 23/10/2022
 // For controlling OrionsHands (a fully custom keyboard)
-// core code taken from https://github.com/dlkj/usbd-human-interface-device/blob/main/examples/src/bin/keyboard_nkro.rs
+// inspired by https://github.com/dlkj/usbd-human-interface-device/blob/main/examples/src/bin/keyboard_nkro.rs
+// somewhat poorly written as it is my first time working with Rust, microcontrollers and hastily written (jumping straight into the deep end - some might say a lil rusty) :D
 
 #![no_std]
 #![no_main]
 
 use bsp::entry;
 use bsp::hal;
-use core::convert::Infallible;
 use defmt::*;
 use defmt_rtt as _;
 use embedded_hal::digital::v2::*;
@@ -74,12 +74,12 @@ fn main() -> ! {
         .manufacturer("Orions Hands")
         .product("Orions Hands")
         .serial_number("000001")
-        .max_packet_size_0(8)
+        .max_packet_size_0(32) // todo check if works
         .build();
 
     //GPIO pins
     // rows
-    let keys: &[&dyn InputPin<Error = core::convert::Infallible>] = &[
+    let row_pins: &[&dyn InputPin<Error = core::convert::Infallible>] = &[
         &pins.gpio20.into_pull_up_input(),
         &pins.gpio19.into_pull_up_input(),
         &pins.gpio18.into_pull_up_input(),
@@ -102,30 +102,44 @@ fn main() -> ! {
     let mut col12 = pins.gpio6.into_push_pull_output();
     let mut col13 = pins.gpio7.into_push_pull_output();
 
-    // todo set all pins to disable to start
-    // send signal for this col
-    col0.set_output_enable_override(Enable);
-    col0.set_low().ok();
-    // then disable
-    col0.set_output_enable_override(Disable);
-    // send signal for this col
-    col1.set_output_enable_override(Enable);
-    col1.set_low().ok();
-    // then disable
-    col1.set_output_enable_override(Disable);
-    // todo etc etc .... and put in the loop getting the keys
+    // key state - 1 is pressed, 0 is released
+    // recording the key state should be separate from polling so that they can work independently
+    let mut pressed_keys: [[i32; 14]; 5] = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
 
+    // set default state of col pins to disable
+    // so we can cycle through each column to check rows
+    col0.set_output_enable_override(Disable);
+    col1.set_output_enable_override(Disable);
+    col2.set_output_enable_override(Disable);
+    col3.set_output_enable_override(Disable);
+    col4.set_output_enable_override(Disable);
+    col5.set_output_enable_override(Disable);
+    col6.set_output_enable_override(Disable);
+    col7.set_output_enable_override(Disable);
+    col8.set_output_enable_override(Disable);
+    col9.set_output_enable_override(Disable);
+    col10.set_output_enable_override(Disable);
+    col11.set_output_enable_override(Disable);
+    col12.set_output_enable_override(Disable);
+    col13.set_output_enable_override(Disable);
+
+    // polling rate countdown
     let mut input_count_down = timer.count_down();
-    input_count_down.start(2.millis());
+    input_count_down.start(1.millis()); // todo maybe reduce the polling time
 
     let mut tick_count_down = timer.count_down();
     tick_count_down.start(1.millis());
 
     loop {
-        //Poll the keys
+        //write report every input_count_down
         if input_count_down.wait().is_ok() {
-            let keys = get_keys(keys);
-
+            let keys = get_keys(pressed_keys);
             match keyboard.interface().write_report(&keys) {
                 Err(UsbHidError::WouldBlock) => {}
                 Err(UsbHidError::Duplicate) => {}
@@ -158,70 +172,196 @@ fn main() -> ! {
                 Ok(_) => {}
             }
         }
+
+        //poll the keys
+        // send signal for this col
+        col0.set_output_enable_override(Enable);
+        col0.set_low().ok();
+        // read the value and set the pressed_keys value if read
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][0] = 1;
+            } else {
+                pressed_keys[i][0] = 0;
+            }
+        }
+        // then disable
+        col0.set_output_enable_override(Disable);
+
+        // send signal for this col
+        col1.set_output_enable_override(Enable);
+        col1.set_low().ok();
+        // read the value and set the pressed_keys value if read
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][1] = 1;
+            } else {
+                pressed_keys[i][1] = 0;
+            }
+        }
+        // then disable
+        col1.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col2.set_output_enable_override(Enable);
+        col2.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][2] = 1;
+            } else {
+                pressed_keys[i][2] = 0;
+            }
+        }
+        col2.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col3.set_output_enable_override(Enable);
+        col3.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][3] = 1;
+            } else {
+                pressed_keys[i][3] = 0;
+            }
+        }
+        col3.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col4.set_output_enable_override(Enable);
+        col4.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][4] = 1;
+            } else {
+                pressed_keys[i][4] = 0;
+            }
+        }
+        col4.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col5.set_output_enable_override(Enable);
+        col5.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][5] = 1;
+            } else {
+                pressed_keys[i][5] = 0;
+            }
+        }
+        col5.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col6.set_output_enable_override(Enable);
+        col6.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][6] = 1;
+            } else {
+                pressed_keys[i][6] = 0;
+            }
+        }
+        col6.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col7.set_output_enable_override(Enable);
+        col7.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][7] = 1;
+            } else {
+                pressed_keys[i][7] = 0;
+            }
+        }
+        col7.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col8.set_output_enable_override(Enable);
+        col8.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][8] = 1;
+            } else {
+                pressed_keys[i][8] = 0;
+            }
+        }
+        col8.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col9.set_output_enable_override(Enable);
+        col9.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][9] = 1;
+            } else {
+                pressed_keys[i][9] = 0;
+            }
+        }
+        col9.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col10.set_output_enable_override(Enable);
+        col10.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][10] = 1;
+            } else {
+                pressed_keys[i][10] = 0;
+            }
+        }
+        col10.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col11.set_output_enable_override(Enable);
+        col11.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][11] = 1;
+            } else {
+                pressed_keys[i][11] = 0;
+            }
+        }
+        col11.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col12.set_output_enable_override(Enable);
+        col12.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][12] = 1;
+            } else {
+                pressed_keys[i][12] = 0;
+            }
+        }
+        col12.set_output_enable_override(Disable);
+
+        // etc etc ....
+        col13.set_output_enable_override(Enable);
+        col13.set_low().ok();
+        for i in 0..5 {
+            if row_pins[i].is_low().unwrap() {
+                pressed_keys[i][13] = 1;
+            } else {
+                pressed_keys[i][13] = 0;
+            }
+        }
+        col13.set_output_enable_override(Disable);
     }
 }
 
-fn get_keys(keys: &[&dyn InputPin<Error = Infallible>]) -> [Keyboard; 12] {
+fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 2] {
     [
-        if keys[0].is_low().unwrap() {
+        if keys[0][0] == 1 {
             Keyboard::A
         } else {
             Keyboard::NoEventIndicated
-        }, //Numlock
-        if keys[1].is_low().unwrap() {
+        },
+        if keys[3][13] == 1 {
             Keyboard::B
         } else {
             Keyboard::NoEventIndicated
-        }, //Up
-        if keys[2].is_low().unwrap() {
-            Keyboard::C
-        } else {
-            Keyboard::NoEventIndicated
-        }, //F12
-        if keys[3].is_low().unwrap() {
-            Keyboard::D
-        } else {
-            Keyboard::NoEventIndicated
-        }, //Left
-        if keys[4].is_low().unwrap() {
-            Keyboard::E
-        } else {
-            Keyboard::NoEventIndicated
-        }, //Down
-        if keys[5].is_low().unwrap() {
-            Keyboard::F
-        } else {
-            Keyboard::NoEventIndicated
-        }, //Right
-        if keys[6].is_low().unwrap() {
-            Keyboard::G
-        } else {
-            Keyboard::NoEventIndicated
-        }, //A
-        if keys[7].is_low().unwrap() {
-            Keyboard::H
-        } else {
-            Keyboard::NoEventIndicated
-        }, //B
-        if keys[8].is_low().unwrap() {
-            Keyboard::I
-        } else {
-            Keyboard::NoEventIndicated
-        }, //C
-        if keys[9].is_low().unwrap() {
-            Keyboard::J
-        } else {
-            Keyboard::NoEventIndicated
-        }, //LCtrl
-        if keys[10].is_low().unwrap() {
-            Keyboard::K
-        } else {
-            Keyboard::NoEventIndicated
-        }, //LShift
-        if keys[11].is_low().unwrap() {
-            Keyboard::L
-        } else {
-            Keyboard::NoEventIndicated
-        }, //Enter
+        },
+        // todo list out rest of keys
+        // todo make layers for fn key
+        // todo implement rotary encoder logic and usb output
     ]
 }
