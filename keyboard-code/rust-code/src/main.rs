@@ -74,7 +74,7 @@ fn main() -> ! {
         .manufacturer("Orions Hands")
         .product("Orions Hands")
         .serial_number("000001")
-        .max_packet_size_0(32) // todo check if works
+        .max_packet_size_0(32) // todo check if works and needed?
         .build();
 
     //GPIO pins
@@ -103,7 +103,7 @@ fn main() -> ! {
     let mut col13 = pins.gpio7.into_push_pull_output();
 
     // key state - 1 is pressed, 0 is released
-    // recording the key state should be separate from polling so that they can work independently
+    // recording the key state should be separate from usb polling so that they can work independently
     let mut pressed_keys: [[i32; 14]; 5] = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -131,7 +131,7 @@ fn main() -> ! {
 
     // polling rate countdown
     let mut input_count_down = timer.count_down();
-    input_count_down.start(1.millis()); // todo maybe reduce the polling time
+    input_count_down.start(1.millis()); // todo good polling time?
 
     let mut tick_count_down = timer.count_down();
     tick_count_down.start(1.millis());
@@ -150,7 +150,7 @@ fn main() -> ! {
             };
         }
 
-        //Tick once per ms
+        //tick every tick_count_down
         if tick_count_down.wait().is_ok() {
             match keyboard.interface().tick() {
                 Err(UsbHidError::WouldBlock) => {}
@@ -169,7 +169,10 @@ fn main() -> ! {
                 Err(e) => {
                     core::panic!("Failed to read keyboard report: {:?}", e)
                 }
-                Ok(_) => {}
+                Ok(_) => {
+                    // does nothing
+                    // can put in logic for lighting up an led when capslock is pressed
+                }
             }
         }
 
