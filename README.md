@@ -1,6 +1,6 @@
 # PCB-Design
-PCB design projects:
+Keyboard design project -> "Orions Shoes"
 
-Currently only contains a custom mechanical keyboard PCB design
+Contains a custom mechanical keyboard PCB design and multpile firmware ideas.
 
 ![Alt text](PCB_OrionsHands.jpg?raw=true "Keyboard PCB")
