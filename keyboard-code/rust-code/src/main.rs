@@ -7,7 +7,6 @@
 
 use bsp::entry;
 use bsp::hal;
-use bsp::hal::gpio::dynpin;
 use core::convert::Infallible;
 use defmt::*;
 use defmt_rtt as _;
@@ -20,6 +19,9 @@ use usb_device::class_prelude::*;
 use usb_device::prelude::*;
 use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
+// enable and disable outputs
+use crate::hal::gpio::OutputEnableOverride::Disable;
+use crate::hal::gpio::OutputEnableOverride::Enable;
 
 use rp_pico as bsp;
 
@@ -71,42 +73,47 @@ fn main() -> ! {
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x0001))
         .manufacturer("Orions Hands")
         .product("Orions Hands")
-        .serial_number("TEST")
+        .serial_number("000001")
         .max_packet_size_0(8)
         .build();
 
     //GPIO pins
-    //let mut col_pins: [
-        //pins.gpio13.into_push_pull_output(),
-        //&pins.gpio14,
-        //&pins.gpio15,
-        //&pins.gpio12,
-        //&pins.gpio11,
-        //&pins.gpio10,
-        //&pins.gpio9,
-        //&pins.gpio8,
-        //&pins.gpio2,
-        //&pins.gpio3,
-        //&pins.gpio4,
-        //&pins.gpio5,
-        //&pins.gpio6,
-        //&pins.gpio7,
-    //];
-
+    // rows
     let keys: &[&dyn InputPin<Error = core::convert::Infallible>] = &[
-        &pins.gpio1.into_pull_up_input(),
-        &pins.gpio2.into_pull_up_input(),
-        &pins.gpio3.into_pull_up_input(),
-        &pins.gpio4.into_pull_up_input(),
-        &pins.gpio5.into_pull_up_input(),
-        &pins.gpio6.into_pull_up_input(),
-        &pins.gpio7.into_pull_up_input(),
-        &pins.gpio8.into_pull_up_input(),
-        &pins.gpio9.into_pull_up_input(),
-        &pins.gpio10.into_pull_up_input(),
-        &pins.gpio11.into_pull_up_input(),
-        &pins.gpio12.into_pull_up_input(),
+        &pins.gpio20.into_pull_up_input(),
+        &pins.gpio19.into_pull_up_input(),
+        &pins.gpio18.into_pull_up_input(),
+        &pins.gpio17.into_pull_up_input(),
+        &pins.gpio16.into_pull_up_input(),
     ];
+    // cols
+    let mut col0 = pins.gpio13.into_push_pull_output();
+    let mut col1 = pins.gpio14.into_push_pull_output();
+    let mut col2 = pins.gpio15.into_push_pull_output();
+    let mut col3 = pins.gpio12.into_push_pull_output();
+    let mut col4 = pins.gpio11.into_push_pull_output();
+    let mut col5 = pins.gpio10.into_push_pull_output();
+    let mut col6 = pins.gpio9.into_push_pull_output();
+    let mut col7 = pins.gpio8.into_push_pull_output();
+    let mut col8 = pins.gpio2.into_push_pull_output();
+    let mut col9 = pins.gpio3.into_push_pull_output();
+    let mut col10 = pins.gpio4.into_push_pull_output();
+    let mut col11 = pins.gpio5.into_push_pull_output();
+    let mut col12 = pins.gpio6.into_push_pull_output();
+    let mut col13 = pins.gpio7.into_push_pull_output();
+
+    // todo set all pins to disable to start
+    // send signal for this col
+    col0.set_output_enable_override(Enable);
+    col0.set_low().ok();
+    // then disable
+    col0.set_output_enable_override(Disable);
+    // send signal for this col
+    col1.set_output_enable_override(Enable);
+    col1.set_low().ok();
+    // then disable
+    col1.set_output_enable_override(Disable);
+    // todo etc etc .... and put in the loop getting the keys
 
     let mut input_count_down = timer.count_down();
     input_count_down.start(2.millis());
@@ -115,7 +122,7 @@ fn main() -> ! {
     tick_count_down.start(1.millis());
 
     loop {
-        //Poll the keys every 2ms
+        //Poll the keys
         if input_count_down.wait().is_ok() {
             let keys = get_keys(keys);
 
@@ -148,9 +155,7 @@ fn main() -> ! {
                 Err(e) => {
                     core::panic!("Failed to read keyboard report: {:?}", e)
                 }
-                Ok(leds) => {
-                    //led_pin.set_state(PinState::from(leds.caps_lock)).ok();
-                }
+                Ok(_) => {}
             }
         }
     }
@@ -159,64 +164,64 @@ fn main() -> ! {
 fn get_keys(keys: &[&dyn InputPin<Error = Infallible>]) -> [Keyboard; 12] {
     [
         if keys[0].is_low().unwrap() {
-            Keyboard::KeypadNumLockAndClear
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1].is_low().unwrap() {
             Keyboard::A
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[2].is_low().unwrap() {
+        }, //Numlock
+        if keys[1].is_low().unwrap() {
             Keyboard::B
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[3].is_low().unwrap() {
+        }, //Up
+        if keys[2].is_low().unwrap() {
             Keyboard::C
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[4].is_low().unwrap() {
+        }, //F12
+        if keys[3].is_low().unwrap() {
             Keyboard::D
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[5].is_low().unwrap() {
+        }, //Left
+        if keys[4].is_low().unwrap() {
             Keyboard::E
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[6].is_low().unwrap() {
+        }, //Down
+        if keys[5].is_low().unwrap() {
             Keyboard::F
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[7].is_low().unwrap() {
+        }, //Right
+        if keys[6].is_low().unwrap() {
             Keyboard::G
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[8].is_low().unwrap() {
+        }, //A
+        if keys[7].is_low().unwrap() {
             Keyboard::H
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[9].is_low().unwrap() {
+        }, //B
+        if keys[8].is_low().unwrap() {
             Keyboard::I
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[10].is_low().unwrap() {
+        }, //C
+        if keys[9].is_low().unwrap() {
             Keyboard::J
         } else {
             Keyboard::NoEventIndicated
-        },
-        if keys[11].is_low().unwrap() {
+        }, //LCtrl
+        if keys[10].is_low().unwrap() {
             Keyboard::K
         } else {
             Keyboard::NoEventIndicated
-        },
+        }, //LShift
+        if keys[11].is_low().unwrap() {
+            Keyboard::L
+        } else {
+            Keyboard::NoEventIndicated
+        }, //Enter
     ]
 }
