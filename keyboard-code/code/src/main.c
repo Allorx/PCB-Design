@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include "pico/stdlib.h"
-#include <tusb.h>
 
 // keyboard rotary encoder inputs
 #define CLK 0
