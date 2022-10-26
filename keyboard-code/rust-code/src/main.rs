@@ -683,3 +683,4 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 64] {
 
 // todo make layers for fn key
 // todo implement rotary encoder logic and usb output
+// todo still need to check keycodes for certain keys or add to them - might need to fork and add the rest from usbd-human-interface-device
