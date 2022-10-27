@@ -21,8 +21,8 @@ use usb_device::prelude::*;
 use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
 
-use rp_pico as bsp;
 use rp2040_hal::gpio::DynPin;
+use rp_pico as bsp;
 
 #[entry]
 fn main() -> ! {
@@ -176,8 +176,13 @@ fn main() -> ! {
         //poll the keys
         // send signal for this col;
         for i in 0..14 {
+            if i != 0 {
+                while col_pins[i - 1].is_low().is_ok() == true {
+                    // waiting until the pull_up_input state of previous pin settles  // todo set wait till next loop or pio
+                }
+            }
             col_pins[i].into_push_pull_output();
-            col_pins[i].set_low().ok(); // todo set wait till next loop or pio
+            col_pins[i].set_low().ok();
             // read the value and set the pressed_keys value if read
             for j in 0..5 {
                 if row_pins[j].is_low().unwrap() {
