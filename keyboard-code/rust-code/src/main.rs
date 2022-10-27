@@ -187,7 +187,7 @@ fn main() -> ! {
                 }
             }
             // then disable
-            col_pins[0].into_pull_up_input();
+            col_pins[i].into_pull_up_input();
         }
     }
 }
