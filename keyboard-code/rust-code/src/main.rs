@@ -8,6 +8,7 @@
 
 use bsp::entry;
 use bsp::hal;
+//use bsp::hal::gpio::dynpin;
 use defmt::*;
 use defmt_rtt as _;
 use embedded_hal::digital::v2::*;
@@ -21,6 +22,7 @@ use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
 
 use rp_pico as bsp;
+use rp2040_hal::gpio::DynPin;
 
 #[entry]
 fn main() -> ! {
@@ -83,23 +85,32 @@ fn main() -> ! {
         &pins.gpio17.into_pull_up_input(),
         &pins.gpio16.into_pull_up_input(),
     ];
+
     // cols
     // set default state of col pins to input
     // so we can cycle through each column to check rows first assign then put in array
-    let mut col0 = pins.gpio13.into_pull_up_input();
-    let mut col1 = pins.gpio14.into_pull_up_input();
-    let mut col2 = pins.gpio15.into_pull_up_input();
-    let mut col3 = pins.gpio12.into_pull_up_input();
-    let mut col4 = pins.gpio11.into_pull_up_input();
-    let mut col5 = pins.gpio10.into_pull_up_input();
-    let mut col6 = pins.gpio9.into_pull_up_input();
-    let mut col7 = pins.gpio8.into_pull_up_input();
-    let mut col8 = pins.gpio2.into_pull_up_input();
-    let mut col9 = pins.gpio3.into_pull_up_input();
-    let mut col10 = pins.gpio4.into_pull_up_input();
-    let mut col11 = pins.gpio5.into_pull_up_input();
-    let mut col12 = pins.gpio6.into_pull_up_input();
-    let mut col13 = pins.gpio7.into_pull_up_input();
+    let col0: DynPin = pins.gpio13.into();
+    let col1: DynPin = pins.gpio14.into();
+    let col2: DynPin = pins.gpio15.into();
+    let col3: DynPin = pins.gpio12.into();
+    let col4: DynPin = pins.gpio11.into();
+    let col5: DynPin = pins.gpio10.into();
+    let col6: DynPin = pins.gpio9.into();
+    let col7: DynPin = pins.gpio8.into();
+    let col8: DynPin = pins.gpio2.into();
+    let col9: DynPin = pins.gpio3.into();
+    let col10: DynPin = pins.gpio4.into();
+    let col11: DynPin = pins.gpio5.into();
+    let col12: DynPin = pins.gpio6.into();
+    let col13: DynPin = pins.gpio7.into();
+
+    let mut col_pins = [
+        col0, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13,
+    ];
+
+    for i in 0..14 {
+        col_pins[i].into_pull_up_input();
+    }
 
     // key state - 1 is pressed, 0 is released
     // recording the key state should be separate from usb polling so that they can work independently
@@ -164,163 +175,20 @@ fn main() -> ! {
 
         //poll the keys
         // send signal for this col;
-        let mut col0_out = col0.into_push_pull_output();
-        col0_out.set_low().ok();
-        // read the value and set the pressed_keys value if read
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][0] = 1;
-            } else {
-                pressed_keys[i][0] = 0;
+        for i in 0..13 {
+            col_pins[i].into_push_pull_output();
+            col_pins[i].set_low().ok(); // todo set wait till next loop or pio
+            // read the value and set the pressed_keys value if read
+            for j in 0..5 {
+                if row_pins[j].is_low().unwrap() {
+                    pressed_keys[j][i] = 1;
+                } else {
+                    pressed_keys[j][i] = 0;
+                }
             }
+            // then disable
+            col_pins[0].into_pull_up_input();
         }
-        // then disable
-        col0 = col0_out.into_pull_up_input();
-        // send signal for this col
-        let mut col1_out = col1.into_push_pull_output();
-        col1_out.set_low().ok();
-        // read the value and set the pressed_keys value if read
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][1] = 1;
-            } else {
-                pressed_keys[i][1] = 0;
-            }
-        }
-        // then disable
-        col1 = col1_out.into_pull_up_input();
-        // etc etc ....
-        let mut col2_out = col2.into_push_pull_output();
-        col2_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][2] = 1;
-            } else {
-                pressed_keys[i][2] = 0;
-            }
-        }
-        col2 = col2_out.into_pull_up_input();
-        // etc etc ....
-        let mut col3_out = col3.into_push_pull_output();
-        col3_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][3] = 1;
-            } else {
-                pressed_keys[i][3] = 0;
-            }
-        }
-        col3 = col3_out.into_pull_up_input();
-        // etc etc ....
-        let mut col4_out = col4.into_push_pull_output();
-        col4_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][4] = 1;
-            } else {
-                pressed_keys[i][4] = 0;
-            }
-        }
-        col4 = col4_out.into_pull_up_input();
-        // etc etc ....
-        let mut col5_out = col5.into_push_pull_output();
-        col5_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][5] = 1;
-            } else {
-                pressed_keys[i][5] = 0;
-            }
-        }
-        col5 = col5_out.into_pull_up_input();
-        // etc etc ....
-        let mut col6_out = col6.into_push_pull_output();
-        col6_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][6] = 1;
-            } else {
-                pressed_keys[i][6] = 0;
-            }
-        }
-        col6 = col6_out.into_pull_up_input();
-        // etc etc ....
-        let mut col7_out = col7.into_push_pull_output();
-        col7_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][7] = 1;
-            } else {
-                pressed_keys[i][7] = 0;
-            }
-        }
-        col7 = col7_out.into_pull_up_input();
-        // etc etc ....
-        let mut col8_out = col8.into_push_pull_output();
-        col8_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][8] = 1;
-            } else {
-                pressed_keys[i][8] = 0;
-            }
-        }
-        col8 = col8_out.into_pull_up_input();
-        // etc etc ....
-        let mut col9_out = col9.into_push_pull_output();
-        col9_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][9] = 1;
-            } else {
-                pressed_keys[i][9] = 0;
-            }
-        }
-        col9 = col9_out.into_pull_up_input();
-        // etc etc ....
-        let mut col10_out = col10.into_push_pull_output();
-        col10_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][10] = 1;
-            } else {
-                pressed_keys[i][10] = 0;
-            }
-        }
-        col10 = col10_out.into_pull_up_input();
-        // etc etc ....
-        let mut col11_out = col11.into_push_pull_output();
-        col11_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][11] = 1;
-            } else {
-                pressed_keys[i][11] = 0;
-            } 
-        }
-        col11 = col11_out.into_pull_up_input();
-        // etc etc ....
-        let mut col12_out = col12.into_push_pull_output();
-        col12_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][12] = 1;
-            } else {
-                pressed_keys[i][12] = 0;
-            }
-        }
-        col12 = col12_out.into_pull_up_input();
-        // etc etc ....
-        let mut col13_out = col13.into_push_pull_output();
-        col13_out.set_low().ok();
-        for i in 0..5 {
-            if row_pins[i].is_low().unwrap() {
-                pressed_keys[i][13] = 1;
-            } else {
-                pressed_keys[i][13] = 0;
-            }
-        }
-        col13 = col13_out.into_pull_up_input();
     }
 }
 

@@ -677,6 +677,7 @@ dependencies = [
  "packed_struct",
  "panic-probe",
  "rp-pico",
+ "rp2040-hal",
  "usb-device",
  "usbd-human-interface-device",
 ]
