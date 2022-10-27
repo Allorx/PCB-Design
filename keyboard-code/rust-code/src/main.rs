@@ -19,9 +19,6 @@ use usb_device::class_prelude::*;
 use usb_device::prelude::*;
 use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
-// enable and disable outputs
-use crate::hal::gpio::OutputEnableOverride::Disable;
-use crate::hal::gpio::OutputEnableOverride::Enable;
 
 use rp_pico as bsp;
 
@@ -87,20 +84,22 @@ fn main() -> ! {
         &pins.gpio16.into_pull_up_input(),
     ];
     // cols
-    let mut col0 = pins.gpio13.into_push_pull_output();
-    let mut col1 = pins.gpio14.into_push_pull_output();
-    let mut col2 = pins.gpio15.into_push_pull_output();
-    let mut col3 = pins.gpio12.into_push_pull_output();
-    let mut col4 = pins.gpio11.into_push_pull_output();
-    let mut col5 = pins.gpio10.into_push_pull_output();
-    let mut col6 = pins.gpio9.into_push_pull_output();
-    let mut col7 = pins.gpio8.into_push_pull_output();
-    let mut col8 = pins.gpio2.into_push_pull_output();
-    let mut col9 = pins.gpio3.into_push_pull_output();
-    let mut col10 = pins.gpio4.into_push_pull_output();
-    let mut col11 = pins.gpio5.into_push_pull_output();
-    let mut col12 = pins.gpio6.into_push_pull_output();
-    let mut col13 = pins.gpio7.into_push_pull_output();
+    // set default state of col pins to input
+    // so we can cycle through each column to check rows first assign then put in array
+    let mut col0 = pins.gpio13.into_pull_up_input();
+    let mut col1 = pins.gpio14.into_pull_up_input();
+    let mut col2 = pins.gpio15.into_pull_up_input();
+    let mut col3 = pins.gpio12.into_pull_up_input();
+    let mut col4 = pins.gpio11.into_pull_up_input();
+    let mut col5 = pins.gpio10.into_pull_up_input();
+    let mut col6 = pins.gpio9.into_pull_up_input();
+    let mut col7 = pins.gpio8.into_pull_up_input();
+    let mut col8 = pins.gpio2.into_pull_up_input();
+    let mut col9 = pins.gpio3.into_pull_up_input();
+    let mut col10 = pins.gpio4.into_pull_up_input();
+    let mut col11 = pins.gpio5.into_pull_up_input();
+    let mut col12 = pins.gpio6.into_pull_up_input();
+    let mut col13 = pins.gpio7.into_pull_up_input();
 
     // key state - 1 is pressed, 0 is released
     // recording the key state should be separate from usb polling so that they can work independently
@@ -112,29 +111,16 @@ fn main() -> ! {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
 
-    // set default state of col pins to disable
-    // so we can cycle through each column to check rows
-    col0.set_output_enable_override(Disable);
-    col1.set_output_enable_override(Disable);
-    col2.set_output_enable_override(Disable);
-    col3.set_output_enable_override(Disable);
-    col4.set_output_enable_override(Disable);
-    col5.set_output_enable_override(Disable);
-    col6.set_output_enable_override(Disable);
-    col7.set_output_enable_override(Disable);
-    col8.set_output_enable_override(Disable);
-    col9.set_output_enable_override(Disable);
-    col10.set_output_enable_override(Disable);
-    col11.set_output_enable_override(Disable);
-    col12.set_output_enable_override(Disable);
-    col13.set_output_enable_override(Disable);
+    // key polling rate countdown
+    //let mut key_input_count_down = timer.count_down();
+    //key_input_count_down.start(500.micros()); // todo good polling time?
 
-    // polling rate countdown
+    // usb polling rate countdown
     let mut input_count_down = timer.count_down();
     input_count_down.start(1.millis()); // todo good polling time?
 
     let mut tick_count_down = timer.count_down();
-    tick_count_down.start(1.millis());
+    tick_count_down.start(500.micros());
 
     loop {
         //write report every input_count_down
@@ -177,9 +163,9 @@ fn main() -> ! {
         }
 
         //poll the keys
-        // send signal for this col
-        col0.set_output_enable_override(Enable);
-        col0.set_low().ok();
+        // send signal for this col;
+        let mut col0_out = col0.into_push_pull_output();
+        col0_out.set_low().ok();
         // read the value and set the pressed_keys value if read
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
@@ -189,11 +175,10 @@ fn main() -> ! {
             }
         }
         // then disable
-        col0.set_output_enable_override(Disable);
-
+        col0 = col0_out.into_pull_up_input();
         // send signal for this col
-        col1.set_output_enable_override(Enable);
-        col1.set_low().ok();
+        let mut col1_out = col1.into_push_pull_output();
+        col1_out.set_low().ok();
         // read the value and set the pressed_keys value if read
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
@@ -203,11 +188,10 @@ fn main() -> ! {
             }
         }
         // then disable
-        col1.set_output_enable_override(Disable);
-
+        col1 = col1_out.into_pull_up_input();
         // etc etc ....
-        col2.set_output_enable_override(Enable);
-        col2.set_low().ok();
+        let mut col2_out = col2.into_push_pull_output();
+        col2_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][2] = 1;
@@ -215,11 +199,10 @@ fn main() -> ! {
                 pressed_keys[i][2] = 0;
             }
         }
-        col2.set_output_enable_override(Disable);
-
+        col2 = col2_out.into_pull_up_input();
         // etc etc ....
-        col3.set_output_enable_override(Enable);
-        col3.set_low().ok();
+        let mut col3_out = col3.into_push_pull_output();
+        col3_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][3] = 1;
@@ -227,11 +210,10 @@ fn main() -> ! {
                 pressed_keys[i][3] = 0;
             }
         }
-        col3.set_output_enable_override(Disable);
-
+        col3 = col3_out.into_pull_up_input();
         // etc etc ....
-        col4.set_output_enable_override(Enable);
-        col4.set_low().ok();
+        let mut col4_out = col4.into_push_pull_output();
+        col4_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][4] = 1;
@@ -239,11 +221,10 @@ fn main() -> ! {
                 pressed_keys[i][4] = 0;
             }
         }
-        col4.set_output_enable_override(Disable);
-
+        col4 = col4_out.into_pull_up_input();
         // etc etc ....
-        col5.set_output_enable_override(Enable);
-        col5.set_low().ok();
+        let mut col5_out = col5.into_push_pull_output();
+        col5_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][5] = 1;
@@ -251,11 +232,10 @@ fn main() -> ! {
                 pressed_keys[i][5] = 0;
             }
         }
-        col5.set_output_enable_override(Disable);
-
+        col5 = col5_out.into_pull_up_input();
         // etc etc ....
-        col6.set_output_enable_override(Enable);
-        col6.set_low().ok();
+        let mut col6_out = col6.into_push_pull_output();
+        col6_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][6] = 1;
@@ -263,11 +243,10 @@ fn main() -> ! {
                 pressed_keys[i][6] = 0;
             }
         }
-        col6.set_output_enable_override(Disable);
-
+        col6 = col6_out.into_pull_up_input();
         // etc etc ....
-        col7.set_output_enable_override(Enable);
-        col7.set_low().ok();
+        let mut col7_out = col7.into_push_pull_output();
+        col7_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][7] = 1;
@@ -275,11 +254,10 @@ fn main() -> ! {
                 pressed_keys[i][7] = 0;
             }
         }
-        col7.set_output_enable_override(Disable);
-
+        col7 = col7_out.into_pull_up_input();
         // etc etc ....
-        col8.set_output_enable_override(Enable);
-        col8.set_low().ok();
+        let mut col8_out = col8.into_push_pull_output();
+        col8_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][8] = 1;
@@ -287,11 +265,10 @@ fn main() -> ! {
                 pressed_keys[i][8] = 0;
             }
         }
-        col8.set_output_enable_override(Disable);
-
+        col8 = col8_out.into_pull_up_input();
         // etc etc ....
-        col9.set_output_enable_override(Enable);
-        col9.set_low().ok();
+        let mut col9_out = col9.into_push_pull_output();
+        col9_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][9] = 1;
@@ -299,11 +276,10 @@ fn main() -> ! {
                 pressed_keys[i][9] = 0;
             }
         }
-        col9.set_output_enable_override(Disable);
-
+        col9 = col9_out.into_pull_up_input();
         // etc etc ....
-        col10.set_output_enable_override(Enable);
-        col10.set_low().ok();
+        let mut col10_out = col10.into_push_pull_output();
+        col10_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][10] = 1;
@@ -311,23 +287,21 @@ fn main() -> ! {
                 pressed_keys[i][10] = 0;
             }
         }
-        col10.set_output_enable_override(Disable);
-
+        col10 = col10_out.into_pull_up_input();
         // etc etc ....
-        col11.set_output_enable_override(Enable);
-        col11.set_low().ok();
+        let mut col11_out = col11.into_push_pull_output();
+        col11_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][11] = 1;
             } else {
                 pressed_keys[i][11] = 0;
-            }
+            } 
         }
-        col11.set_output_enable_override(Disable);
-
+        col11 = col11_out.into_pull_up_input();
         // etc etc ....
-        col12.set_output_enable_override(Enable);
-        col12.set_low().ok();
+        let mut col12_out = col12.into_push_pull_output();
+        col12_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][12] = 1;
@@ -335,11 +309,10 @@ fn main() -> ! {
                 pressed_keys[i][12] = 0;
             }
         }
-        col12.set_output_enable_override(Disable);
-
+        col12 = col12_out.into_pull_up_input();
         // etc etc ....
-        col13.set_output_enable_override(Enable);
-        col13.set_low().ok();
+        let mut col13_out = col13.into_push_pull_output();
+        col13_out.set_low().ok();
         for i in 0..5 {
             if row_pins[i].is_low().unwrap() {
                 pressed_keys[i][13] = 1;
@@ -347,7 +320,7 @@ fn main() -> ! {
                 pressed_keys[i][13] = 0;
             }
         }
-        col13.set_output_enable_override(Disable);
+        col13 = col13_out.into_pull_up_input();
     }
 }
 
