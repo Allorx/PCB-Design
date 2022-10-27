@@ -175,7 +175,7 @@ fn main() -> ! {
 
         //poll the keys
         // send signal for this col;
-        for i in 0..13 {
+        for i in 0..14 {
             col_pins[i].into_push_pull_output();
             col_pins[i].set_low().ok(); // todo set wait till next loop or pio
             // read the value and set the pressed_keys value if read
