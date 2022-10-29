@@ -87,8 +87,7 @@ fn main() -> ! {
     ];
 
     // cols
-    // set default state of col pins to input
-    // so we can cycle through each column to check rows first assign then put in array
+    // so we can cycle through each column to check rows first turn them into dynpins then put in array
     let col0: DynPin = pins.gpio13.into();
     let col1: DynPin = pins.gpio14.into();
     let col2: DynPin = pins.gpio15.into();
@@ -103,11 +102,11 @@ fn main() -> ! {
     let col11: DynPin = pins.gpio5.into();
     let col12: DynPin = pins.gpio6.into();
     let col13: DynPin = pins.gpio7.into();
-
+    
     let mut col_pins = [
         col0, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13,
     ];
-
+    // set default state of col pins to input
     for i in 0..14 {
         col_pins[i].into_pull_up_input();
     }
@@ -124,7 +123,7 @@ fn main() -> ! {
 
     // key polling rate countdown
     //let mut key_input_count_down = timer.count_down();
-    //key_input_count_down.start(500.micros()); // todo good polling time?
+    //key_input_count_down.start(500.micros());
 
     // usb polling rate countdown
     let mut input_count_down = timer.count_down();
@@ -181,8 +180,7 @@ fn main() -> ! {
                     core::panic!("Failed to read keyboard report: {:?}", e)
                 }
                 Ok(_) => {
-                    // does nothing
-                    // can put in logic for lighting up an led when capslock is pressed?
+                    // do nothing
                 }
             }
         }
@@ -859,5 +857,6 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 64] {
     ]
 }
 
-// todo implement rotary encoder logic and usb output
+// todo implement rotary encoder logic 
+// todo usb over bluetooth?
 // todo still need to check keycodes for certain keys or add to them - might need to fork and add the rest from usbd-human-interface-device
