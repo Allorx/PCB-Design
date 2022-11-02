@@ -102,10 +102,28 @@ fn main() -> ! {
     let col11: DynPin = pins.gpio5.into();
     let col12: DynPin = pins.gpio6.into();
     let col13: DynPin = pins.gpio7.into();
-    
+
     let mut col_pins = [
         col0, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13,
     ];
+    // rotary encoder
+    let rot_clk = &pins.gpio0.into_pull_up_input();
+    let rot_dt = &pins.gpio1.into_pull_up_input();
+    let mut rot_last_state = [0, 0];
+    let mut rot_current_state = [0, 0];
+    // set rot_last_state
+    col_pins[13].into_push_pull_output();
+    col_pins[13].set_low().ok();
+    if rot_clk.is_low().unwrap() {
+        rot_last_state[0] = 1;
+    } else {
+        rot_last_state[0] = 0;
+    }
+    if rot_dt.is_low().unwrap() {
+        rot_last_state[1] = 1;
+    } else {
+        rot_last_state[1] = 0;
+    }
     // set default state of col pins to input
     for i in 0..14 {
         col_pins[i].into_pull_up_input();
@@ -188,7 +206,7 @@ fn main() -> ! {
         //poll the keys
         // send signal for this col;
         for i in 0..14 {
-            // todo set wait till next loop or pio
+            // ? set wait till next loop or pio
             col_pins[i].into_push_pull_output();
             col_pins[i].set_low().ok();
             // read the value and set the pressed_keys value if read
@@ -199,14 +217,58 @@ fn main() -> ! {
                     pressed_keys[j][i] = 0;
                 }
             }
+            // for rotary encoder check if at col13
+            if i == 13 {
+                //poll the rotary encoder
+                // read values clk and dt and compare to last state
+                if rot_clk.is_low().unwrap() {
+                    rot_current_state[0] = 1;
+                } else {
+                    rot_current_state[0] = 0;
+                }
+                if rot_dt.is_low().unwrap() {
+                    rot_current_state[1] = 1;
+                } else {
+                    rot_current_state[1] = 0;
+                }
+                // compare current to last state and assign to an unused pressed_keys
+                if (rot_last_state[0] == 0
+                    && rot_last_state[1] == 0
+                    && rot_current_state[0] == 1
+                    && rot_current_state[1] == 0)
+                    || (rot_last_state[0] == 1
+                        && rot_last_state[1] == 1
+                        && rot_current_state[0] == 0
+                        && rot_current_state[1] == 1)
+                {
+                    // clockwise
+                    pressed_keys[4][4] = 1;
+                } else if (rot_last_state[0] == 0
+                    && rot_last_state[1] == 0
+                    && rot_current_state[0] == 0
+                    && rot_current_state[1] == 1)
+                    || (rot_last_state[0] == 1
+                        && rot_last_state[1] == 1
+                        && rot_current_state[0] == 1
+                        && rot_current_state[1] == 0)
+                {
+                    // anticlockwise
+                    pressed_keys[4][4] = -1;
+                } else {
+                    // nothing
+                    pressed_keys[4][4] = 0;
+                }
+                // setup for next
+                rot_last_state = rot_current_state;
+            }
             // then disable
             col_pins[i].into_pull_up_input();
         }
     }
 }
 
-// 64 keys excluding fn key
-fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 64] {
+// 64 keys excluding fn key - 65th key is volume
+fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
     [
         if keys[0][0] == 1 {
             Keyboard::Escape
@@ -528,11 +590,18 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 64] {
         } else {
             Keyboard::NoEventIndicated
         },
+        if keys[4][4] == 1 {
+            Keyboard::VolumeUp
+        } else if keys[4][4] == -1 {
+            Keyboard::VolumeDown
+        } else {
+            Keyboard::NoEventIndicated
+        },
     ]
 }
 
-// 64 keys excluding fn key
-fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 64] {
+// 64 keys excluding fn key - 65th key is volume
+fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
     [
         if keys[0][0] == 1 {
             Keyboard::Escape
@@ -854,9 +923,15 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 64] {
         } else {
             Keyboard::NoEventIndicated
         },
+        if keys[4][4] == 1 {
+            Keyboard::VolumeUp
+        } else if keys[4][4] == -1 {
+            Keyboard::VolumeDown
+        } else {
+            Keyboard::NoEventIndicated
+        },
     ]
 }
 
-// todo implement rotary encoder logic 
 // todo usb over bluetooth?
 // todo still need to check keycodes for certain keys or add to them - might need to fork and add the rest from usbd-human-interface-device
