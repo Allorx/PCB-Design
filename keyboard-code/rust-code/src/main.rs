@@ -935,3 +935,4 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
 
 // todo usb over bluetooth?
 // todo still need to check keycodes for certain keys or add to them - might need to fork and add the rest from usbd-human-interface-device
+// todo add consumer device to code so we can have vol up/down/play/pause
