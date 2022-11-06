@@ -153,7 +153,7 @@ fn main() -> ! {
     loop {
         //write report every input_count_down
         if input_count_down.wait().is_ok() {
-            if pressed_keys[4][11] == 1 {
+            if pressed_keys[4][10] == 1 {
                 // fn key pressed
                 let keys = get_fnkeys(pressed_keys);
                 match keyboard.interface().write_report(&keys) {
