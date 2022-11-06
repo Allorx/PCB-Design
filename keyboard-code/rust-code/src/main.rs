@@ -18,6 +18,10 @@ use hal::pac;
 use panic_probe as _;
 use usb_device::class_prelude::*;
 use usb_device::prelude::*;
+use usbd_human_interface_device::device::consumer::ConsumerControlInterface;
+use usbd_human_interface_device::device::consumer::MultipleConsumerReport;
+use usbd_human_interface_device::device::keyboard::NKROBootKeyboardInterface;
+use usbd_human_interface_device::page::Consumer;
 use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
 
@@ -62,10 +66,11 @@ fn main() -> ! {
         &mut pac.RESETS,
     ));
 
-    let mut keyboard = UsbHidClassBuilder::new()
+    let mut composite = UsbHidClassBuilder::new()
         .add_interface(
             usbd_human_interface_device::device::keyboard::NKROBootKeyboardInterface::default_config(),
         )
+        .add_interface(usbd_human_interface_device::device::consumer::ConsumerControlInterface::default_config())
         .build(&usb_bus);
 
     //https://pid.codes
@@ -73,7 +78,7 @@ fn main() -> ! {
         .manufacturer("Orions Hands")
         .product("Orions Hands")
         .serial_number("291020221639") // using date + time
-        .max_packet_size_0(32) // todo check if works and needed?
+        .max_packet_size_0(32) // ? good packet size - seems okay!
         .build();
 
     //GPIO pins
@@ -130,6 +135,7 @@ fn main() -> ! {
     }
 
     // key state - 1 is pressed, 0 is released
+    // also uses spare indices for rotary encoder -1 is rotated anticlockwise, 1 is rotated clockwise, 0 is released
     // recording the key state should be separate from usb polling so that they can work independently
     let mut pressed_keys: [[i32; 14]; 5] = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -150,13 +156,20 @@ fn main() -> ! {
     let mut tick_count_down = timer.count_down();
     tick_count_down.start(1.millis());
 
+    let mut consumer_poll = timer.count_down();
+    consumer_poll.start(100.millis());
+    let mut last_consumer_report = MultipleConsumerReport::default();
+
     loop {
+        // keyboard reporting
         //write report every input_count_down
         if input_count_down.wait().is_ok() {
+            let keyboard = composite.interface::<NKROBootKeyboardInterface<'_, _>, _>();
+            // 2 separate functions for fn key and normal, more memory intensive but less cpu
             if pressed_keys[4][10] == 1 {
                 // fn key pressed
                 let keys = get_fnkeys(pressed_keys);
-                match keyboard.interface().write_report(&keys) {
+                match keyboard.write_report(&keys) {
                     Err(UsbHidError::WouldBlock) => {}
                     Err(UsbHidError::Duplicate) => {}
                     Ok(_) => {}
@@ -167,7 +180,7 @@ fn main() -> ! {
             } else {
                 // fn key released
                 let keys = get_keys(pressed_keys);
-                match keyboard.interface().write_report(&keys) {
+                match keyboard.write_report(&keys) {
                     Err(UsbHidError::WouldBlock) => {}
                     Err(UsbHidError::Duplicate) => {}
                     Ok(_) => {}
@@ -180,7 +193,10 @@ fn main() -> ! {
 
         //tick every tick_count_down
         if tick_count_down.wait().is_ok() {
-            match keyboard.interface().tick() {
+            match composite
+                .interface::<NKROBootKeyboardInterface<'_, _>, _>()
+                .tick()
+            {
                 Err(UsbHidError::WouldBlock) => {}
                 Ok(_) => {}
                 Err(e) => {
@@ -189,17 +205,44 @@ fn main() -> ! {
             };
         }
 
-        if usb_dev.poll(&mut [&mut keyboard]) {
-            match keyboard.interface().read_report() {
-                Err(UsbError::WouldBlock) => {
-                    //do nothing
-                }
+        if usb_dev.poll(&mut [&mut composite]) {
+            let keyboard = composite.interface::<NKROBootKeyboardInterface<'_, _>, _>();
+            match keyboard.read_report() {
+                Err(UsbError::WouldBlock) => {}
                 Err(e) => {
                     core::panic!("Failed to read keyboard report: {:?}", e)
                 }
                 Ok(_) => {
                     // do nothing
+                    // can read report from host to eg turn on caps lock led
                 }
+            }
+        }
+
+        // consumer reporting
+        //write report every consumer_poll
+        if consumer_poll.wait().is_ok() {
+            let codes = get_consumer(pressed_keys);
+            let consumer_report = MultipleConsumerReport {
+                codes: [
+                    codes[0],
+                    codes[1],
+                    Consumer::Unassigned,
+                    Consumer::Unassigned,
+                ],
+            };
+
+            if last_consumer_report != consumer_report {
+                let consumer = composite.interface::<ConsumerControlInterface<'_, _>, _>();
+                match consumer.write_report(&consumer_report) {
+                    Err(UsbError::WouldBlock) => {}
+                    Ok(_) => {
+                        last_consumer_report = consumer_report;
+                    }
+                    Err(e) => {
+                        core::panic!("Failed to write consumer report: {:?}", e)
+                    }
+                };
             }
         }
 
@@ -267,8 +310,33 @@ fn main() -> ! {
     }
 }
 
-// 64 keys excluding fn key - 65th key is volume
-fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
+// consumer controls
+fn get_consumer(keys: [[i32; 14]; 5]) -> [Consumer; 1] {
+    [
+        // rotary encoder pushed
+        if keys[1][13] == 1 {
+            // pushed and rotated
+            if keys[4][4] == 1 {
+                Consumer::ScanNextTrack
+            } else if keys[4][4] == -1 {
+                Consumer::ScanPreviousTrack
+            } else {
+                // normal push
+                Consumer::PlayPause
+            }
+        // rotary encoder not pushed
+        } else if keys[4][4] == 1 {
+            Consumer::VolumeIncrement
+        } else if keys[4][4] == -1 {
+            Consumer::VolumeDecrement
+        } else {
+            Consumer::Unassigned
+        },
+    ]
+}
+
+// 63 keys excluding fn key and consumer
+fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
             Keyboard::Escape
@@ -405,11 +473,6 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
         } else {
             Keyboard::NoEventIndicated
         },
-        if keys[1][13] == 1 {
-            Keyboard::Pause
-        } else {
-            Keyboard::NoEventIndicated
-        },
         if keys[2][0] == 1 {
             Keyboard::CapsLock
         } else {
@@ -590,18 +653,11 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
         } else {
             Keyboard::NoEventIndicated
         },
-        if keys[4][4] == 1 {
-            Keyboard::VolumeUp
-        } else if keys[4][4] == -1 {
-            Keyboard::VolumeDown
-        } else {
-            Keyboard::NoEventIndicated
-        },
     ]
 }
 
-// 64 keys excluding fn key - 65th key is volume
-fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
+// 63 keys excluding fn key and consumer
+fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
             Keyboard::Escape
@@ -738,11 +794,6 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
         } else {
             Keyboard::NoEventIndicated
         },
-        if keys[1][13] == 1 {
-            Keyboard::Pause
-        } else {
-            Keyboard::NoEventIndicated
-        },
         if keys[2][0] == 1 {
             Keyboard::CapsLock
         } else {
@@ -923,16 +974,8 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 65] {
         } else {
             Keyboard::NoEventIndicated
         },
-        if keys[4][4] == 1 {
-            Keyboard::VolumeUp
-        } else if keys[4][4] == -1 {
-            Keyboard::VolumeDown
-        } else {
-            Keyboard::NoEventIndicated
-        },
     ]
 }
 
 // todo usb over bluetooth?
 // todo still need to check keycodes for certain keys or add to them - might need to fork and add the rest from usbd-human-interface-device
-// todo add consumer device to code so we can have vol up/down/play/pause
