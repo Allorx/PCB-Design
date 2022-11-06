@@ -226,7 +226,7 @@ fn main() -> ! {
             let consumer_report = MultipleConsumerReport {
                 codes: [
                     codes[0],
-                    codes[1],
+                    Consumer::Unassigned,
                     Consumer::Unassigned,
                     Consumer::Unassigned,
                 ],
