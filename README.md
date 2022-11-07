@@ -8,3 +8,5 @@ Contains a custom mechanical keyboard PCB design (keyboard-pcb) and firmware (ke
 ## Key Features:
 * NKRO support over USB using a RP Pico and Rust
 * Custom layout with pushable rotary encoder (vol +/- and pause)
+
+NOTE: Rotary encoder schematic is wrong - should be flipped the other way around
