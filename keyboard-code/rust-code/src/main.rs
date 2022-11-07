@@ -77,7 +77,7 @@ fn main() -> ! {
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x0001))
         .manufacturer("Orions Hands")
         .product("Orions Hands")
-        .serial_number("291020221639") // using date + time
+        .serial_number("071120221818") // using date + time
         .max_packet_size_0(32) // ? good packet size - seems okay!
         .build();
 
@@ -151,7 +151,7 @@ fn main() -> ! {
 
     // usb polling rate countdown
     let mut input_count_down = timer.count_down();
-    input_count_down.start(1.millis()); // todo good polling time?
+    input_count_down.start(1.millis());
 
     let mut tick_count_down = timer.count_down();
     tick_count_down.start(1.millis());
@@ -978,4 +978,4 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
 }
 
 // todo usb over bluetooth?
-// todo still need to check keycodes for certain keys or add to them - might need to fork and add the rest from usbd-human-interface-device
+// ? no debounce logic - but seems like it isn't needed? the key matrix loop is separate from the reporting so keys look like they have enough time to settle before a report is sent
