@@ -112,19 +112,19 @@ fn main() -> ! {
         col0, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13,
     ];
     // rotary encoder
-    let rot_clk = &pins.gpio0.into_pull_up_input();
-    let rot_dt = &pins.gpio1.into_pull_up_input();
+    let rot_a = &pins.gpio0.into_pull_up_input();
+    let rot_b = &pins.gpio1.into_pull_up_input();
     let mut rot_last_state = [0, 0];
     let mut rot_current_state = [0, 0];
     // set rot_last_state
     col_pins[13].into_push_pull_output();
     col_pins[13].set_low().ok();
-    if rot_clk.is_low().unwrap() {
+    if rot_a.is_low().unwrap() {
         rot_last_state[0] = 1;
     } else {
         rot_last_state[0] = 0;
     }
-    if rot_dt.is_low().unwrap() {
+    if rot_b.is_low().unwrap() {
         rot_last_state[1] = 1;
     } else {
         rot_last_state[1] = 0;
@@ -144,6 +144,16 @@ fn main() -> ! {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
+    // key debounce flip flop
+    let mut debounce_keys: [[i32; 14]; 5] = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ];
+    // debounce iterations until press is confirmed
+    let confirmed_press = 4;
 
     // key polling rate countdown
     //let mut key_input_count_down = timer.count_down();
@@ -252,24 +262,38 @@ fn main() -> ! {
             // ? set wait till next loop or pio
             col_pins[i].into_push_pull_output();
             col_pins[i].set_low().ok();
-            // read the value and set the pressed_keys value if read
+            // read the value and set the pressed_keys value if read and confirmed_press
             for j in 0..5 {
                 if row_pins[j].is_low().unwrap() {
-                    pressed_keys[j][i] = 1;
+                    if debounce_keys[j][i] > confirmed_press{
+                        pressed_keys[j][i] = 1;
+                        // reset debounce
+                        debounce_keys[j][i] = 0;
+                    } else {
+                        // increment debounce
+                        debounce_keys[j][i] += 1;
+                    }
                 } else {
-                    pressed_keys[j][i] = 0;
+                    if debounce_keys[j][i] < -confirmed_press{
+                        pressed_keys[j][i] = 0;
+                        // reset debounce
+                        debounce_keys[j][i] = 0;
+                    } else {
+                        // decrement debounce
+                        debounce_keys[j][i] -= 1;
+                    }
                 }
             }
             // for rotary encoder check if at col13
             if i == 13 {
                 //poll the rotary encoder
-                // read values clk and dt and compare to last state
-                if rot_clk.is_low().unwrap() {
+                // read values_a and b and compare to last state
+                if rot_a.is_low().unwrap() {
                     rot_current_state[0] = 1;
                 } else {
                     rot_current_state[0] = 0;
                 }
-                if rot_dt.is_low().unwrap() {
+                if rot_b.is_low().unwrap() {
                     rot_current_state[1] = 1;
                 } else {
                     rot_current_state[1] = 0;
