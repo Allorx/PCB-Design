@@ -15,7 +15,7 @@ Contains a custom mechanical keyboard PCB design (keyboard-pcb) and firmware (ke
 
 2) The rp pico usb micro-b connector is inaccesible after soldering - this is because the intention is to solder a connection for usb-c on the back of the rp pico as demonstrated here: [usb-c mod for rp pico](https://www.reddit.com/r/raspberry_pi/comments/m8p2ed/usb_type_c_mod_for_pico/). The connector can then be case mounted for more freedom of positioning. The PCB has a cutout to make these pads easily accessible. Alternative 4 wire connectors may also be used. If you would like to put the connector on the back of the keyboard it may be convenient to have a hole in the pcb for connector wires to go to the back rather than over the side of the pcb.
 
-3) I would also recommend soldering the rp pico and usb connections first so you can test the key matrix while soldering diodes and switches (ie to check if the diodes are the right way round).
+3) I would also recommend soldering the rp pico and usb connections first (and adding the firmware) so you can test the key matrix while soldering diodes and switches (ie to check if the diodes are the right way round).
 
 ## Inspiration and key resources
 * [How keyboard switch matrix works](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard works
