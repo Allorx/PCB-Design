@@ -10,4 +10,4 @@ Contains a custom mechanical keyboard PCB design (keyboard-pcb) and firmware (ke
 * Custom layout with pushable rotary encoder (vol +/- and pause)
 
 ## IMPORTANT!
-NOTE: Rotary encoder schematic and pcb is wired wrong - should be flipped the other way around (may update this in future but a workaround by rewiring is required atm). I misunderstood the wiring of the rotary encoders so please check diagrams to wire this component correctly.
+NOTE: The schematic and pcb is wired wrong for the rotary encoder - should be flipped the other way around (may update this in future but a workaround by rewiring is required atm). I misunderstood the wiring of the rotary encoders so please check diagrams to wire this component correctly.
