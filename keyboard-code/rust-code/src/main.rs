@@ -996,5 +996,5 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     ]
 }
 
-// todo usb over bluetooth?
+// todo usb over bluetooth? - an external bluetooth controller can be used to intercept usb and send signal to host
 // ? pio could be very good for polling keys but unnecessary - there is more than enough headroom and speed currently - pio could be used for future features
