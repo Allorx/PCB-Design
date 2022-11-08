@@ -20,6 +20,6 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 ## Inspiration and key resources
 * [How keyboard switch matrix works](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard works
 * [Keyboard layout editor](http://www.keyboard-layout-editor.com/) - useful for figuring out your layout
-* [How to make a simple keyboard PCB in KiCAD](https://wiki.ai03.com/books/pcb-design/page/pcb-guide-part-1---preparations) - good for general guidance and set up
+* [How to make a simple keyboard PCB in KiCAD](https://wiki.ai03.com/books/pcb-design/page/pcb-guide-part-1---preparations) - good for general guidance and set up for making Keyboard PCB's in KiCAD
 * [Rust crate for rp-pico usb hid devices](https://github.com/dlkj/usbd-human-interface-device) - great crate for usb hid
 * For better understanding of how it comes together I would also recommend reading: some documentation on the rp pico; about usb hid protocols; about mechanical switch debounce; about n-key roll over (NKRO) for usb hid keyboards; about pushable rotary encoders.
