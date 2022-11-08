@@ -9,5 +9,5 @@ Contains a custom mechanical keyboard PCB design (keyboard-pcb) and firmware (ke
 * NKRO support over USB using a RP Pico and Rust
 * Custom layout with pushable rotary encoder (vol +/- and pause)
 
-## Important!
-NOTE: Rotary encoder schematic and pcb is wrong - should be flipped the other way around and rewired (may update this in future but a workaround is required atm)
+## IMPORTANT!
+NOTE: Rotary encoder schematic and pcb is wired wrong - should be flipped the other way around (may update this in future but a workaround by rewiring is required atm). I misunderstood the wiring of the rotary encoders so please check diagrams to wire this component correctly.
