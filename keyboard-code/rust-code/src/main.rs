@@ -153,7 +153,7 @@ fn main() -> ! {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
     // debounce iterations until press or release is confirmed
-    let confirmed_press = 4;
+    let confirmed_press = 4; // ? enough iterations - will probably find out over time
 
     // key polling rate countdown
     //let mut key_input_count_down = timer.count_down();
