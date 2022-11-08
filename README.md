@@ -9,7 +9,7 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 * NKRO support over USB using a RP Pico and Rust
 * Custom layout with pushable rotary encoder consumer controls (vol +/-, pause, next/prev track)
 * Highly customisable no-compromises design
-* With some understanding of the project many more features can be added e.g. bluetooth, oled/e-paper screen, leds
+* With some understanding of the project many more features can be added e.g. bluetooth, oled/e-paper screen, leds (edit to your hearts content)
 
 ## IMPORTANT!
 1) The schematic and pcb is wired wrong for the rotary encoder - should be flipped the other way around (may update this in future but a workaround by rewiring is required atm). I misunderstood the wiring of the rotary encoders (or used a rotary encoder diagram that is not common) so please check diagrams to wire this component correctly (edit schematic and pcb).
