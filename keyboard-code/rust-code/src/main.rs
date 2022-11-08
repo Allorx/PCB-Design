@@ -161,7 +161,7 @@ fn main() -> ! {
 
     let mut tick_count_down = timer.count_down();
     tick_count_down.start(1.millis());
-
+    // consumer polling can be less frequent and speed is not so important - for efficiency and so resources arent taken away from key polling/reporting
     let mut consumer_poll = timer.count_down();
     consumer_poll.start(100.millis());
     let mut last_consumer_report = MultipleConsumerReport::default();
@@ -171,7 +171,7 @@ fn main() -> ! {
         //write report every input_count_down
         if input_count_down.wait().is_ok() {
             let keyboard = composite.interface::<NKROBootKeyboardInterface<'_, _>, _>();
-            // 2 separate functions for fn key and normal, more memory intensive but less cpu
+            // 2 separate functions for fn key and normal, more memory intensive but less cpu?
             if pressed_keys[4][10] == 1 {
                 // fn key pressed
                 let keys = get_fnkeys(pressed_keys);
@@ -255,7 +255,6 @@ fn main() -> ! {
         //poll the keys
         // send signal for this col;
         for i in 0..14 {
-            // ? set wait till next loop or pio
             col_pins[i].into_push_pull_output();
             col_pins[i].set_low().ok();
             // read the value and set the pressed_keys value if read and confirmed_press
@@ -283,7 +282,7 @@ fn main() -> ! {
             // for rotary encoder check if at col13
             if i == 13 {
                 //poll the rotary encoder
-                // read values_a and b and compare to last state
+                // read values a and b and compare to last state
                 if rot_a.is_low().unwrap() {
                     rot_current_state[0] = 1;
                 } else {
@@ -998,4 +997,4 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
 }
 
 // todo usb over bluetooth?
-// ? no debounce logic - but seems like it isn't needed? the key matrix loop is separate from the reporting so keys look like they have enough time to settle before a report is sent
+// ? pio could be very good for polling keys but unnecessary - there is more than enough headroom and speed currently - pio could be used for future features
