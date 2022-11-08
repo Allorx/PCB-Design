@@ -18,7 +18,7 @@ Contains a custom mechanical keyboard PCB design (keyboard-pcb) and firmware (ke
 3) I would also recommend soldering the rp pico and usb connections first so you can test the key matrix as the diodes and switches are soldered (ie to check if the diodes are the right way round).
 
 ## Inspiration and key resources
-* [How keyboard switch matrix works](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding
+* [How keyboard switch matrix works](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard works
 * [Keyboard layout editor](http://www.keyboard-layout-editor.com/) - useful for figuring out your layout
 * [How to make a simple keyboard PCB in KiCAD](https://wiki.ai03.com/books/pcb-design/page/pcb-guide-part-1---preparations) - good for general guidance and set up
 * [Rust crate for rp-pico usb hid devices](https://github.com/dlkj/usbd-human-interface-device) - great crate for usb hid
