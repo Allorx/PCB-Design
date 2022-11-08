@@ -22,3 +22,4 @@ Contains a custom mechanical keyboard PCB design (keyboard-pcb) and firmware (ke
 * [Keyboard layout editor](http://www.keyboard-layout-editor.com/) - useful for figuring out your layout
 * [How to make a simple keyboard PCB in KiCAD](https://wiki.ai03.com/books/pcb-design/page/pcb-guide-part-1---preparations) - good for general guidance and set up
 * [Rust crate for rp-pico usb hid devices](https://github.com/dlkj/usbd-human-interface-device) - great crate for usb hid
+* I would also recommend reading some documentation on the rp-pico and hid protocols for better understanding of how it comes together.
