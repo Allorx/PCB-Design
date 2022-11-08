@@ -19,7 +19,7 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 3) I would also recommend soldering the rp pico and usb connections first (and adding the firmware) so you can test the key matrix while soldering diodes and switches (i.e. to check if the diodes are the right way round).
 
 ## Inspiration and key resources:
-* [How keyboard switch matrix works](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard works
+* [The Switch Matrix - PCB Design for Mechanical Keyboards](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard matrix works
 * [Keyboard layout editor](http://www.keyboard-layout-editor.com/) - useful for figuring out your layout
 * [Keyboard PCB Design Guide](https://wiki.ai03.com/books/pcb-design/page/pcb-guide-part-1---preparations) - good for general guidance and set up for making keyboard PCB's in KiCAD - note: this is for a macropad, not for a key matrix; this guide uses a bare bones mcu not a development board; the latest version of KiCAD is best to use contrary to the guide (it has improved a lot) -> despite the issues it is very good for general understanding, required schematics/footprints for keyboards and tips/tricks in KiCAD 
 * [KiCAD RP Pico](https://github.com/ncarandini/KiCad-RP-Pico) - a great resource for the schematic, footprints and 3D model of the rp pico for use in KiCAD
