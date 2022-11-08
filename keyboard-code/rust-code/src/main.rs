@@ -152,7 +152,7 @@ fn main() -> ! {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
-    // debounce iterations until press is confirmed
+    // debounce iterations until press or release is confirmed
     let confirmed_press = 4;
 
     // key polling rate countdown
