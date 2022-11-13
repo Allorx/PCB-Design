@@ -111,28 +111,15 @@ fn main() -> ! {
     let mut col_pins = [
         col0, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11, col12, col13,
     ];
-    // rotary encoder
-    let rot_a = &pins.gpio0.into_pull_up_input();
-    let rot_b = &pins.gpio1.into_pull_up_input();
-    let mut rot_last_state = [0, 0];
-    let mut rot_current_state = [0, 0];
-    // set rot_last_state
-    col_pins[13].into_push_pull_output();
-    col_pins[13].set_low().ok();
-    if rot_a.is_low().unwrap() {
-        rot_last_state[0] = 1;
-    } else {
-        rot_last_state[0] = 0;
-    }
-    if rot_b.is_low().unwrap() {
-        rot_last_state[1] = 1;
-    } else {
-        rot_last_state[1] = 0;
-    }
     // set default state of col pins to input
     for i in 0..14 {
         col_pins[i].into_pull_up_input();
     }
+
+    // rotary encoder
+    let rot_a = &pins.gpio0.into_pull_up_input();
+    let rot_b = &pins.gpio1.into_pull_up_input();
+    let mut rot_a_last_state = rot_a.is_low().unwrap();
 
     // key state - 1 is pressed, 0 is released
     // also uses spare indices for rotary encoder -1 is rotated anticlockwise, 1 is rotated clockwise, 0 is released
@@ -153,7 +140,7 @@ fn main() -> ! {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
     // debounce iterations until press or release is confirmed
-    let confirmed_press = 4; // ? enough iterations - will probably find out over time
+    let confirmed_press = 4; // ? enough iterations - will probably find out over time - looks good!
 
     // usb polling rate countdown
     let mut input_count_down = timer.count_down();
@@ -260,7 +247,7 @@ fn main() -> ! {
             // read the value and set the pressed_keys value if read and confirmed_press
             for j in 0..5 {
                 if row_pins[j].is_low().unwrap() {
-                    if debounce_keys[j][i] > confirmed_press{
+                    if debounce_keys[j][i] > confirmed_press {
                         pressed_keys[j][i] = 1;
                         // reset debounce
                         debounce_keys[j][i] = 0;
@@ -269,7 +256,7 @@ fn main() -> ! {
                         debounce_keys[j][i] += 1;
                     }
                 } else {
-                    if debounce_keys[j][i] < -confirmed_press{
+                    if debounce_keys[j][i] < -confirmed_press {
                         pressed_keys[j][i] = 0;
                         // reset debounce
                         debounce_keys[j][i] = 0;
@@ -279,52 +266,25 @@ fn main() -> ! {
                     }
                 }
             }
-            // for rotary encoder check if at col13
-            if i == 13 {
-                //poll the rotary encoder
-                // read values a and b and compare to last state
-                if rot_a.is_low().unwrap() {
-                    rot_current_state[0] = 1;
-                } else {
-                    rot_current_state[0] = 0;
-                }
-                if rot_b.is_low().unwrap() {
-                    rot_current_state[1] = 1;
-                } else {
-                    rot_current_state[1] = 0;
-                }
-                // compare current to last state and assign to an unused pressed_keys
-                if (rot_last_state[0] == 0
-                    && rot_last_state[1] == 0
-                    && rot_current_state[0] == 1
-                    && rot_current_state[1] == 0)
-                    || (rot_last_state[0] == 1
-                        && rot_last_state[1] == 1
-                        && rot_current_state[0] == 0
-                        && rot_current_state[1] == 1)
-                {
-                    // clockwise
-                    pressed_keys[4][4] = 1;
-                } else if (rot_last_state[0] == 0
-                    && rot_last_state[1] == 0
-                    && rot_current_state[0] == 0
-                    && rot_current_state[1] == 1)
-                    || (rot_last_state[0] == 1
-                        && rot_last_state[1] == 1
-                        && rot_current_state[0] == 1
-                        && rot_current_state[1] == 0)
-                {
-                    // anticlockwise
-                    pressed_keys[4][4] = -1;
-                } else {
-                    // nothing
-                    pressed_keys[4][4] = 0;
-                }
-                // setup for next
-                rot_last_state = rot_current_state;
-            }
             // then disable
             col_pins[i].into_pull_up_input();
+        }
+
+        //poll the rotary encoder
+        // read values a and b and compare to last state and assign to an unused pressed_keys
+        if rot_a.is_low().unwrap() != rot_a_last_state {
+            if rot_b.is_low().unwrap() {
+                // clockwise
+                pressed_keys[4][4] = 1;
+            } else {
+                // anticlockwise
+                pressed_keys[4][4] = -1;
+            }
+            // setup for next
+            rot_a_last_state = rot_a.is_low().unwrap();
+        } else {
+            // nothing
+            pressed_keys[4][4] = 0;
         }
     }
 }
