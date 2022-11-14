@@ -217,7 +217,12 @@ fn main() -> ! {
         // consumer reporting
         //write report every consumer_poll
         if consumer_poll.wait().is_ok() {
-            let codes = get_consumer(pressed_keys, rot_rotation_dir, rot_was_pressed, rot_can_push);
+            let codes = get_consumer(
+                pressed_keys,
+                rot_rotation_dir,
+                rot_was_pressed,
+                rot_can_push,
+            );
             let consumer_report = MultipleConsumerReport {
                 codes: [
                     codes[0],
@@ -299,7 +304,7 @@ fn main() -> ! {
             // setup for next
             rot_a_last_state = rot_a.is_low().unwrap();
             // reset rot can push
-            if !rot_was_pressed && !rot_can_push{
+            if !rot_was_pressed && !rot_can_push {
                 rot_can_push = true;
             }
         }
@@ -307,23 +312,26 @@ fn main() -> ! {
 }
 
 // consumer controls
-fn get_consumer(keys: [[i32; 14]; 5], rot_dir: i32, rot_released: bool, rot_can_push: bool) -> [Consumer; 1] {
-    [
-        if keys[1][13] == 0 && rot_released && rot_can_push {
-            // rotary encoder has been released and was pressed
-            Consumer::PlayPause
-        } else if keys[1][13] == 1 && rot_dir == 1 {
-            Consumer::ScanNextTrack
-        } else if keys[1][13] == 1 && rot_dir == -1 {
-            Consumer::ScanPreviousTrack
-        } else if rot_dir == 1 {
-            Consumer::VolumeIncrement
-        } else if rot_dir == -1 {
-            Consumer::VolumeDecrement
-        } else {
-            Consumer::Unassigned
-        },
-    ]
+fn get_consumer(
+    keys: [[i32; 14]; 5],
+    rot_dir: i32,
+    rot_released: bool,
+    rot_can_push: bool,
+) -> [Consumer; 1] {
+    [if keys[1][13] == 0 && rot_released && rot_can_push {
+        // rotary encoder has been released and was pressed
+        Consumer::PlayPause
+    } else if keys[1][13] == 1 && rot_dir == 1 {
+        Consumer::ScanNextTrack
+    } else if keys[1][13] == 1 && rot_dir == -1 {
+        Consumer::ScanPreviousTrack
+    } else if rot_dir == 1 {
+        Consumer::VolumeIncrement
+    } else if rot_dir == -1 {
+        Consumer::VolumeDecrement
+    } else {
+        Consumer::Unassigned
+    }]
 }
 
 // 63 keys excluding fn key and consumer
