@@ -1,5 +1,5 @@
 # PCB-Design
-Keyboard design project -> "Orions Shoes"
+Keyboard design project "Orions Hands"
 
 Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware ("keyboard-code/rust-code").
 
