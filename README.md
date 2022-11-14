@@ -12,7 +12,7 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 * With some understanding of the project many more features can be added e.g. external bluetooth, oled/e-paper screen, leds (edit to your hearts content)
 
 ## IMPORTANT!
-1) The schematic and pcb is wired wrong for the rotary encoder - should be flipped the other way around (may update this in future but a workaround by rewiring is required atm). I misunderstood the wiring of the rotary encoders so please check diagrams to wire this component correctly (edit schematic and pcb).
+1) The schematic and pcb is wired wrong for the rotary encoder - should be flipped the other way around (may update this in future but a workaround by rewiring is required atm). I misunderstood the wiring of the rotary encoders so please check diagrams to wire this component correctly (edit schematic and pcb). (Alternatively rewire manually like I did :D)
 
 2) The rp pico usb micro-b connector is only slightly accessible after soldering - this is because the intention is to extend the connector, using usb-c or an alternative 4 wire connector, away from the controller. The connector can then be case mounted for more freedom of positioning. This extension of the connector can be done in 2 ways:
     * slightly more fiddly way (my solution), plugging in a stripped usb micro-b cable into the controller -> the other end can then be connected to a usb-c breakout board or alternative 4 pin connector (the rotary encoders clips may have to be clipped to give some more room). The wires end up on the bottom of keyboard.
