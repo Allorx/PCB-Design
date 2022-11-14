@@ -150,9 +150,9 @@ fn main() -> ! {
 
     let mut tick_count_down = timer.count_down();
     tick_count_down.start(1.millis());
-    // consumer polling can be less frequent as speed is not so important - for efficiency and so resources arent taken away from key polling/reporting
+    // consumer polling rate countdown
     let mut consumer_poll = timer.count_down();
-    consumer_poll.start(5.millis());
+    consumer_poll.start(1.millis());
     let mut last_consumer_report = MultipleConsumerReport::default();
 
     loop {
