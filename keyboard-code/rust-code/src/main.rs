@@ -120,6 +120,8 @@ fn main() -> ! {
     let rot_a = &pins.gpio0.into_pull_up_input();
     let rot_b = &pins.gpio1.into_pull_up_input();
     let mut rot_a_last_state = rot_a.is_low().unwrap();
+    let mut rot_was_pressed = false;
+    let mut rot_rotation_dir: i32 = 0;
 
     // key state - 1 is pressed, 0 is released
     // also uses spare indices for rotary encoder -1 is rotated anticlockwise, 1 is rotated clockwise, 0 is released
@@ -140,7 +142,7 @@ fn main() -> ! {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
     // debounce iterations until press or release is confirmed
-    let confirmed_press = 4; // ? enough iterations - will probably find out over time - looks good!
+    let confirmed_press = 4; // ? enough iterations - will probably find out over time - looks good so far!
 
     // usb polling rate countdown
     let mut input_count_down = timer.count_down();
@@ -148,9 +150,9 @@ fn main() -> ! {
 
     let mut tick_count_down = timer.count_down();
     tick_count_down.start(1.millis());
-    // consumer polling can be less frequent and speed is not so important - for efficiency and so resources arent taken away from key polling/reporting
+    // consumer polling can be less frequent as speed is not so important - for efficiency and so resources arent taken away from key polling/reporting
     let mut consumer_poll = timer.count_down();
-    consumer_poll.start(100.millis());
+    consumer_poll.start(5.millis());
     let mut last_consumer_report = MultipleConsumerReport::default();
 
     loop {
@@ -215,7 +217,7 @@ fn main() -> ! {
         // consumer reporting
         //write report every consumer_poll
         if consumer_poll.wait().is_ok() {
-            let codes = get_consumer(pressed_keys);
+            let codes = get_consumer(pressed_keys, rot_rotation_dir, rot_was_pressed);
             let consumer_report = MultipleConsumerReport {
                 codes: [
                     codes[0],
@@ -236,7 +238,10 @@ fn main() -> ! {
                         core::panic!("Failed to write consumer report: {:?}", e)
                     }
                 };
-            }
+            };
+            // reset rotary encoder states
+            rot_was_pressed = false;
+            rot_rotation_dir = 0;
         }
 
         //poll the keys
@@ -270,43 +275,47 @@ fn main() -> ! {
             col_pins[i].into_pull_up_input();
         }
 
+        // check if play/pause key has been pressed and set that it was pressed
+        if pressed_keys[1][13] == 1 && !rot_was_pressed {
+            rot_was_pressed = true;
+        }
+
         //poll the rotary encoder
         // read values a and b and compare to last state and assign to an unused pressed_keys
         if rot_a.is_low().unwrap() != rot_a_last_state {
-            if rot_b.is_low().unwrap() {
-                // clockwise
-                pressed_keys[4][4] = 1;
-            } else {
-                // anticlockwise
-                pressed_keys[4][4] = -1;
+            if rot_a.is_low().unwrap() {
+                if rot_b.is_low().unwrap() {
+                    // clockwise
+                    rot_rotation_dir = 1;
+                } else {
+                    // anticlockwise
+                    rot_rotation_dir = -1;
+                }
             }
             // setup for next
             rot_a_last_state = rot_a.is_low().unwrap();
-        } else {
-            // nothing
-            pressed_keys[4][4] = 0;
         }
     }
 }
 
 // consumer controls
-fn get_consumer(keys: [[i32; 14]; 5]) -> [Consumer; 1] {
+fn get_consumer(keys: [[i32; 14]; 5], rot_dir: i32, rot_released: bool) -> [Consumer; 1] {
     [
-        // rotary encoder pushed
-        if keys[1][13] == 1 {
-            // pushed and rotated
-            if keys[4][4] == 1 {
-                Consumer::ScanNextTrack
-            } else if keys[4][4] == -1 {
-                Consumer::ScanPreviousTrack
-            } else {
-                // normal push
-                Consumer::PlayPause
-            }
-        // rotary encoder not pushed
-        } else if keys[4][4] == 1 {
+        // rotary encoder has been released
+        if keys[1][13] == 0 && rot_released {
+            Consumer::PlayPause
+            //// pushed and rotated
+            //if keys[4][4] == 1 {
+            //    Consumer::ScanNextTrack
+            //} else if keys[4][4] == -1 {
+            //    Consumer::ScanPreviousTrack
+            //} else {
+            // normal push
+            //Consumer::PlayPause
+            //}
+        } else if rot_dir == 1 {
             Consumer::VolumeIncrement
-        } else if keys[4][4] == -1 {
+        } else if rot_dir == -1 {
             Consumer::VolumeDecrement
         } else {
             Consumer::Unassigned
