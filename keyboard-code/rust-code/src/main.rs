@@ -77,7 +77,7 @@ fn main() -> ! {
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x0001))
         .manufacturer("Orions Hands")
         .product("Orions Hands")
-        .serial_number("071120221818") // using date + time
+        .serial_number("071120221818") // using date + time (ddmmyyyyhhmm)
         .max_packet_size_0(32) // ? good packet size - seems okay!
         .build();
 
@@ -92,7 +92,7 @@ fn main() -> ! {
     ];
 
     // cols
-    // so we can cycle through each column to check rows first turn them into dynpins then put in array
+    // so we can cycle through each column to check rows, first turn them into dynpins then put in array
     let col0: DynPin = pins.gpio13.into();
     let col1: DynPin = pins.gpio14.into();
     let col2: DynPin = pins.gpio15.into();
@@ -226,7 +226,7 @@ fn main() -> ! {
             let consumer_report = MultipleConsumerReport {
                 codes: [
                     codes[0],
-                    Consumer::Unassigned,
+                    Consumer::Unassigned, // can send more consumer codes with codes[1], codes[2], codes[3]
                     Consumer::Unassigned,
                     Consumer::Unassigned,
                 ],
@@ -286,18 +286,20 @@ fn main() -> ! {
         }
 
         //poll the rotary encoder
-        // read values a and b and compare to last state and assign to an unused pressed_keys
+        // read values a and b and compare to last state and assign to rot_rotation_dir
         if rot_a.is_low().unwrap() != rot_a_last_state {
             if rot_a.is_low().unwrap() {
                 if rot_b.is_low().unwrap() {
                     // clockwise
                     rot_rotation_dir = 1;
-                    // disable push
+                    // disable push - play/pause will not activate if the encoder has also been rotated before its release
+                    // so we can have alternate pushed and rotated functionality without also activating play/pause after release.
                     rot_can_push = false;
                 } else {
                     // anticlockwise
                     rot_rotation_dir = -1;
-                    // disable push
+                    // disable push - play/pause will not activate if the encoder has also been rotated before its release
+                    // so we can have alternate pushed and rotated functionality without also activating play/pause after release.
                     rot_can_push = false;
                 }
             }
@@ -319,22 +321,26 @@ fn get_consumer(
     rot_can_push: bool,
 ) -> [Consumer; 1] {
     [if keys[1][13] == 0 && rot_released && rot_can_push {
-        // rotary encoder has been released and was pressed
+        // rotary encoder has been released and was pressed and can be pushed (hasn't also been rotated)
         Consumer::PlayPause
     } else if keys[1][13] == 1 && rot_dir == 1 {
+        // pushed and rotated
         Consumer::ScanNextTrack
     } else if keys[1][13] == 1 && rot_dir == -1 {
+        // pushed and rotated
         Consumer::ScanPreviousTrack
     } else if rot_dir == 1 {
+        // only rotated
         Consumer::VolumeIncrement
     } else if rot_dir == -1 {
+        // only rotated
         Consumer::VolumeDecrement
     } else {
         Consumer::Unassigned
     }]
 }
 
-// 63 keys excluding fn key and consumer
+// 63 keys excluding fn key and consumer - normal layer
 fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
@@ -655,7 +661,7 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     ]
 }
 
-// 63 keys excluding fn key and consumer
+// 63 keys excluding fn key and consumer - fn layer
 fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
