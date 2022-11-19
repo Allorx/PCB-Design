@@ -20,6 +20,8 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 
 3) I would also recommend soldering the rp pico and usb connections first (and adding the firmware) so you can test the key matrix while soldering diodes and switches (i.e. to check if the diodes are the right way round).
 
+4) Some keycaps are not standard sizes: caps lock is stepped; backspace, enter and '#/~' keys are 0.25u shorter than standard - these desicions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. 
+
 ## Inspiration and key resources:
 * [The Switch Matrix - PCB Design for Mechanical Keyboards](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard matrix works
 * [Keyboard layout editor](http://www.keyboard-layout-editor.com/) - useful for figuring out your layout
