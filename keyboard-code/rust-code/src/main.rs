@@ -544,7 +544,7 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
             Keyboard::NoEventIndicated
         },
         if keys[2][13] == 1 {
-            Keyboard::DeleteForward
+            Keyboard::NonUSHash
         } else {
             Keyboard::NoEventIndicated
         },
@@ -609,7 +609,7 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
             Keyboard::NoEventIndicated
         },
         if keys[3][12] == 1 {
-            Keyboard::NonUSHash
+            Keyboard::RightShift
         } else {
             Keyboard::NoEventIndicated
         },
@@ -730,7 +730,7 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
             Keyboard::NoEventIndicated
         },
         if keys[0][13] == 1 {
-            Keyboard::DeleteBackspace
+            Keyboard::DeleteForward
         } else {
             Keyboard::NoEventIndicated
         },
