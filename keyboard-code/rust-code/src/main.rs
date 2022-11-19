@@ -74,10 +74,10 @@ fn main() -> ! {
         .build(&usb_bus);
 
     //https://pid.codes
-    let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x0001))
-        .manufacturer("Orions Hands")
+    let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x0001)) //0x6E6E
+        .manufacturer("Allorx")
         .product("Orions Hands")
-        .serial_number("071120221818") // using date + time (ddmmyyyyhhmm)
+        .serial_number("191120221534") // using date + time (ddmmyyyyhhmm)
         .max_packet_size_0(32) // ? good packet size - seems okay!
         .build();
 
@@ -665,7 +665,7 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
 fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
-            Keyboard::Escape
+            Keyboard::Grave
         } else {
             Keyboard::NoEventIndicated
         },
@@ -983,4 +983,6 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
 }
 
 // todo usb over bluetooth? - an external bluetooth controller can be used to intercept usb and send signal to host
+// todo get_fnconsumer? - can then have extra controls like mute
+
 // ? pio could be very good for polling keys but unnecessary - there is more than enough headroom and speed currently - pio could be used for future features
