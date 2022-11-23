@@ -988,3 +988,4 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
 // ? pio could be very good for polling keys but unnecessary - there is more than enough headroom and speed currently - pio could be used for future features
 
 // todo when switch to darkstar systems ltd make new commit for pidcodes
+// todo make use of other core
