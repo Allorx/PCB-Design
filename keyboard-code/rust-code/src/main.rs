@@ -25,7 +25,9 @@ use usbd_human_interface_device::page::Consumer;
 use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
 
+//use rp2040_hal::gpio::DynFunction::Spi;
 use rp2040_hal::gpio::DynPin;
+//use rp2040_hal::gpio::DynPinMode::Function;
 use rp_pico as bsp;
 
 #[entry]
@@ -74,10 +76,10 @@ fn main() -> ! {
         .build(&usb_bus);
 
     //https://pid.codes
-    let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x0001)) //0x6E6E
+    let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x6E6E)) //0x0001 - testing PID
         .manufacturer("Allorx")
         .product("Orions Hands")
-        .serial_number("191120221534") // using date + time (ddmmyyyyhhmm)
+        .serial_number("251120221629") // using date + time (ddmmyyyyhhmm)
         .max_packet_size_0(32) // ? good packet size - seems okay!
         .build();
 
@@ -123,6 +125,9 @@ fn main() -> ! {
     let mut rot_was_pressed = false;
     let mut rot_can_push = true;
     let mut rot_rotation_dir: i32 = 0;
+
+    // spi
+    //let spi_sclk = col_pins[7].try_into_mode(Function(Spi)); // todo try to convert to spi after key loop to send data to peripheral then go back to previous state
 
     // key state - 1 is pressed, 0 is released
     // recording the key state should be separate from usb polling so that they can work independently
