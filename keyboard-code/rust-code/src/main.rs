@@ -126,9 +126,6 @@ fn main() -> ! {
     let mut rot_can_push = true;
     let mut rot_rotation_dir: i32 = 0;
 
-    // spi
-    //let spi_sclk = col_pins[7].try_into_mode(Function(Spi)); // todo try to convert to spi after key loop to send data to peripheral then go back to previous state
-
     // key state - 1 is pressed, 0 is released
     // recording the key state should be separate from usb polling so that they can work independently
     let mut pressed_keys: [[i32; 14]; 5] = [
@@ -987,10 +984,8 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     ]
 }
 
-// todo usb over bluetooth? - an external bluetooth controller can be used to intercept usb and send signal to host
 // todo get_fnconsumer? - can then have extra controls like mute
 
 // ? pio could be very good for polling keys but unnecessary - there is more than enough headroom and speed currently - pio could be used for future features
 
-// todo when switch to darkstar systems ltd make new commit for pidcodes
 // todo make use of other core
