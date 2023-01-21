@@ -30,10 +30,32 @@ use rp2040_hal::gpio::DynPin;
 //use rp2040_hal::gpio::DynPinMode::Function;
 use rp_pico as bsp;
 
+// ?core1 (used for external display)
+use rp2040_hal::multicore::{Multicore, Stack};
+static mut CORE1_STACK: Stack<4096> = Stack::new();
+
+fn core1_task() -> ! {
+    let mut pac = unsafe { pac::Peripherals::steal() };
+
+    let sio = hal::Sio::new(pac.SIO);
+    let pins = hal::gpio::Pins::new(
+        pac.IO_BANK0,
+        pac.PADS_BANK0,
+        sio.gpio_bank0,
+        &mut pac.RESETS,
+    );
+
+    let mut led_pin = pins.gpio25.into_push_pull_output();
+    led_pin.set_high().unwrap();
+    loop {
+    }
+}
+
+// ?core0 and entry point
 #[entry]
 fn main() -> ! {
+    // ?initialisation
     let mut pac = pac::Peripherals::take().unwrap();
-
     let mut watchdog = hal::Watchdog::new(pac.WATCHDOG);
     let clocks = hal::clocks::init_clocks_and_plls(
         bsp::XOSC_CRYSTAL_FREQ,
@@ -48,8 +70,8 @@ fn main() -> ! {
     .unwrap();
 
     let timer = hal::Timer::new(pac.TIMER, &mut pac.RESETS);
+    let mut sio = hal::Sio::new(pac.SIO);
 
-    let sio = hal::Sio::new(pac.SIO);
     let pins = hal::gpio::Pins::new(
         pac.IO_BANK0,
         pac.PADS_BANK0,
@@ -57,9 +79,15 @@ fn main() -> ! {
         &mut pac.RESETS,
     );
 
+    // ?initialise other core
+    let mut mc = Multicore::new(&mut pac.PSM, &mut pac.PPB, &mut sio.fifo);
+    let cores = mc.cores();
+    let core1 = &mut cores[1];
+    let _test = core1.spawn(unsafe { &mut CORE1_STACK.mem }, core1_task);
+
     info!("Starting");
 
-    //USB
+    // ?USB set up
     let usb_bus = UsbBusAllocator::new(hal::usb::UsbBus::new(
         pac.USBCTRL_REGS,
         pac.USBCTRL_DPRAM,
@@ -75,15 +103,15 @@ fn main() -> ! {
         .add_interface(usbd_human_interface_device::device::consumer::ConsumerControlInterface::default_config())
         .build(&usb_bus);
 
-    //https://pid.codes
+    // ?https://pid.codes
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x6E6E)) //0x0001 - testing PID
         .manufacturer("Allorx")
         .product("Orions Hands")
         .serial_number("251120221629") // using date + time (ddmmyyyyhhmm)
-        .max_packet_size_0(32) // ? good packet size - seems okay!
+        .max_packet_size_0(32)
         .build();
 
-    //GPIO pins
+    // ?GPIO pin and variable set up
     // rows
     let row_pins: &[&dyn InputPin<Error = core::convert::Infallible>] = &[
         &pins.gpio20.into_pull_up_input(),
@@ -144,7 +172,7 @@ fn main() -> ! {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
     // debounce iterations until press or release is confirmed
-    let confirmed_press = 4; // ? enough iterations - will probably find out over time - looks good so far!
+    let confirmed_press = 4;
 
     // usb polling rate countdown
     let mut input_count_down = timer.count_down();
@@ -158,8 +186,8 @@ fn main() -> ! {
     let mut last_consumer_report = MultipleConsumerReport::default();
 
     loop {
-        // keyboard reporting
-        //write report every input_count_down
+        // ?keyboard reporting
+        // write report every input_count_down
         if input_count_down.wait().is_ok() {
             let keyboard = composite.interface::<NKROBootKeyboardInterface<'_, _>, _>();
             // 2 separate functions for fn key and normal, more memory intensive but less cpu?
@@ -188,7 +216,7 @@ fn main() -> ! {
             }
         }
 
-        //tick every tick_count_down
+        // tick every tick_count_down
         if tick_count_down.wait().is_ok() {
             match composite
                 .interface::<NKROBootKeyboardInterface<'_, _>, _>()
@@ -216,8 +244,8 @@ fn main() -> ! {
             }
         }
 
-        // consumer reporting
-        //write report every consumer_poll
+        // ?consumer reporting
+        // write report every consumer_poll
         if consumer_poll.wait().is_ok() {
             let codes = get_consumer(
                 pressed_keys,
@@ -251,7 +279,7 @@ fn main() -> ! {
             rot_rotation_dir = 0;
         }
 
-        //poll the keys
+        // ?poll the keys
         // send signal for this col;
         for i in 0..14 {
             col_pins[i].into_push_pull_output();
@@ -287,7 +315,7 @@ fn main() -> ! {
             rot_was_pressed = true;
         }
 
-        //poll the rotary encoder
+        // ?poll the rotary encoder
         // read values a and b and compare to last state and assign to rot_rotation_dir
         if rot_a.is_low().unwrap() != rot_a_last_state {
             if rot_a.is_low().unwrap() {
@@ -315,7 +343,7 @@ fn main() -> ! {
     }
 }
 
-// consumer controls
+// ?consumer controls
 fn get_consumer(
     keys: [[i32; 14]; 5],
     rot_dir: i32,
@@ -342,7 +370,7 @@ fn get_consumer(
     }]
 }
 
-// 63 keys excluding fn key and consumer - normal layer
+// ?63 keys excluding fn key and consumer - normal layer
 fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
@@ -663,7 +691,7 @@ fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     ]
 }
 
-// 63 keys excluding fn key and consumer - fn layer
+// ?63 keys excluding fn key and consumer - fn layer
 fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
@@ -983,9 +1011,3 @@ fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
         },
     ]
 }
-
-// todo get_fnconsumer? - can then have extra controls like mute
-
-// ? pio could be very good for polling keys but unnecessary - there is more than enough headroom and speed currently - pio could be used for future features
-
-// todo make use of other core
