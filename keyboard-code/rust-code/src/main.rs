@@ -8,14 +8,25 @@
 
 use bsp::entry;
 use bsp::hal;
-//use bsp::hal::gpio::dynpin;
 use defmt::*;
 use defmt_rtt as _;
+use display_interface_i2c::I2CInterface;
+use embedded_graphics::{
+    pixelcolor::BinaryColor,
+    prelude::*,
+    primitives::{Circle, PrimitiveStyle},
+};
 use embedded_hal::digital::v2::*;
 use embedded_hal::prelude::*;
 use fugit::ExtU32;
+use fugit::RateExtU32;
+use hal::clocks::SystemClock;
 use hal::pac;
 use panic_probe as _;
+use rp2040_hal::gpio::DynPin;
+use rp2040_hal::i2c::I2C;
+use rp_pico as bsp;
+use ssd1309::{prelude::*, Builder};
 use usb_device::class_prelude::*;
 use usb_device::prelude::*;
 use usbd_human_interface_device::device::consumer::ConsumerControlInterface;
@@ -25,17 +36,14 @@ use usbd_human_interface_device::page::Consumer;
 use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
 
-//use rp2040_hal::gpio::DynFunction::Spi;
-use rp2040_hal::gpio::DynPin;
-//use rp2040_hal::gpio::DynPinMode::Function;
-use rp_pico as bsp;
-
 // ?core1 (used for external display)
 use rp2040_hal::multicore::{Multicore, Stack};
 static mut CORE1_STACK: Stack<4096> = Stack::new();
 
-fn core1_task() -> ! {
-    let mut pac = unsafe { pac::Peripherals::steal() };
+fn core1_task(sys_freq: &SystemClock) -> ! {
+    // ?initialisation
+    let mut pac = pac::Peripherals::take().unwrap();
+    let core = pac::CorePeripherals::take().unwrap();
 
     let sio = hal::Sio::new(pac.SIO);
     let pins = hal::gpio::Pins::new(
@@ -45,10 +53,36 @@ fn core1_task() -> ! {
         &mut pac.RESETS,
     );
 
-    let mut led_pin = pins.gpio25.into_push_pull_output();
-    led_pin.set_high().unwrap();
-    loop {
-    }
+    // configure two pins as being I2C, not GPIO
+    let sda_pin = pins.gpio26.into_mode::<hal::gpio::FunctionI2C>(); // sda = din
+    let scl_pin = pins.gpio27.into_mode::<hal::gpio::FunctionI2C>(); // scl = clk
+    let mut reset = pins.gpio28.into_push_pull_output(); // reset pin
+    let mut delay = cortex_m::delay::Delay::new(core.SYST, bsp::XOSC_CRYSTAL_FREQ); // for reset
+
+    // set up i2c and display
+    let i2c = I2C::i2c1(
+        pac.I2C1,
+        sda_pin,
+        scl_pin,
+        400.kHz(),
+        &mut pac.RESETS,
+        sys_freq,
+    );
+    let i2c_interface = I2CInterface::new(i2c, 0x3C, 0x40);
+    let mut disp: GraphicsMode<_> = Builder::new().connect(i2c_interface).into();
+    disp.reset(&mut reset, &mut delay).unwrap();
+    disp.init().unwrap();
+    disp.flush().unwrap();
+
+    // write to display
+    Circle::new(Point::new(88, 16), 16)
+        .into_styled(PrimitiveStyle::with_stroke(BinaryColor::On, 1))
+        .draw(&mut disp)
+        .unwrap();
+
+    disp.flush().unwrap();
+
+    loop {}
 }
 
 // ?core0 and entry point
@@ -83,7 +117,9 @@ fn main() -> ! {
     let mut mc = Multicore::new(&mut pac.PSM, &mut pac.PPB, &mut sio.fifo);
     let cores = mc.cores();
     let core1 = &mut cores[1];
-    let _test = core1.spawn(unsafe { &mut CORE1_STACK.mem }, core1_task);
+    let _test = core1.spawn(unsafe { &mut CORE1_STACK.mem }, move || {
+        core1_task(&clocks.system_clock)
+    });
 
     info!("Starting");
 
