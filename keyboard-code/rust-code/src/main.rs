@@ -13,13 +13,9 @@ use embedded_hal::prelude::*;
 use fugit::{ExtU32, RateExtU32};
 use hal::clocks::{Clock, SystemClock};
 use hal::pac;
-use panic_probe as _;
 use rp2040_hal::gpio::DynPin;
 use rp2040_hal::multicore::{Multicore, Stack};
 use rp_pico as bsp;
-// debug
-use defmt::*;
-use defmt_rtt as _;
 // display
 use display_interface_i2c::I2CInterface;
 use embedded_graphics::{
@@ -133,8 +129,6 @@ fn main() -> ! {
     let _test = core1.spawn(unsafe { &mut CORE1_STACK.mem }, move || {
         core1_task(&clocks.system_clock)
     });
-
-    info!("Starting");
 
     // ?USB set up
     let usb_bus = UsbBusAllocator::new(hal::usb::UsbBus::new(
