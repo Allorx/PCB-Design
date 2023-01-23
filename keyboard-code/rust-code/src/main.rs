@@ -156,7 +156,7 @@ fn main() -> ! {
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x6E6E)) //0x0001 - testing PID
         .manufacturer("Allorx")
         .product("Orions Hands")
-        .serial_number("251120221629") // using date + time (ddmmyyyyhhmm)
+        .serial_number("230120232045") // using date + time (ddmmyyyyhhmm)
         .max_packet_size_0(32)
         .build();
 
