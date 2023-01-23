@@ -9,15 +9,13 @@ authors = ["Aleksas Girenas"]
 [dependencies]
 usbd-human-interface-device = "0.3.1"
 usb-device = "0.2.9"
-packed_struct = { version = "0.10.0", default-features = false }
-frunk = { version = "0.4.0", default-features = false }
 fugit = "0.3.6"
 cortex-m = "0.7.6"
 cortex-m-rt = "0.7.1"
 embedded-hal = "0.2.7"
-embedded-time = "0.12.1"
 rp-pico = "0.5.0"
 rp2040-hal = "0.6.0"
 ssd1309 = "0.3.0"
 embedded-graphics = "0.7.1"
 display-interface-i2c = "0.4.0"
+panic-halt = "0.2.0"

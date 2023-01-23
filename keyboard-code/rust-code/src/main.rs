@@ -7,15 +7,18 @@
 #![no_main]
 
 // core
-use bsp::{entry, hal};
+use cortex_m::delay;
 use embedded_hal::digital::v2::*;
 use embedded_hal::prelude::*;
 use fugit::{ExtU32, RateExtU32};
-use hal::clocks::{Clock, SystemClock};
-use hal::pac;
+use panic_halt as _;
 use rp2040_hal::gpio::DynPin;
 use rp2040_hal::multicore::{Multicore, Stack};
-use rp_pico as bsp;
+use rp_pico::{
+    entry, hal,
+    hal::clocks::{Clock, SystemClock},
+    hal::pac,
+};
 // display
 use display_interface_i2c::I2CInterface;
 use embedded_graphics::{
@@ -55,7 +58,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     );
 
     let mut led_pin = pins.gpio25.into_push_pull_output();
-    let mut delay = cortex_m::delay::Delay::new(core.SYST, sys_clock.freq().to_Hz()); // delay for reset
+    let mut delay = delay::Delay::new(core.SYST, sys_clock.freq().to_Hz()); // delay for reset
 
     // configure two pins as being I2C, not GPIO
     let sda_pin = pins.gpio26.into_mode::<hal::gpio::FunctionI2C>(); // sda = din
@@ -101,7 +104,7 @@ fn main() -> ! {
     let mut pac = pac::Peripherals::take().unwrap();
     let mut watchdog = hal::Watchdog::new(pac.WATCHDOG);
     let clocks = hal::clocks::init_clocks_and_plls(
-        bsp::XOSC_CRYSTAL_FREQ,
+        rp_pico::XOSC_CRYSTAL_FREQ,
         pac.XOSC,
         pac.CLOCKS,
         pac.PLL_SYS,
