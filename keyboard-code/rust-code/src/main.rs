@@ -6,44 +6,49 @@
 #![no_std]
 #![no_main]
 
-use bsp::entry;
-use bsp::hal;
+// core
+use bsp::{entry, hal};
+use embedded_hal::digital::v2::*;
+use embedded_hal::prelude::*;
+use fugit::{ExtU32, RateExtU32};
+use hal::clocks::{Clock, SystemClock};
+use hal::pac;
+use panic_probe as _;
+use rp2040_hal::gpio::DynPin;
+use rp2040_hal::multicore::{Multicore, Stack};
+use rp_pico as bsp;
+// debug
 use defmt::*;
 use defmt_rtt as _;
+// display
 use display_interface_i2c::I2CInterface;
 use embedded_graphics::{
     pixelcolor::BinaryColor,
     prelude::*,
     primitives::{Circle, PrimitiveStyle},
 };
-use embedded_hal::digital::v2::*;
-use embedded_hal::prelude::*;
-use fugit::ExtU32;
-use fugit::RateExtU32;
-use hal::clocks::SystemClock;
-use hal::pac;
-use panic_probe as _;
-use rp2040_hal::gpio::DynPin;
-use rp2040_hal::i2c::I2C;
-use rp_pico as bsp;
-use ssd1309::{prelude::*, Builder};
-use usb_device::class_prelude::*;
-use usb_device::prelude::*;
-use usbd_human_interface_device::device::consumer::ConsumerControlInterface;
-use usbd_human_interface_device::device::consumer::MultipleConsumerReport;
+use ssd1309::{prelude::GraphicsMode, Builder};
+// usb hid
+use usb_device::{class_prelude::*, prelude::*};
+use usbd_human_interface_device::device::consumer::{
+    ConsumerControlInterface, MultipleConsumerReport,
+};
 use usbd_human_interface_device::device::keyboard::NKROBootKeyboardInterface;
 use usbd_human_interface_device::page::Consumer;
-use usbd_human_interface_device::page::Keyboard;
 use usbd_human_interface_device::prelude::*;
 
-// ?core1 (used for external display)
-use rp2040_hal::multicore::{Multicore, Stack};
+// src
+pub mod consumer;
+pub mod keys;
+
+// declarations
 static mut CORE1_STACK: Stack<4096> = Stack::new();
 
-fn core1_task(sys_freq: &SystemClock) -> ! {
-    // ?initialisation
-    let mut pac = pac::Peripherals::take().unwrap();
-    let core = pac::CorePeripherals::take().unwrap();
+// ?core1 - used for external display
+fn core1_task(sys_clock: &SystemClock) -> ! {
+    // initialisation
+    let mut pac = unsafe { pac::Peripherals::steal() };
+    let core = unsafe { pac::CorePeripherals::steal() };
 
     let sio = hal::Sio::new(pac.SIO);
     let pins = hal::gpio::Pins::new(
@@ -53,20 +58,23 @@ fn core1_task(sys_freq: &SystemClock) -> ! {
         &mut pac.RESETS,
     );
 
+    let mut led_pin = pins.gpio25.into_push_pull_output();
+    let mut delay = cortex_m::delay::Delay::new(core.SYST, sys_clock.freq().to_Hz()); // delay for reset
+
     // configure two pins as being I2C, not GPIO
     let sda_pin = pins.gpio26.into_mode::<hal::gpio::FunctionI2C>(); // sda = din
     let scl_pin = pins.gpio27.into_mode::<hal::gpio::FunctionI2C>(); // scl = clk
-    let mut reset = pins.gpio28.into_push_pull_output(); // reset pin
-    let mut delay = cortex_m::delay::Delay::new(core.SYST, bsp::XOSC_CRYSTAL_FREQ); // for reset
 
-    // set up i2c and display
-    let i2c = I2C::i2c1(
+    let mut reset = pins.gpio28.into_push_pull_output(); // reset pin
+
+    // create i2c drive and display
+    let i2c = hal::I2C::i2c1(
         pac.I2C1,
         sda_pin,
         scl_pin,
         400.kHz(),
         &mut pac.RESETS,
-        sys_freq,
+        sys_clock,
     );
     let i2c_interface = I2CInterface::new(i2c, 0x3C, 0x40);
     let mut disp: GraphicsMode<_> = Builder::new().connect(i2c_interface).into();
@@ -82,13 +90,18 @@ fn core1_task(sys_freq: &SystemClock) -> ! {
 
     disp.flush().unwrap();
 
-    loop {}
+    loop {
+        led_pin.set_high().unwrap();
+        delay.delay_ms(1000);
+        led_pin.set_low().unwrap();
+        delay.delay_ms(100);
+    }
 }
 
 // ?core0 and entry point
 #[entry]
 fn main() -> ! {
-    // ?initialisation
+    // initialisation
     let mut pac = pac::Peripherals::take().unwrap();
     let mut watchdog = hal::Watchdog::new(pac.WATCHDOG);
     let clocks = hal::clocks::init_clocks_and_plls(
@@ -229,7 +242,7 @@ fn main() -> ! {
             // 2 separate functions for fn key and normal, more memory intensive but less cpu?
             if pressed_keys[4][10] == 1 {
                 // fn key pressed
-                let keys = get_fnkeys(pressed_keys);
+                let keys = keys::get_fnkeys(pressed_keys);
                 match keyboard.write_report(&keys) {
                     Err(UsbHidError::WouldBlock) => {}
                     Err(UsbHidError::Duplicate) => {}
@@ -240,7 +253,7 @@ fn main() -> ! {
                 };
             } else {
                 // fn key released
-                let keys = get_keys(pressed_keys);
+                let keys = keys::get_keys(pressed_keys);
                 match keyboard.write_report(&keys) {
                     Err(UsbHidError::WouldBlock) => {}
                     Err(UsbHidError::Duplicate) => {}
@@ -283,7 +296,7 @@ fn main() -> ! {
         // ?consumer reporting
         // write report every consumer_poll
         if consumer_poll.wait().is_ok() {
-            let codes = get_consumer(
+            let codes = consumer::get_consumer(
                 pressed_keys,
                 rot_rotation_dir,
                 rot_was_pressed,
@@ -377,673 +390,4 @@ fn main() -> ! {
             }
         }
     }
-}
-
-// ?consumer controls
-fn get_consumer(
-    keys: [[i32; 14]; 5],
-    rot_dir: i32,
-    rot_released: bool,
-    rot_can_push: bool,
-) -> [Consumer; 1] {
-    [if keys[1][13] == 0 && rot_released && rot_can_push {
-        // rotary encoder has been released and was pressed and can be pushed (hasn't also been rotated)
-        Consumer::PlayPause
-    } else if keys[1][13] == 1 && rot_dir == 1 {
-        // pushed and rotated
-        Consumer::ScanNextTrack
-    } else if keys[1][13] == 1 && rot_dir == -1 {
-        // pushed and rotated
-        Consumer::ScanPreviousTrack
-    } else if rot_dir == 1 {
-        // only rotated
-        Consumer::VolumeIncrement
-    } else if rot_dir == -1 {
-        // only rotated
-        Consumer::VolumeDecrement
-    } else {
-        Consumer::Unassigned
-    }]
-}
-
-// ?63 keys excluding fn key and consumer - normal layer
-fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
-    [
-        if keys[0][0] == 1 {
-            Keyboard::Escape
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][1] == 1 {
-            Keyboard::Keyboard1
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][2] == 1 {
-            Keyboard::Keyboard2
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][3] == 1 {
-            Keyboard::Keyboard3
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][4] == 1 {
-            Keyboard::Keyboard4
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][5] == 1 {
-            Keyboard::Keyboard5
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][6] == 1 {
-            Keyboard::Keyboard6
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][7] == 1 {
-            Keyboard::Keyboard7
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][8] == 1 {
-            Keyboard::Keyboard8
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][9] == 1 {
-            Keyboard::Keyboard9
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][10] == 1 {
-            Keyboard::Keyboard0
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][11] == 1 {
-            Keyboard::Minus
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][12] == 1 {
-            Keyboard::Equal
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][13] == 1 {
-            Keyboard::DeleteBackspace
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][0] == 1 {
-            Keyboard::Tab
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][1] == 1 {
-            Keyboard::Q
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][2] == 1 {
-            Keyboard::W
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][3] == 1 {
-            Keyboard::E
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][4] == 1 {
-            Keyboard::R
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][5] == 1 {
-            Keyboard::T
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][6] == 1 {
-            Keyboard::Y
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][7] == 1 {
-            Keyboard::U
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][8] == 1 {
-            Keyboard::I
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][9] == 1 {
-            Keyboard::O
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][10] == 1 {
-            Keyboard::P
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][11] == 1 {
-            Keyboard::LeftBrace
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][12] == 1 {
-            Keyboard::RightBrace
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][0] == 1 {
-            Keyboard::CapsLock
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][1] == 1 {
-            Keyboard::A
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][2] == 1 {
-            Keyboard::S
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][3] == 1 {
-            Keyboard::D
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][4] == 1 {
-            Keyboard::F
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][5] == 1 {
-            Keyboard::G
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][6] == 1 {
-            Keyboard::H
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][7] == 1 {
-            Keyboard::J
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][8] == 1 {
-            Keyboard::K
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][9] == 1 {
-            Keyboard::L
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][10] == 1 {
-            Keyboard::Semicolon
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][11] == 1 {
-            Keyboard::Apostrophe
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][12] == 1 {
-            Keyboard::ReturnEnter
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][13] == 1 {
-            Keyboard::NonUSHash
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][0] == 1 {
-            Keyboard::LeftShift
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][1] == 1 {
-            Keyboard::NonUSBackslash
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][2] == 1 {
-            Keyboard::Z
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][3] == 1 {
-            Keyboard::X
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][4] == 1 {
-            Keyboard::C
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][5] == 1 {
-            Keyboard::V
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][6] == 1 {
-            Keyboard::B
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][7] == 1 {
-            Keyboard::N
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][8] == 1 {
-            Keyboard::M
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][9] == 1 {
-            Keyboard::Comma
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][10] == 1 {
-            Keyboard::Dot
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][11] == 1 {
-            Keyboard::ForwardSlash
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][12] == 1 {
-            Keyboard::RightShift
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][13] == 1 {
-            Keyboard::UpArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][0] == 1 {
-            Keyboard::LeftControl
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][1] == 1 {
-            Keyboard::LeftGUI
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][2] == 1 {
-            Keyboard::LeftAlt
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][6] == 1 {
-            Keyboard::Space
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][9] == 1 {
-            Keyboard::RightAlt
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][11] == 1 {
-            Keyboard::LeftArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][12] == 1 {
-            Keyboard::DownArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][13] == 1 {
-            Keyboard::RightArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-    ]
-}
-
-// ?63 keys excluding fn key and consumer - fn layer
-fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
-    [
-        if keys[0][0] == 1 {
-            Keyboard::Grave
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][1] == 1 {
-            Keyboard::F1
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][2] == 1 {
-            Keyboard::F2
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][3] == 1 {
-            Keyboard::F3
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][4] == 1 {
-            Keyboard::F4
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][5] == 1 {
-            Keyboard::F5
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][6] == 1 {
-            Keyboard::F6
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][7] == 1 {
-            Keyboard::F7
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][8] == 1 {
-            Keyboard::F8
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][9] == 1 {
-            Keyboard::F9
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][10] == 1 {
-            Keyboard::F10
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][11] == 1 {
-            Keyboard::F11
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][12] == 1 {
-            Keyboard::F12
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[0][13] == 1 {
-            Keyboard::DeleteForward
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][0] == 1 {
-            Keyboard::Tab
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][1] == 1 {
-            Keyboard::Q
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][2] == 1 {
-            Keyboard::W
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][3] == 1 {
-            Keyboard::E
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][4] == 1 {
-            Keyboard::R
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][5] == 1 {
-            Keyboard::T
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][6] == 1 {
-            Keyboard::Y
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][7] == 1 {
-            Keyboard::U
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][8] == 1 {
-            Keyboard::I
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][9] == 1 {
-            Keyboard::O
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][10] == 1 {
-            Keyboard::P
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][11] == 1 {
-            Keyboard::LeftBrace
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[1][12] == 1 {
-            Keyboard::RightBrace
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][0] == 1 {
-            Keyboard::CapsLock
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][1] == 1 {
-            Keyboard::A
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][2] == 1 {
-            Keyboard::S
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][3] == 1 {
-            Keyboard::D
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][4] == 1 {
-            Keyboard::F
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][5] == 1 {
-            Keyboard::G
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][6] == 1 {
-            Keyboard::H
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][7] == 1 {
-            Keyboard::J
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][8] == 1 {
-            Keyboard::K
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][9] == 1 {
-            Keyboard::L
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][10] == 1 {
-            Keyboard::Semicolon
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][11] == 1 {
-            Keyboard::Apostrophe
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][12] == 1 {
-            Keyboard::ReturnEnter
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[2][13] == 1 {
-            Keyboard::DeleteForward
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][0] == 1 {
-            Keyboard::LeftShift
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][1] == 1 {
-            Keyboard::NonUSBackslash
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][2] == 1 {
-            Keyboard::Z
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][3] == 1 {
-            Keyboard::X
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][4] == 1 {
-            Keyboard::C
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][5] == 1 {
-            Keyboard::V
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][6] == 1 {
-            Keyboard::B
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][7] == 1 {
-            Keyboard::N
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][8] == 1 {
-            Keyboard::M
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][9] == 1 {
-            Keyboard::Comma
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][10] == 1 {
-            Keyboard::Dot
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][11] == 1 {
-            Keyboard::ForwardSlash
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][12] == 1 {
-            Keyboard::NonUSHash
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[3][13] == 1 {
-            Keyboard::UpArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][0] == 1 {
-            Keyboard::LeftControl
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][1] == 1 {
-            Keyboard::LeftGUI
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][2] == 1 {
-            Keyboard::LeftAlt
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][6] == 1 {
-            Keyboard::Space
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][9] == 1 {
-            Keyboard::RightAlt
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][11] == 1 {
-            Keyboard::LeftArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][12] == 1 {
-            Keyboard::DownArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-        if keys[4][13] == 1 {
-            Keyboard::RightArrow
-        } else {
-            Keyboard::NoEventIndicated
-        },
-    ]
 }
