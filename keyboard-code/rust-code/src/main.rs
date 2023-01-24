@@ -8,6 +8,7 @@
 
 // core
 use cortex_m::delay;
+use cortex_m_rt::{entry, exception, ExceptionFrame};
 use embedded_hal::digital::v2::*;
 use embedded_hal::prelude::*;
 use fugit::{ExtU32, RateExtU32};
@@ -15,7 +16,7 @@ use panic_halt as _;
 use rp2040_hal::gpio::DynPin;
 use rp2040_hal::multicore::{Multicore, Stack};
 use rp_pico::{
-    entry, hal,
+    hal,
     hal::clocks::{Clock, SystemClock},
     hal::pac,
 };
@@ -42,6 +43,12 @@ pub mod keys;
 
 // declarations
 static mut CORE1_STACK: Stack<4096> = Stack::new();
+
+// Implementing exception frame handling
+#[exception]
+unsafe fn HardFault(ef: &ExceptionFrame) -> ! {
+    panic!("{:#?}", ef);
+}
 
 // ?core1 - used for external display
 fn core1_task(sys_clock: &SystemClock) -> ! {
@@ -73,10 +80,10 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         scl_pin,
         400.kHz(),
         &mut pac.RESETS,
-        sys_clock,
+        sys_clock.freq(),
     );
-    let i2c_interface = I2CInterface::new(i2c, 0x3C, 0x40);
-    let mut disp: GraphicsMode<_> = Builder::new().connect(i2c_interface).into();
+    let i2c_interface = I2CInterface::new(i2c, 0x3D, 0x40);
+    let mut disp: GraphicsMode<_> = Builder::new().connect(i2c_interface).into(); // can add .with_rotation(DisplayRotation::Rotate180)
     disp.reset(&mut reset, &mut delay).unwrap();
     disp.init().unwrap();
     disp.flush().unwrap();
