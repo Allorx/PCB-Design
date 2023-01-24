@@ -3,7 +3,7 @@
 
 use usbd_human_interface_device::page::Consumer;
 
-// ?consumer controls
+// ? consumer controls
 pub fn get_consumer(
     keys: [[i32; 14]; 5],
     rot_dir: i32,

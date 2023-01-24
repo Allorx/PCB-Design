@@ -44,13 +44,13 @@ pub mod keys;
 // declarations
 static mut CORE1_STACK: Stack<4096> = Stack::new();
 
-// ?implementing exception frame handling
+// ? implementing exception frame handling
 #[exception]
 unsafe fn HardFault(ef: &ExceptionFrame) -> ! {
     panic!("{:#?}", ef);
 }
 
-// ?core1 - used for external display
+// ? core1 - used for external display
 fn core1_task(sys_clock: &SystemClock) -> ! {
     // initialisation
     let mut pac = unsafe { pac::Peripherals::steal() };
@@ -104,7 +104,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     }
 }
 
-// ?core0 and entry point
+// ? core0 and entry point
 #[entry]
 fn main() -> ! {
     // initialisation
@@ -132,7 +132,7 @@ fn main() -> ! {
         &mut pac.RESETS,
     );
 
-    // ?initialise other core
+    // ? initialise other core
     let mut mc = Multicore::new(&mut pac.PSM, &mut pac.PPB, &mut sio.fifo);
     let cores = mc.cores();
     let core1 = &mut cores[1];
@@ -140,7 +140,7 @@ fn main() -> ! {
         core1_task(&clocks.system_clock)
     });
 
-    // ?USB set up
+    // ? USB set up
     let usb_bus = UsbBusAllocator::new(hal::usb::UsbBus::new(
         pac.USBCTRL_REGS,
         pac.USBCTRL_DPRAM,
@@ -156,7 +156,7 @@ fn main() -> ! {
         .add_interface(usbd_human_interface_device::device::consumer::ConsumerControlInterface::default_config())
         .build(&usb_bus);
 
-    // ?https://pid.codes
+    // ? https://pid.codes
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x6E6E)) //0x0001 - testing PID
         .manufacturer("Allorx")
         .product("Orions Hands")
@@ -164,7 +164,7 @@ fn main() -> ! {
         .max_packet_size_0(32)
         .build();
 
-    // ?GPIO pin and variable set up
+    // ? GPIO pin and variable set up
     // rows
     let row_pins: &[&dyn InputPin<Error = core::convert::Infallible>] = &[
         &pins.gpio20.into_pull_up_input(),
@@ -239,7 +239,7 @@ fn main() -> ! {
     let mut last_consumer_report = MultipleConsumerReport::default();
 
     loop {
-        // ?keyboard reporting
+        // ? keyboard reporting
         // write report every input_count_down
         if input_count_down.wait().is_ok() {
             let keyboard = composite.interface::<NKROBootKeyboardInterface<'_, _>, _>();
@@ -297,7 +297,7 @@ fn main() -> ! {
             }
         }
 
-        // ?consumer reporting
+        // ? consumer reporting
         // write report every consumer_poll
         if consumer_poll.wait().is_ok() {
             let codes = consumer::get_consumer(
@@ -332,7 +332,7 @@ fn main() -> ! {
             rot_rotation_dir = 0;
         }
 
-        // ?poll the keys
+        // ? poll the keys
         // send signal for this col;
         for i in 0..14 {
             col_pins[i].into_push_pull_output();
@@ -368,7 +368,7 @@ fn main() -> ! {
             rot_was_pressed = true;
         }
 
-        // ?poll the rotary encoder
+        // ? poll the rotary encoder
         // read values a and b and compare to last state and assign to rot_rotation_dir
         if rot_a.is_low().unwrap() != rot_a_last_state {
             if rot_a.is_low().unwrap() {

@@ -3,7 +3,7 @@
 
 use usbd_human_interface_device::page::Keyboard;
 
-// ?63 keys excluding fn key and consumer - normal layer
+// ? 63 keys excluding fn key and consumer - normal layer
 pub fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
@@ -324,7 +324,7 @@ pub fn get_keys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     ]
 }
 
-// ?63 keys excluding fn key and consumer - fn layer
+// ? 63 keys excluding fn key and consumer - fn layer
 pub fn get_fnkeys(keys: [[i32; 14]; 5]) -> [Keyboard; 63] {
     [
         if keys[0][0] == 1 {
