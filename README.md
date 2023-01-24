@@ -9,6 +9,8 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 * NKRO support over USB using a RP Pico and Rust
 * Custom layout with pushable rotary encoder consumer controls over USB (vol +/-, pause, next/prev track)
 * Highly customisable design 
+* I2C display (SSD1309) with embedded-graphics
+* Multicore for efficiency/speed (core0: keyboard/usb hid, core1: display/other)
 * With some understanding of the project many more features can be added e.g. external bluetooth, oled/e-paper screen, leds (edit to your hearts content)
 
 ## IMPORTANT!
@@ -29,4 +31,4 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 * [KiCAD RP Pico](https://github.com/ncarandini/KiCad-RP-Pico) - a great resource for the schematic, footprints and 3D model of the rp pico for use in KiCAD
 * [usbd-human-interface-device (rp pico Rust crate)](https://github.com/dlkj/usbd-human-interface-device) - great crate for usb hid! Much (the core) of the firmware is based on this crate and examples within
 * Ben Eater's youtube videos on keyboards - someone has put together a playlist of these: [Ben Eater keyboard interface (playlist)](https://youtube.com/playlist?list=PLInUV34wyeCZ7whCxtxIWtcLeoI49szQo)
-* For better understanding of how it comes together I would also recommend reading: some documentation on the rp pico; about usb hid protocols; about mechanical switch debounce; about n-key roll over (NKRO) for usb hid keyboards; about pushable rotary encoders; about the Rust language; how spi/i2c works for adding external devices (Ben Eater also has some videos on this)
+* For better understanding of how it comes together I would also recommend reading: some documentation on the rp pico; about usb hid protocols; about mechanical switch debounce; about n-key roll over (NKRO) for usb hid keyboards; about pushable rotary encoders; about the Rust language; how spi/i2c works for adding external devices (Ben Eater also has some videos on this); about multicore on rp-pico with rust
