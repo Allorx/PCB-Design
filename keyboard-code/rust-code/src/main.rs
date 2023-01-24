@@ -44,7 +44,7 @@ pub mod keys;
 // declarations
 static mut CORE1_STACK: Stack<4096> = Stack::new();
 
-// Implementing exception frame handling
+// ?implementing exception frame handling
 #[exception]
 unsafe fn HardFault(ef: &ExceptionFrame) -> ! {
     panic!("{:#?}", ef);
