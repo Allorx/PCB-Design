@@ -1,7 +1,7 @@
 // Aleksas Girenas 23/10/2022
 // For controlling OrionsHands (a fully custom keyboard)
 // inspired by https://github.com/dlkj/usbd-human-interface-device/blob/main/examples/src/bin/keyboard_nkro.rs
-// somewhat poorly written as it is my first time working with Rust, microcontrollers and hastily written (jumping straight into the deep end - some might say a lil rusty) :D
+// somewhat poorly written as it is my first time working with Rust and microcontrollers (jumping straight into the deep end - some might say a lil rusty) :D
 
 #![no_std]
 #![no_main]
@@ -27,7 +27,7 @@ use embedded_graphics::{
     prelude::*,
     primitives::{Circle, PrimitiveStyle},
 };
-use ssd1309::{prelude::GraphicsMode, Builder};
+use ssd1309::{prelude::*, Builder};
 // usb hid
 use usb_device::{class_prelude::*, prelude::*};
 use usbd_human_interface_device::device::consumer::{
@@ -64,16 +64,14 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         &mut pac.RESETS,
     );
 
-    let mut led_pin = pins.gpio25.into_push_pull_output();
-    let mut delay = delay::Delay::new(core.SYST, sys_clock.freq().to_Hz()); // delay for reset
-
+    // ? create i2c drive and display
     // configure two pins as being I2C, not GPIO
     let sda_pin = pins.gpio26.into_mode::<hal::gpio::FunctionI2C>(); // sda = din
     let scl_pin = pins.gpio27.into_mode::<hal::gpio::FunctionI2C>(); // scl = clk
 
     let mut reset = pins.gpio28.into_push_pull_output(); // reset pin
+    let mut delay = delay::Delay::new(core.SYST, sys_clock.freq().to_Hz()); // delay for reset
 
-    // create i2c drive and display
     let i2c = hal::I2C::i2c1(
         pac.I2C1,
         sda_pin,
@@ -83,24 +81,43 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         sys_clock.freq(),
     );
     let i2c_interface = I2CInterface::new(i2c, 0x3D, 0x40);
-    let mut disp: GraphicsMode<_> = Builder::new().connect(i2c_interface).into(); // can add .with_rotation(DisplayRotation::Rotate180)
+    let mut disp: GraphicsMode<_> = Builder::new()
+        .with_rotation(DisplayRotation::Rotate270)
+        .connect(i2c_interface)
+        .into();
     disp.reset(&mut reset, &mut delay).unwrap();
     disp.init().unwrap();
-    disp.flush().unwrap();
 
-    // write to display
-    Circle::new(Point::new(88, 16), 16)
-        .into_styled(PrimitiveStyle::with_stroke(BinaryColor::On, 1))
-        .draw(&mut disp)
-        .unwrap();
-
-    disp.flush().unwrap();
+    // drawing variables
+    let disp_dim = disp.get_dimensions();
+    let circle_rad: i32 = 5;
+    let circle_dim = 10;
+    let circle_start = Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2).into());
+    let mut velocity = Point::new(1, 1);
+    let mut circle = Circle::with_center(circle_start, circle_dim);
 
     loop {
-        led_pin.set_high().unwrap();
-        delay.delay_ms(1000);
-        led_pin.set_low().unwrap();
-        delay.delay_ms(100);
+        // todo - show when caps lock on, turn off display after inactivity period
+        // ? draw to display
+        disp.clear();
+        circle
+            .into_styled(PrimitiveStyle::with_fill(BinaryColor::On))
+            .draw(&mut disp)
+            .unwrap();
+        if (circle.center().x - circle_rad) < 1
+            || (circle.center().x + circle_rad) + 1 >= disp_dim.0.into()
+        {
+            velocity.x *= -1;
+        }
+        if (circle.center().y - circle_rad) < 1
+            || (circle.center().y + circle_rad) + 1 >= disp_dim.1.into()
+        {
+            velocity.y *= -1;
+        }
+        circle.translate_mut(velocity);
+        disp.flush().unwrap();
+
+        
     }
 }
 
