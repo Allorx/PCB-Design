@@ -20,7 +20,6 @@ use rp_pico::{
     hal,
     hal::clocks::{Clock, SystemClock},
     hal::pac,
-    hal::sio::Spinlock0,
 };
 // display
 use display_interface_i2c::I2CInterface;
@@ -45,7 +44,6 @@ pub mod keys;
 
 // declarations
 static mut CORE1_STACK: Stack<4096> = Stack::new();
-static mut DISPLAY_ON: u32 = 1;
 
 // ? implementing exception frame handling
 #[exception]
@@ -59,7 +57,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     let mut pac = unsafe { pac::Peripherals::steal() };
     let core = unsafe { pac::CorePeripherals::steal() };
 
-    let sio = hal::Sio::new(pac.SIO);
+    let mut sio = hal::Sio::new(pac.SIO);
     let pins = hal::gpio::Pins::new(
         pac.IO_BANK0,
         pac.PADS_BANK0,
@@ -102,7 +100,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     let mut display_on = true;
 
     loop {
-        // todo - show when caps lock on
+        // todo - show when caps lock on, add more circles/shapes different sizes with some binarycolor::on and some off
         // ? draw to display
         disp.clear();
         circle
@@ -123,13 +121,15 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         disp.flush().unwrap();
 
         // ? toggle on/off display
-        let _lock = Spinlock0::claim();
-        if unsafe { DISPLAY_ON == 0 } && display_on {
-            disp.display_on(false).unwrap();
-            display_on = false;
-        } else if unsafe { DISPLAY_ON == 1 } && !display_on {
-            disp.display_on(true).unwrap();
-            display_on = true;
+        if sio.fifo.is_read_ready() {
+            let fifo_read = sio.fifo.read();
+            if fifo_read == Some(0xDD) && display_on {
+                disp.display_on(false).unwrap();
+                display_on = false;
+            } else if fifo_read == Some(0xDE) && !display_on {
+                disp.display_on(true).unwrap();
+                display_on = true;
+            }
         }
     }
 }
@@ -291,18 +291,20 @@ fn main() -> ! {
             display_on = true;
         }
 
-        if !display_toggled && toggle_display == 0 && display_off_timer.wait().is_ok() {
+        if !display_toggled
+            && toggle_display == 0
+            && display_off_timer.wait().is_ok()
+            && sio.fifo.is_write_ready()
+        {
             // timer ran out
             display_off_timer.cancel().unwrap();
             display_on = false;
             display_toggled = true;
-            let _lock = Spinlock0::claim();
-            unsafe { DISPLAY_ON = 0 };
-        } else if display_on && display_toggled {
+            sio.fifo.write(0xDD);
+        } else if display_on && display_toggled && sio.fifo.is_write_ready() {
             // reset
             display_toggled = false;
-            let _lock = Spinlock0::claim();
-            unsafe { DISPLAY_ON = 1 };
+            sio.fifo.write(0xDE);
         }
 
         // ? keyboard reporting
