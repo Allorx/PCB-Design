@@ -11,6 +11,7 @@ use cortex_m::delay;
 use cortex_m_rt::{entry, exception, ExceptionFrame};
 use embedded_hal::digital::v2::*;
 use embedded_hal::prelude::*;
+use embedded_hal::timer::Cancel;
 use fugit::{ExtU32, RateExtU32};
 use panic_halt as _;
 use rp2040_hal::gpio::DynPin;
@@ -19,6 +20,7 @@ use rp_pico::{
     hal,
     hal::clocks::{Clock, SystemClock},
     hal::pac,
+    hal::sio::Spinlock0,
 };
 // display
 use display_interface_i2c::I2CInterface;
@@ -43,6 +45,7 @@ pub mod keys;
 
 // declarations
 static mut CORE1_STACK: Stack<4096> = Stack::new();
+static mut DISPLAY_ON: u32 = 1;
 
 // ? implementing exception frame handling
 #[exception]
@@ -96,8 +99,10 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     let mut velocity = Point::new(1, 1);
     let mut circle = Circle::with_center(circle_start, circle_dim);
 
+    let mut display_on = true;
+
     loop {
-        // todo - show when caps lock on, turn off display after inactivity period
+        // todo - show when caps lock on
         // ? draw to display
         disp.clear();
         circle
@@ -117,7 +122,15 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         circle.translate_mut(velocity);
         disp.flush().unwrap();
 
-        
+        // toggle on/off display timed by core0 through DISPLAY_ON variable
+        let _lock = Spinlock0::claim();
+        if unsafe { DISPLAY_ON == 0 } && display_on {
+            disp.display_on(false).unwrap();
+            display_on = false;
+        } else if unsafe { DISPLAY_ON == 1 } && !display_on {
+            disp.display_on(true).unwrap();
+            display_on = true;
+        }
     }
 }
 
@@ -177,7 +190,7 @@ fn main() -> ! {
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x6E6E)) //0x0001 - testing PID
         .manufacturer("Allorx")
         .product("Orions Hands")
-        .serial_number("230120232045") // using date + time (ddmmyyyyhhmm)
+        .serial_number("260120230337") // using date + time (ddmmyyyyhhmm)
         .max_packet_size_0(32)
         .build();
 
@@ -255,7 +268,40 @@ fn main() -> ! {
     consumer_poll.start(1.millis());
     let mut last_consumer_report = MultipleConsumerReport::default();
 
+    // display
+    let mut display_on = true;
+    let mut display_toggled = false;
+    let display_on_time = 1.minutes();
+    let mut display_off_timer = timer.count_down();
+    display_off_timer.start(display_on_time);
+
     loop {
+        // ? toggle on/off display with DISPLAY_ON
+        let mut toggle_display = 0;
+        for i in 0..14 {
+            for j in 0..5 {
+                toggle_display += pressed_keys[j][i];
+            }
+        }
+        toggle_display += rot_rotation_dir.pow(2);
+
+        if toggle_display > 0 {
+            display_off_timer.start(display_on_time);
+            display_on = true;
+        }
+
+        if !display_toggled && toggle_display == 0 && display_off_timer.wait().is_ok() {
+            display_off_timer.cancel().unwrap();
+            display_on = false;
+            display_toggled = true;
+            let _lock = Spinlock0::claim();
+            unsafe { DISPLAY_ON = 0 };
+        } else if display_on && display_toggled {
+            display_toggled = false;
+            let _lock = Spinlock0::claim();
+            unsafe { DISPLAY_ON = 1 };
+        }
+
         // ? keyboard reporting
         // write report every input_count_down
         if input_count_down.wait().is_ok() {
