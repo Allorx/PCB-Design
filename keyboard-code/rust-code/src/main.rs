@@ -122,7 +122,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         circle.translate_mut(velocity);
         disp.flush().unwrap();
 
-        // toggle on/off display timed by core0 through DISPLAY_ON variable
+        // ? toggle on/off display
         let _lock = Spinlock0::claim();
         if unsafe { DISPLAY_ON == 0 } && display_on {
             disp.display_on(false).unwrap();
@@ -276,7 +276,8 @@ fn main() -> ! {
     display_off_timer.start(display_on_time);
 
     loop {
-        // ? toggle on/off display with DISPLAY_ON
+        // ? toggle on/off display if keyboard inactive for some time
+        // checking keyboard activity
         let mut toggle_display = 0;
         for i in 0..14 {
             for j in 0..5 {
@@ -284,19 +285,21 @@ fn main() -> ! {
             }
         }
         toggle_display += rot_rotation_dir.pow(2);
-
+        // reset
         if toggle_display > 0 {
             display_off_timer.start(display_on_time);
             display_on = true;
         }
 
         if !display_toggled && toggle_display == 0 && display_off_timer.wait().is_ok() {
+            // timer ran out
             display_off_timer.cancel().unwrap();
             display_on = false;
             display_toggled = true;
             let _lock = Spinlock0::claim();
             unsafe { DISPLAY_ON = 0 };
         } else if display_on && display_toggled {
+            // reset
             display_toggled = false;
             let _lock = Spinlock0::claim();
             unsafe { DISPLAY_ON = 1 };
