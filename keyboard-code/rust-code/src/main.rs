@@ -192,7 +192,7 @@ fn main() -> ! {
     let mut usb_dev = UsbDeviceBuilder::new(&usb_bus, UsbVidPid(0x1209, 0x6E6E)) //0x0001 - testing PID
         .manufacturer("Allorx")
         .product("Orions Hands")
-        .serial_number("260120230337") // using date + time (ddmmyyyyhhmm)
+        .serial_number("260120231843") // using date + time (ddmmyyyyhhmm)
         .max_packet_size_0(32)
         .build();
 
@@ -273,7 +273,7 @@ fn main() -> ! {
     // display
     let mut display_on = true;
     let mut display_toggled = false;
-    let display_on_time = 1.minutes();
+    let display_on_time = 5.minutes();
     let mut display_off_timer = timer.count_down();
     display_off_timer.start(display_on_time);
 
