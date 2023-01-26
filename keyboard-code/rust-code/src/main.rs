@@ -44,6 +44,8 @@ pub mod keys;
 
 // declarations
 static mut CORE1_STACK: Stack<4096> = Stack::new();
+const DISPLAY_ON: u32 = 0xDE;
+const DISPLAY_OFF: u32 = 0xDD;
 
 // ? implementing exception frame handling
 #[exception]
@@ -123,10 +125,10 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         // ? toggle on/off display
         if sio.fifo.is_read_ready() {
             let fifo_read = sio.fifo.read();
-            if fifo_read == Some(0xDD) && display_on {
+            if fifo_read == Some(DISPLAY_OFF) && display_on {
                 disp.display_on(false).unwrap();
                 display_on = false;
-            } else if fifo_read == Some(0xDE) && !display_on {
+            } else if fifo_read == Some(DISPLAY_ON) && !display_on {
                 disp.display_on(true).unwrap();
                 display_on = true;
             }
@@ -300,11 +302,11 @@ fn main() -> ! {
             display_off_timer.cancel().unwrap();
             display_on = false;
             display_toggled = true;
-            sio.fifo.write(0xDD);
+            sio.fifo.write(DISPLAY_OFF);
         } else if display_on && display_toggled && sio.fifo.is_write_ready() {
             // reset
             display_toggled = false;
-            sio.fifo.write(0xDE);
+            sio.fifo.write(DISPLAY_ON);
         }
 
         // ? keyboard reporting
