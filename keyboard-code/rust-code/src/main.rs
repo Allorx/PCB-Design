@@ -99,8 +99,6 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     let mut velocity = Point::new(1, 1);
     let mut circle = Circle::with_center(circle_start, circle_dim);
 
-    let mut display_on = true;
-
     loop {
         // todo - show when caps lock on, add more circles/shapes different sizes with some binarycolor::on and some off
         // ? draw to display
@@ -125,12 +123,10 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         // ? toggle on/off display
         if sio.fifo.is_read_ready() {
             let fifo_read = sio.fifo.read();
-            if fifo_read == Some(DISPLAY_OFF) && display_on {
+            if fifo_read == Some(DISPLAY_OFF) {
                 disp.display_on(false).unwrap();
-                display_on = false;
-            } else if fifo_read == Some(DISPLAY_ON) && !display_on {
+            } else if fifo_read == Some(DISPLAY_ON) {
                 disp.display_on(true).unwrap();
-                display_on = true;
             }
         }
     }
@@ -271,7 +267,7 @@ fn main() -> ! {
     let mut last_consumer_report = MultipleConsumerReport::default();
 
     // display
-    let mut display_on = true;
+    let mut display_turn_on = true;
     let mut display_toggled = false;
     let display_on_time = 5.minutes();
     let mut display_off_timer = timer.count_down();
@@ -280,30 +276,30 @@ fn main() -> ! {
     loop {
         // ? toggle on/off display if keyboard inactive for some time
         // checking keyboard activity
-        let mut toggle_display = 0;
+        let mut keyboard_activity = 0;
         for i in 0..14 {
             for j in 0..5 {
-                toggle_display += pressed_keys[j][i];
+                keyboard_activity += pressed_keys[j][i];
             }
         }
-        toggle_display += rot_rotation_dir.pow(2);
+        keyboard_activity += rot_rotation_dir.pow(2);
         // reset
-        if toggle_display > 0 {
+        if keyboard_activity > 0 {
             display_off_timer.start(display_on_time);
-            display_on = true;
+            display_turn_on = true;
         }
 
         if !display_toggled
-            && toggle_display == 0
+            && keyboard_activity == 0
             && display_off_timer.wait().is_ok()
             && sio.fifo.is_write_ready()
         {
             // timer ran out
             display_off_timer.cancel().unwrap();
-            display_on = false;
+            display_turn_on = false;
             display_toggled = true;
             sio.fifo.write(DISPLAY_OFF);
-        } else if display_on && display_toggled && sio.fifo.is_write_ready() {
+        } else if display_turn_on && display_toggled && sio.fifo.is_write_ready() {
             // reset
             display_toggled = false;
             sio.fifo.write(DISPLAY_ON);
