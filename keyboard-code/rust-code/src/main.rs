@@ -26,7 +26,7 @@ use display_interface_i2c::I2CInterface;
 use embedded_graphics::{
     pixelcolor::BinaryColor,
     prelude::*,
-    primitives::{Circle, PrimitiveStyle},
+    primitives::{Circle, PrimitiveStyle, Rectangle, Triangle},
 };
 use ssd1309::{prelude::*, Builder};
 // usb hid
@@ -46,6 +46,8 @@ pub mod keys;
 static mut CORE1_STACK: Stack<4096> = Stack::new();
 const DISPLAY_ON: u32 = 0xDE;
 const DISPLAY_OFF: u32 = 0xDD;
+const CAPS_ON: u32 = 0xCC;
+const CAPS_OFF: u32 = 0xCD;
 
 // ? implementing exception frame handling
 #[exception]
@@ -92,41 +94,75 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     disp.init().unwrap();
 
     // drawing variables
+    let mut caps_on = false;
+
     let disp_dim = disp.get_dimensions();
     let circle_rad: i32 = 5;
     let circle_dim = 10;
     let circle_start = Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2).into());
-    let mut velocity = Point::new(1, 1);
+    let mut circle_velocity = Point::new(1, 1);
     let mut circle = Circle::with_center(circle_start, circle_dim);
 
+    let caps_block_start = Point::new((disp_dim.0 / 2 - 5).into(), (disp_dim.1 / 2 - 10).into());
+    let mut caps_velocity = Point::new(0, 1);
+    let caps_max_pos = 9;
+    let mut caps_y_pos = 0;
+    let mut caps_arrow = Triangle::new(
+        Point::new((disp_dim.0 / 2 - 9).into(), (disp_dim.1 / 2).into()),
+        Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2 + 9).into()),
+        Point::new((disp_dim.0 / 2 + 9).into(), (disp_dim.1 / 2).into()),
+    )
+    .into_styled(PrimitiveStyle::with_stroke(BinaryColor::On, 2));
+    let mut caps_block = Rectangle::new(caps_block_start, Size::new(10, 10))
+        .into_styled(PrimitiveStyle::with_fill(BinaryColor::On));
+
     loop {
-        // todo - show when caps lock on, add more circles/shapes different sizes with some binarycolor::on and some off
+        // todo - add more circles/shapes different sizes with some binarycolor::on and some off
         // ? draw to display
         disp.clear();
-        circle
-            .into_styled(PrimitiveStyle::with_fill(BinaryColor::On))
-            .draw(&mut disp)
-            .unwrap();
-        if (circle.center().x - circle_rad) < 1
-            || (circle.center().x + circle_rad) + 1 >= disp_dim.0.into()
-        {
-            velocity.x *= -1;
+        if !caps_on {
+            // animation
+            circle
+                .into_styled(PrimitiveStyle::with_fill(BinaryColor::On))
+                .draw(&mut disp)
+                .unwrap();
+            if (circle.center().x - circle_rad) < 1
+                || (circle.center().x + circle_rad) + 1 >= disp_dim.0.into()
+            {
+                circle_velocity.x *= -1;
+            }
+            if (circle.center().y - circle_rad) < 1
+                || (circle.center().y + circle_rad) + 1 >= disp_dim.1.into()
+            {
+                circle_velocity.y *= -1;
+            }
+            circle.translate_mut(circle_velocity);
+        } else {
+            //? draw caps on
+            caps_block.draw(&mut disp).unwrap();
+            caps_arrow.draw(&mut disp).unwrap();
+            caps_y_pos += caps_velocity.y;
+            if caps_y_pos > 0 {
+                caps_velocity.y *= -1;
+            } else if caps_y_pos < -caps_max_pos {
+                caps_velocity.y *= -1;
+            }
+            caps_arrow.translate_mut(caps_velocity);
+            caps_block.translate_mut(caps_velocity);
         }
-        if (circle.center().y - circle_rad) < 1
-            || (circle.center().y + circle_rad) + 1 >= disp_dim.1.into()
-        {
-            velocity.y *= -1;
-        }
-        circle.translate_mut(velocity);
         disp.flush().unwrap();
 
-        // ? toggle on/off display
+        // ? read fifo
         if sio.fifo.is_read_ready() {
             let fifo_read = sio.fifo.read();
             if fifo_read == Some(DISPLAY_OFF) {
                 disp.display_on(false).unwrap();
             } else if fifo_read == Some(DISPLAY_ON) {
                 disp.display_on(true).unwrap();
+            } else if fifo_read == Some(CAPS_ON) {
+                caps_on = true;
+            } else if fifo_read == Some(CAPS_OFF) {
+                caps_on = false;
             }
         }
     }
@@ -273,6 +309,10 @@ fn main() -> ! {
     let mut display_off_timer = timer.count_down();
     display_off_timer.start(display_on_time);
 
+    // capslock
+    let mut caps_on = false;
+    let mut caps_toggled = false;
+
     loop {
         // ? toggle on/off display if keyboard inactive for some time
         // checking keyboard activity
@@ -288,7 +328,7 @@ fn main() -> ! {
             display_off_timer.start(display_on_time);
             display_turn_on = true;
         }
-
+        // send message
         if !display_toggled
             && keyboard_activity == 0
             && display_off_timer.wait().is_ok()
@@ -303,6 +343,17 @@ fn main() -> ! {
             // reset
             display_toggled = false;
             sio.fifo.write(DISPLAY_ON);
+        }
+
+        // ? toggle when caps_on
+        // send message
+        if !caps_toggled && caps_on && sio.fifo.is_write_ready() {
+            caps_toggled = true;
+            sio.fifo.write(CAPS_ON);
+        } else if !caps_on && caps_toggled && sio.fifo.is_write_ready() {
+            // reset
+            caps_toggled = false;
+            sio.fifo.write(CAPS_OFF);
         }
 
         // ? keyboard reporting
@@ -356,9 +407,8 @@ fn main() -> ! {
                 Err(e) => {
                     core::panic!("Failed to read keyboard report: {:?}", e)
                 }
-                Ok(_) => {
-                    // do nothing
-                    // can read report from host to eg turn on caps lock led
+                Ok(caps_lock) => {
+                    caps_on = caps_lock.caps_lock;
                 }
             }
         }
