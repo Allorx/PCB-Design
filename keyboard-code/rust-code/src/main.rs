@@ -24,9 +24,11 @@ use rp_pico::{
 // display
 use display_interface_i2c::I2CInterface;
 use embedded_graphics::{
+    mono_font::{ascii::FONT_6X10, MonoTextStyle},
     pixelcolor::BinaryColor,
     prelude::*,
     primitives::{Circle, PrimitiveStyle, Rectangle, Triangle},
+    text::{Alignment, Text},
 };
 use ssd1309::{prelude::*, Builder};
 // usb hid
@@ -87,7 +89,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     );
     let i2c_interface = I2CInterface::new(i2c, 0x3D, 0x40);
     let mut disp: GraphicsMode<_> = Builder::new()
-        .with_rotation(DisplayRotation::Rotate270)
+        .with_rotation(DisplayRotation::Rotate90)
         .connect(i2c_interface)
         .into();
     disp.reset(&mut reset, &mut delay).unwrap();
@@ -100,21 +102,24 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     let circle_rad: i32 = 5;
     let circle_dim = 10;
     let circle_start = Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2).into());
-    let mut circle_velocity = Point::new(1, 1);
+    let mut circle_velocity = Point::new(1, -1);
     let mut circle = Circle::with_center(circle_start, circle_dim);
 
-    let caps_block_start = Point::new((disp_dim.0 / 2 - 5).into(), (disp_dim.1 / 2 - 10).into());
-    let mut caps_velocity = Point::new(0, 1);
+    let caps_block_start = Point::new((disp_dim.0 / 2 - 5).into(), (disp_dim.1 / 2 + 1).into());
+    let mut caps_velocity = Point::new(0, -1);
     let caps_max_pos = 9;
     let mut caps_y_pos = 0;
     let mut caps_arrow = Triangle::new(
         Point::new((disp_dim.0 / 2 - 9).into(), (disp_dim.1 / 2).into()),
-        Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2 + 9).into()),
+        Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2 - 9).into()),
         Point::new((disp_dim.0 / 2 + 9).into(), (disp_dim.1 / 2).into()),
     )
     .into_styled(PrimitiveStyle::with_stroke(BinaryColor::On, 2));
-    let mut caps_block = Rectangle::new(caps_block_start, Size::new(10, 10))
+    let mut caps_block = Rectangle::new(caps_block_start, Size::new(11, 10))
         .into_styled(PrimitiveStyle::with_fill(BinaryColor::On));
+    let text_style = MonoTextStyle::new(&FONT_6X10, BinaryColor::On);
+    let caps_text =
+        Text::with_alignment("Locked", Point::new(31, 100), text_style, Alignment::Center);
 
     loop {
         // todo - add more circles/shapes different sizes with some binarycolor::on and some off
@@ -141,6 +146,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
             //? draw caps on
             caps_block.draw(&mut disp).unwrap();
             caps_arrow.draw(&mut disp).unwrap();
+            caps_text.draw(&mut disp).unwrap();
             caps_y_pos += caps_velocity.y;
             if caps_y_pos > 0 {
                 caps_velocity.y *= -1;
