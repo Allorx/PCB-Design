@@ -24,7 +24,7 @@ use rp_pico::{
 // display
 use display_interface_i2c::I2CInterface;
 use embedded_graphics::{
-    mono_font::{ascii::FONT_6X10, MonoTextStyle},
+    mono_font::{ascii::FONT_6X12, MonoTextStyle},
     pixelcolor::BinaryColor,
     prelude::*,
     primitives::{Circle, Polyline, PrimitiveStyle, Rectangle, RoundedRectangle},
@@ -127,7 +127,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
         Size::new(2, 2),
     )
     .into_styled(PrimitiveStyle::with_fill(BinaryColor::On));
-    let text_style = MonoTextStyle::new(&FONT_6X10, BinaryColor::On);
+    let text_style = MonoTextStyle::new(&FONT_6X12, BinaryColor::On);
     let caps_text = Text::with_alignment(
         "Caps Lock\nON",
         Point::new(32, 100),
