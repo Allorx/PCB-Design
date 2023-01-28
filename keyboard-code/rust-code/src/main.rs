@@ -27,7 +27,7 @@ use embedded_graphics::{
     mono_font::{ascii::FONT_6X10, MonoTextStyle},
     pixelcolor::BinaryColor,
     prelude::*,
-    primitives::{Circle, PrimitiveStyle, Rectangle, Triangle},
+    primitives::{Circle, Polyline, PrimitiveStyle, Rectangle, RoundedRectangle},
     text::{Alignment, Text},
 };
 use ssd1309::{prelude::*, Builder};
@@ -109,17 +109,31 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     let mut caps_velocity = Point::new(0, -1);
     let caps_max_pos = 9;
     let mut caps_y_pos = 0;
-    let mut caps_arrow = Triangle::new(
-        Point::new((disp_dim.0 / 2 - 9).into(), (disp_dim.1 / 2).into()),
-        Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2 - 9).into()),
-        Point::new((disp_dim.0 / 2 + 9).into(), (disp_dim.1 / 2).into()),
+    let caps_arrow_offset = Point::new((disp_dim.0 / 2).into(), (disp_dim.1 / 2 - 9).into());
+    let caps_arrow_points = [
+        Point::new(1, -1),
+        Point::new(-1, -1),
+        Point::new(-10, 8),
+        Point::new(-9, 10),
+        Point::new(9, 10),
+        Point::new(10, 8),
+        Point::new(1, -1),
+    ];
+    let mut caps_arrow = Polyline::new(&caps_arrow_points)
+        .into_styled(PrimitiveStyle::with_stroke(BinaryColor::On, 2))
+        .translate(caps_arrow_offset);
+    let mut caps_block = RoundedRectangle::with_equal_corners(
+        Rectangle::new(caps_block_start, Size::new(11, 10)),
+        Size::new(2, 2),
     )
-    .into_styled(PrimitiveStyle::with_stroke(BinaryColor::On, 2));
-    let mut caps_block = Rectangle::new(caps_block_start, Size::new(11, 10))
-        .into_styled(PrimitiveStyle::with_fill(BinaryColor::On));
+    .into_styled(PrimitiveStyle::with_fill(BinaryColor::On));
     let text_style = MonoTextStyle::new(&FONT_6X10, BinaryColor::On);
-    let caps_text =
-        Text::with_alignment("Locked", Point::new(31, 100), text_style, Alignment::Center);
+    let caps_text = Text::with_alignment(
+        "Caps Lock\nON",
+        Point::new(32, 100),
+        text_style,
+        Alignment::Center,
+    );
 
     loop {
         // todo - add more circles/shapes different sizes with some binarycolor::on and some off
