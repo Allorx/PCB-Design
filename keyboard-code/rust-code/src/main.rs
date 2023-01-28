@@ -130,7 +130,7 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
     let text_style = MonoTextStyle::new(&FONT_6X12, BinaryColor::On);
     let caps_text = Text::with_alignment(
         "Caps Lock\nON",
-        Point::new(32, 100),
+        Point::new(32, 105),
         text_style,
         Alignment::Center,
     );
@@ -162,9 +162,9 @@ fn core1_task(sys_clock: &SystemClock) -> ! {
             caps_arrow.draw(&mut disp).unwrap();
             caps_text.draw(&mut disp).unwrap();
             caps_y_pos += caps_velocity.y;
-            if caps_y_pos > 0 {
+            if caps_y_pos > caps_max_pos {
                 caps_velocity.y *= -1;
-            } else if caps_y_pos < -caps_max_pos {
+            } else if caps_y_pos < 0 {
                 caps_velocity.y *= -1;
             }
             caps_arrow.translate_mut(caps_velocity);
