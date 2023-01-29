@@ -333,9 +333,6 @@ fn main() -> ! {
     let mut caps_on = false;
     let mut caps_toggled = false;
 
-    // test
-    //let mut counter: u32 = 0;
-
     loop {
         // ? toggle on/off display if keyboard inactive for some time
         // checking keyboard activity
@@ -432,9 +429,6 @@ fn main() -> ! {
                 }
                 Ok(led) => {
                     caps_on = led.caps_lock;
-                    if led.num_lock {
-                        //counter += 1; // ????????? host can flicker led to send binary message to device
-                    }
                 }
             }
         }
