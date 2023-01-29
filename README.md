@@ -23,6 +23,8 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 
 4) Some keycaps are not standard sizes: caps lock is stepped; backspace and enter keys are 0.5u shorter than standard; and '#/~' keys are 0.25u shorter than standard - these desicions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. Some keys have also been removed - I have found that this layout is my most commonly used keys - feel free to change it!
 
+5) Note: Works great on Windows; MacOS seems to not repeat held down keys.
+
 ## Inspiration and key resources:
 * [The Switch Matrix - PCB Design for Mechanical Keyboards](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard matrix works
 * [Keyboard layout editor](http://www.keyboard-layout-editor.com/) - useful for figuring out your layout
