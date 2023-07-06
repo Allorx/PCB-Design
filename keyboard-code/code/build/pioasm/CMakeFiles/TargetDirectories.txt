@@ -1,0 +1,3 @@
+D:/Documents/Github/PCB-Design/keyboard-code/code/build/pioasm/CMakeFiles/pioasm.dir
+D:/Documents/Github/PCB-Design/keyboard-code/code/build/pioasm/CMakeFiles/edit_cache.dir
+D:/Documents/Github/PCB-Design/keyboard-code/code/build/pioasm/CMakeFiles/rebuild_cache.dir
