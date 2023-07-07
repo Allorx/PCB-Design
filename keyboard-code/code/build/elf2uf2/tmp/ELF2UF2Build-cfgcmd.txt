@@ -1,1 +1,0 @@
-cmd='C:/Program Files/CMake/bin/cmake.exe;-DCMAKE_MAKE_PROGRAM:FILEPATH=nmake;-GNMake Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'

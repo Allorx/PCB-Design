@@ -1,5 +1,0 @@
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/CMakeFiles/elf2uf2.dir
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/CMakeFiles/edit_cache.dir
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/CMakeFiles/rebuild_cache.dir
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/boot_uf2_headers/CMakeFiles/edit_cache.dir
-D:/Documents/Github/PCB-Design/keyboard-code/code/build/elf2uf2/boot_uf2_headers/CMakeFiles/rebuild_cache.dir
