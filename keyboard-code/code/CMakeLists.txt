@@ -28,5 +28,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 pico_add_extra_outputs(${PROJECT_NAME})
 
 # enable usb or uart output
-pico_enable_stdio_usb(${PROJECT_NAME} 1)
+pico_enable_stdio_usb(${PROJECT_NAME} 0)
 pico_enable_stdio_uart(${PROJECT_NAME} 0)
