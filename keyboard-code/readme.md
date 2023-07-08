@@ -1,7 +1,7 @@
 # Firmware for keyboard
 
-|Lang|Complete?|   
-|---|---|
-|Rust|- [x]|
-|C|- [ ]|
-|Python|- [ ]|
+|Lang  |Complete?|   
+|------|---------|
+|Rust  | - [x]   |
+|C     | - [ ]   |
+|Python| - [ ]   |
