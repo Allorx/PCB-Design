@@ -1,6 +1,6 @@
 # Firmware for keyboard
 
-|Lang  |Complete?          |   
+|Lang  |Complete/Working?          |   
 |------|-------------------|
 |Rust  |<ul><li>- [x] </li>|
 |C     |<ul><li>- [ ] </li>|
