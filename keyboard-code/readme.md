@@ -2,6 +2,6 @@
 
 |Lang|Complete?|   
 |---|---|
-|Rust|[x]|
-|C|[]|
-|Python|[]|
+|Rust|- [x]|
+|C|- [ ]|
+|Python|- [ ]|
