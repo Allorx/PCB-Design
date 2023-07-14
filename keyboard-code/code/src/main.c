@@ -1,9 +1,10 @@
 // Aleksas Girenas 15/10/2022
 // For controlling OrionsHands (a fully custom keyboard)
 
-#include <stdio.h>
+// #include <stdio.h>
 #include "pico/stdlib.h"
-#include <tusb.h>
+#include "hid_keyboard_demo.c"
+#include "pico/cyw43_arch.h"
 
 // keyboard rotary encoder inputs
 #define CLK 0
@@ -17,9 +18,33 @@
 // define FUNC_KEY
 #define FUNC_KEY 0xFF
 
-int main() {
+int main()
+{
     stdio_init_all();
+    if (cyw43_arch_init())
+    {
+        printf("failed to initialise cyw43_arch\n");
+        return -1;
+    }
 
+    // bt
+    btstack_main(0, NULL);
+    gap_set_local_name("Orions Hands");
+
+    while (true)
+    {
+        uint8_t *text = "hello, world";
+        btstack_ring_buffer_write(&send_buffer, text, strlen(text));
+        send_next(NULL);
+        cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+        sleep_ms(2500);
+        cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
+        sleep_ms(2500);
+    }
+
+    return 0;
+}
+/*
     // keymaps
     const unsigned char keymap[5][14] =
     {
@@ -38,7 +63,7 @@ int main() {
         {0xE0,0XE3,0XE2,0X00,0X00,0X00,0X2C,0X00,0X00,0XE6,FUNC_KEY,0X50,0X51,0X4F}
     };
     // bool to state whether function key is pressed
-    const unsigned char 
+    const unsigned char
     bool fning = false;
 
     // define key outputs
@@ -136,4 +161,6 @@ int main() {
         // send queued keys to usb
 
     }
+    return 0;
 }
+*/

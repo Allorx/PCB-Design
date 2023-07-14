@@ -4,6 +4,7 @@
         "stdlib.h": "c",
         "pico.h": "c",
         "tusb.h": "c",
-        "usbd.h": "c"
+        "usbd.h": "c",
+        "btstack_hid.h": "c"
     }
 }

@@ -11,6 +11,9 @@ project(orionshands C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
+# set board to pico w
+set(PICO_BOARD pico_w)
+
 pico_sdk_init()
 
 add_executable(${PROJECT_NAME}
@@ -18,6 +21,9 @@ add_executable(${PROJECT_NAME}
 )
 target_link_libraries(${PROJECT_NAME} 
   pico_stdlib
+  pico_btstack_classic
+  pico_btstack_cyw43
+  pico_cyw43_arch_none
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
