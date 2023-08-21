@@ -6,5 +6,6 @@
         "tusb.h": "c",
         "usbd.h": "c",
         "btstack_hid.h": "c"
-    }
+    },
+    "cmake.generator": "Ninja"
 }
