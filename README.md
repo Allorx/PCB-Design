@@ -12,7 +12,7 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 * Multicore for efficiency/speed (core0: keyboard/usb hid, core1: display/other)
 
 ## IMPORTANT!
-1) The space on the front side of the pcb on the right is reserved for a small display.
+1) The space on the front side of the pcb on the right is reserved for a small I2C display.
 2) The rp pico usb micro-b connector is only slightly accessible after soldering - this is because the intention is to extend the connector, using usb-c or an alternative 4 wire connector, away from the controller. The connector can then be case mounted for more freedom of positioning. This extension of the connector can be done in 2 ways:
     * slightly more fiddly way (my solution), plugging in a stripped usb micro-b cable into the controller -> the other end can then be connected to a usb-c breakout board or alternative 4 pin connector (the rotary encoders clips may have to be clipped to give some more room). The wires end up on the bottom of keyboard.
     * solder a connection for usb-c on the back of the rp pico (care not to break solder pads) -> demonstrated here: [usb-c mod for rp pico](https://www.reddit.com/r/raspberry_pi/comments/m8p2ed/usb_type_c_mod_for_pico/). The wires will end up on the top of the keyboard. The PCB has a cutout to make these pads easily accessible. If you would like to put the connector on the back of the keyboard using this method it may be convenient to have a hole in the pcb for connector wires to go to the back rather than over the side of the pcb.
