@@ -13,17 +13,15 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 * With some understanding of the project many more features can be added e.g. external bluetooth, oled/e-paper screen, leds (edit to your hearts content)
 
 ## IMPORTANT!
-1) The schematic and pcb is wired wrong for the rotary encoder - should be flipped the other way around (may update this in future but a workaround by rewiring is required atm). I misunderstood the wiring of the rotary encoders so please check diagrams to wire this component correctly (edit schematic and pcb). Alternatively rewire manually like I did :D.
-
-2) The rp pico usb micro-b connector is only slightly accessible after soldering - this is because the intention is to extend the connector, using usb-c or an alternative 4 wire connector, away from the controller. The connector can then be case mounted for more freedom of positioning. This extension of the connector can be done in 2 ways:
+1) The rp pico usb micro-b connector is only slightly accessible after soldering - this is because the intention is to extend the connector, using usb-c or an alternative 4 wire connector, away from the controller. The connector can then be case mounted for more freedom of positioning. This extension of the connector can be done in 2 ways:
     * slightly more fiddly way (my solution), plugging in a stripped usb micro-b cable into the controller -> the other end can then be connected to a usb-c breakout board or alternative 4 pin connector (the rotary encoders clips may have to be clipped to give some more room). The wires end up on the bottom of keyboard.
     * solder a connection for usb-c on the back of the rp pico (care not to break solder pads) -> demonstrated here: [usb-c mod for rp pico](https://www.reddit.com/r/raspberry_pi/comments/m8p2ed/usb_type_c_mod_for_pico/). The wires will end up on the top of the keyboard. The PCB has a cutout to make these pads easily accessible. If you would like to put the connector on the back of the keyboard using this method it may be convenient to have a hole in the pcb for connector wires to go to the back rather than over the side of the pcb.
 
-3) I would also recommend soldering the rp pico and usb connections first (and adding the firmware) so you can test the key matrix while soldering diodes and switches (i.e. to check if the diodes are the right way round).
+2) I would also recommend soldering the rp pico and usb connections first (and adding the firmware) so you can test the key matrix while soldering diodes and switches (i.e. to check if the diodes are the right way round).
 
-4) Some keycaps are not standard sizes: caps lock is stepped; backspace and enter keys are 0.5u shorter than standard; and '#/~' keys are 0.25u shorter than standard - these desicions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. Some keys have also been removed - I have found that this layout is my most commonly used keys - feel free to change it!
+3) Some keycaps are not standard sizes: caps lock is stepped; backspace and enter keys are 0.5u shorter than standard; and '#/~' keys are 0.25u shorter than standard - these desicions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. Some keys have also been removed - I have found that this layout is my most commonly used keys - feel free to change it!
 
-5) Note: Works great on Windows; MacOS seems to not repeat held down keys.
+4) Note: Works great on Windows; MacOS seems to not repeat held down keys.
 
 ## Inspiration and key resources:
 * [The Switch Matrix - PCB Design for Mechanical Keyboards](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard matrix works
