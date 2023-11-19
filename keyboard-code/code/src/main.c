@@ -155,4 +155,4 @@ int main()
     return 0;
 }
 
-//! scanning column then row is not the most memory efficient
+//! scanning column then row is not the most efficient (not looking at memory sequentially)
