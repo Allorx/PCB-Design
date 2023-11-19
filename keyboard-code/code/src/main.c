@@ -16,7 +16,7 @@
 // for debounce
 #define CONFIRMED_PRESS 5
 // bluetooth reporting rate
-#define REPORT_DELAY_MS 1000
+#define REPORT_DELAY_MS 1
 
 // ?keymaps
 const uint8_t keymap[5][14] =
@@ -154,5 +154,3 @@ int main()
 
     return 0;
 }
-
-//! scanning column then row is not the most efficient (not looking at memory sequentially)
