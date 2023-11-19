@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
-if(MSVC)
-    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif()
+# windblows
+add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 
 # include pico-sdk next to the workspace folder
 include(../pico-sdk/external/pico_sdk_import.cmake)
@@ -24,6 +23,7 @@ target_link_libraries(${PROJECT_NAME}
   pico_btstack_classic
   pico_btstack_cyw43
   pico_cyw43_arch_none
+  pico_multicore
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
