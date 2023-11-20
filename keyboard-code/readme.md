@@ -4,5 +4,5 @@ The primary firmware is originally [rust-code](rust-code). The C version is for 
 
 |Lang  |Folder                |Complete, Tested and Working?               |
 |------|----------------------|--------------------------------------------|
-|Rust  |[rust-code](rust-code)|&check;            rp pico + ssd1309 display|
-|C     |[code](code)          |&cross;                rp pico w + bluetooth|
+|Rust  |[rust-code](rust-code)|&check; rp pico + ssd1309 display           |
+|C     |[code](code)          |&cross; rp pico w + bluetooth               |
