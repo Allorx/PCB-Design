@@ -1,7 +1,7 @@
 # PCB-Design
 Keyboard design project "Orions Hands"
 
-Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware ("keyboard-code").
+Contains a custom mechanical keyboard PCB design [keyboard-pcb](keyboard-pcb) and firmware [keyboard-code](keyboard-code).
 
 ![Alt text](PCB_OrionsHands.jpg?raw=true "Keyboard PCB")
 
@@ -11,6 +11,9 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
 * I2C display (SSD1309) with embedded-graphics
 * Multicore for efficiency/speed (core0: keyboard/usb hid, core1: display/other)
 
+## Tests:
+Tested succesfully on Windows and MacOS
+
 ## IMPORTANT!
 1) The space on the front side of the pcb on the right is reserved for a small I2C display.
    
@@ -18,9 +21,7 @@ Contains a custom mechanical keyboard PCB design ("keyboard-pcb") and firmware (
     * slightly more fiddly way (my solution), plugging in a stripped usb micro-b cable into the controller -> the other end can then be connected to a usb-c breakout board or alternative 4 pin connector (the rotary encoders clips may have to be clipped to give some more room). The wires end up on the bottom of keyboard.
     * solder a connection for usb-c on the back of the rp pico (care not to break solder pads) -> demonstrated here: [usb-c mod for rp pico](https://www.reddit.com/r/raspberry_pi/comments/m8p2ed/usb_type_c_mod_for_pico/). The wires will end up on the top of the keyboard. The PCB has a cutout to make these pads easily accessible. If you would like to put the connector on the back of the keyboard using this method it may be convenient to have a hole in the pcb for connector wires to go to the back rather than over the side of the pcb.
 
-3) Some keycaps are not standard sizes: caps lock is stepped; backspace and enter keys are 0.5u shorter than standard; and '#/~' keys are 0.25u shorter than standard - these desicions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. Some keys have also been removed - I have found that this layout is my most commonly used keys - feel free to change it!
-
-4) Test Notes: Works great on Windows; MacOS seems to not repeat held down keys.
+3) Some keycaps are not standard sizes: caps lock is stepped; backspace and enter keys are 0.5u shorter than standard; and '#/~' keys are 0.25u shorter than standard - these decisions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. Some keys have also been removed to keep most commonly used keys - feel free to change it!
 
 ## Inspiration and key resources:
 * [The Switch Matrix - PCB Design for Mechanical Keyboards](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard matrix works
