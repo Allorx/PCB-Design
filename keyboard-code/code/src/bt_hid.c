@@ -53,8 +53,8 @@
 //#define REPORT_DELAY_MS 1
 
 // When not set to 0xffff, sniff and sniff subrating are enabled
-//static uint16_t host_max_latency = 1600;
-//static uint16_t host_min_timeout = 3200;
+static uint16_t host_max_latency = 1600;
+static uint16_t host_min_timeout = 3200;
 
 static uint8_t hid_service_buffer[300];
 static uint8_t device_id_sdp_service_buffer[100];
@@ -252,8 +252,8 @@ int bt_init(){
         hid_virtual_cable, hid_remote_wake, 
         hid_reconnect_initiate, hid_normally_connectable,
         hid_boot_device,
-        //host_max_latency, host_min_timeout,
-        0xFFFF, 0xFFFF,
+        host_max_latency, host_min_timeout,
+        //0xFFFF, 0xFFFF,
         3200,
         hid_descriptor_keyboard,
         sizeof(hid_descriptor_keyboard),
