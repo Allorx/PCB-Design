@@ -1,7 +1,8 @@
 # Firmware for keyboard
 
-|Lang  |Folder   |Complete/Working?                           |   
-|------|---------|--------------------------------------------|
-|Rust  |rust-code|<ul><li>- [x] rp pico + ssd1309 display</li>|
-|C     |code     |<ul><li>- [ ] rp pico w -> bluetooth</li>   |
-|Python|         |<ul><li>- [ ] </li>                         |
+The primary firmware is originally [rust-code](rust-code). The C version is for a bluetooth keyboard with rp pico w.  
+
+|Lang  |Folder                |Complete, Tested and Working?               |
+|------|----------------------|--------------------------------------------|
+|Rust  |[rust-code](rust-code)|&check; rp pico + ssd1309 display           |
+|C     |[code](code)          |&cross; rp pico w + bluetooth               |
