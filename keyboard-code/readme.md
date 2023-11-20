@@ -1,6 +1,6 @@
 # Firmware for keyboard
 
-The primary firmware is originally [rust-code](rust-code). The C version is for a bluetooth keyboard with rp pico w.  
+The primary firmware is originally [rust-code](rust-code). The C version is for a bluetooth keyboard with rp pico w but it is incomplete.  
 
 |Lang  |Folder                |Complete, Tested and Working?               |
 |------|----------------------|--------------------------------------------|
