@@ -3,7 +3,7 @@ Prototype Keyboard design project "Orions Hands V0.1"
 
 Contains a custom mechanical keyboard PCB design [keyboard-pcb](keyboard-pcb) and firmware [keyboard-code](keyboard-code).
 
-![Alt text](PCB_OrionsHands.jpg?raw=true "Keyboard PCB")
+![Alt text](Images/PCB_OrionsHands.jpg?raw=true "Keyboard PCB")
 
 ## Key Features:
 * NKRO support over USB using a RP Pico and Rust
