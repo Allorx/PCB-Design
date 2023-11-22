@@ -12,7 +12,7 @@ Contains a custom mechanical keyboard PCB design [keyboard-pcb](keyboard-pcb) an
 * Multicore for efficiency/speed (core0: keyboard/usb hid, core1: display/other)
 
 ## Tests:
-Tested on Windows and MacOS -> [keyboard-code](keyboard-code)
+Tested on Windows and MacOS - check [keyboard-code](keyboard-code)
 
 ## IMPORTANT!
 1) The space on the front side of the pcb on the right is reserved for a small I2C display.
