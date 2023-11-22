@@ -1,5 +1,5 @@
 # PCB-Design
-Keyboard design project "Orions Hands"
+Prototype Keyboard design project "Orions Hands"
 
 Contains a custom mechanical keyboard PCB design [keyboard-pcb](keyboard-pcb) and firmware [keyboard-code](keyboard-code).
 
