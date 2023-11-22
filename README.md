@@ -23,7 +23,7 @@ Tested on Windows and MacOS - check [keyboard-code](keyboard-code)
 
 3) Some keycaps are not standard sizes: caps lock is stepped; backspace and enter keys are 0.5u shorter than standard; and '#/~' keys are 0.25u shorter than standard - these decisions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. Some keys have also been removed to keep most commonly used keys - feel free to change it!
 
-## To Improve
+## To Improve:
 * Use pull up resistors rather than relying on pi pico internal pull ups
 
 ## Inspiration and key resources:
