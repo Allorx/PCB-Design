@@ -1,0 +1,8 @@
+# KiCad
+*-bak
+*-backups
+*-cache*
+*-bak*
+_autosave*
+*.lck
+*auto_saved_files*
