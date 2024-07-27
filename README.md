@@ -12,7 +12,11 @@ Contains a custom mechanical keyboard PCB design [keyboard-pcb](keyboard-pcb) an
 * Multicore for efficiency/speed (core0: keyboard/usb hid, core1: display/other)
 
 ## Tests:
-Tested on Windows and MacOS - check [keyboard-code](keyboard-code)
+Check [keyboard-code](keyboard-code). There seems to be a hardware issue with this design causing ghosting after extensive use...
+
+## To Improve:
+* Use pull up resistors rather than relying on pi pico internal pull ups
+* Grounding fill (and thicker traces?)
 
 ## IMPORTANT!
 1) The space on the front side of the pcb on the right is reserved for a small I2C display.
@@ -22,9 +26,6 @@ Tested on Windows and MacOS - check [keyboard-code](keyboard-code)
     * solder a connection for usb-c on the back of the rp pico (care not to break solder pads) -> demonstrated here: [usb-c mod for rp pico](https://www.reddit.com/r/raspberry_pi/comments/m8p2ed/usb_type_c_mod_for_pico/). The wires will end up on the top of the keyboard. The PCB has a cutout to make these pads easily accessible. If you would like to put the connector on the back of the keyboard using this method it may be convenient to have a hole in the pcb for connector wires to go to the back rather than over the side of the pcb.
 
 3) Some keycaps are not standard sizes: caps lock is stepped; backspace and enter keys are 0.5u shorter than standard; and '#/~' keys are 0.25u shorter than standard - these decisions were made to make the keyboard cleaner/more compact and so that the space bar is the only key that needs to have a stabiliser! The disadvantage is the keys can be more difficult to buy/re-use. Some keys have also been removed to keep most commonly used keys - feel free to change it!
-
-## To Improve:
-* Use pull up resistors rather than relying on pi pico internal pull ups
 
 ## Inspiration and key resources:
 * [The Switch Matrix - PCB Design for Mechanical Keyboards](https://www.youtube.com/watch?v=vLGklanzQIc) - important for understanding how a keyboard matrix works
